@@ -1,0 +1,127 @@
+import { useState, useEffect } from 'react';
+
+export const useFicha = () => {
+  const [session, setSession] = useState(null);
+  const [preguntas, setPreguntas] = useState([]);
+  const [preguntaActual, setPreguntaActual] = useState(0);
+  const [chismeActivo, setChismeActivo] = useState(null);
+  const [resultadoFinal, setResultadoFinal] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  // Revisa si ya hay una sesión guardada al abrir la web
+  useEffect(() => {
+    const savedUuid = localStorage.getItem('ficha_uuid');
+    const savedCodigo = localStorage.getItem('ficha_codigo');
+    if (savedUuid && savedCodigo) {
+      setSession({ uuid: savedUuid, codigo_tramite: savedCodigo });
+      cargarPreguntas(savedUuid);
+    }
+  }, []);
+
+  // Paso 1: Registrar al usuario
+  const iniciarTramite = async (region) => {
+    setLoading(true);
+    const nuevoUuid = crypto.randomUUID();
+    const nuevoCodigo = "FCH-" + Math.random().toString(36).substring(2, 7).toUpperCase();
+
+    try {
+      const res = await fetch('/api/init-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ uuid: nuevoUuid, codigo_tramite: nuevoCodigo, region })
+      });
+      
+      if (res.ok) {
+        localStorage.setItem('ficha_uuid', nuevoUuid);
+        localStorage.setItem('ficha_codigo', nuevoCodigo);
+        setSession({ uuid: nuevoUuid, codigo_tramite: nuevoCodigo, region });
+        await cargarPreguntas(nuevoUuid);
+      }
+    } catch (error) {
+      console.error("Error iniciando trámite", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Paso 2: Traer las preguntas
+  const cargarPreguntas = async (uuidActual) => {
+    setLoading(true);
+    try {
+      const res = await fetch(/api/get-preguntas?uuid=${uuidActual});
+      const data = await res.json();
+      
+      if (data.finished) {
+        await calcularResultado(uuidActual);
+      } else {
+        setPreguntas(data);
+        setPreguntaActual(0);
+      }
+    } catch (error) {
+      console.error("Error cargando preguntas", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Paso 3: Guardar el voto y avanzar
+  const responderPregunta = async (preguntaId, opcionId) => {
+    try {
+      await fetch('/api/save-respuesta', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ uuid: session.uuid, pregunta_id: preguntaId, opcion_id: opcionId })
+      });
+
+      // Lógica de avance: Si es la última pregunta del bloque, pide más o muestra chisme
+      if (preguntaActual + 1 >= preguntas.length) {
+        await mostrarChisme();
+        await cargarPreguntas(session.uuid); // Pide el siguiente bloque de 5
+      } else {
+        setPreguntaActual(prev => prev + 1);
+      }
+    } catch (error) {
+      console.error("Error guardando respuesta", error);
+    }
+  };
+
+  // Paso 4: Cargar un chisme para el morbo
+  const mostrarChisme = async () => {
+    try {
+      const res = await fetch('/api/get-chisme');
+      const data = await res.json();
+      setChismeActivo(data.texto_chisme);
+      // El chisme desaparece a los 4 segundos
+      setTimeout(() => setChismeActivo(null), 4000); 
+    } catch (error) {
+      console.error("Error cargando chisme", error);
+    }
+  };
+
+  // Paso 5: Calcular Ficha Final
+  const calcularResultado = async (uuidActual) => {
+    try {
+      const res = await fetch('/api/get-resultado', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ uuid: uuidActual })
+      });
+      const data = await res.json();
+      setResultadoFinal(data);
+    } catch (error) {
+      console.error("Error calculando ficha", error);
+    }
+  };
+
+  return {
+    session,
+    preguntas,
+    preguntaActual,
+    preguntaActiva: preguntas[preguntaActual],
+    chismeActivo,
+    resultadoFinal,
+    loading,
+    iniciarTramite,
+    responderPregunta
+  };
+};
