@@ -1,0 +1,318 @@
+// ─────────────────────────────────────────────────────────────
+// DATA.JS — Preguntas, Chismes y Perfiles para Saca tu Ficha
+// ─────────────────────────────────────────────────────────────
+
+export const PERFILES = {
+  vivillo: {
+    id: "vivillo",
+    nombre: "EL VIVILLO",
+    emoji: "🦊",
+    color: "#FFFF00",
+    descripcion: "Siempre tienes una vara, un atajo o un compadre que te soluciona todo sin hacer la cola.",
+    rasgos: ["Experto en 'agilizar' trámites", "Conoce al que conoce al que sabe", "El primero en encontrar el hueco", "Sobrevive en cualquier sistema"],
+  },
+  radical: {
+    id: "radical",
+    nombre: "EL RADICAL",
+    emoji: "🔥",
+    color: "#FF6B00",
+    descripcion: "Todo está podrido, hay que quemarlo. Confrontas sin filtro y no negocias con el sistema.",
+    rasgos: ["No se calla ante nadie", "El primero en protestar", "Ve corrupción en todo", "Su voto es una declaración de guerra"],
+  },
+  tranquilo: {
+    id: "tranquilo",
+    nombre: "EL TRANQUILO",
+    emoji: "🦥",
+    color: "#00FF41",
+    descripcion: "Fluyes, no buscas líos. Dejas que las cosas pasen y sobrevives en silencio como los grandes.",
+    rasgos: ["Perfil bajo, impacto alto", "Paciencia de piedra", "No opina, observa", "Deja pasar la corriente"],
+  },
+  negociador: {
+    id: "negociador",
+    nombre: "EL NEGOCIADOR",
+    emoji: "🤝",
+    color: "#FF00AA",
+    descripcion: "Diplomático nato. Buscas el punto medio y crees que hablando se arregla hasta lo más torcido.",
+    rasgos: ["Escucha antes de hablar", "Siempre encuentra el acuerdo", "Nadie queda mal con él", "El árbitro de la familia"],
+  },
+  tecnico: {
+    id: "tecnico",
+    nombre: "EL TÉCNICO",
+    emoji: "📋",
+    color: "#00FFFF",
+    descripcion: "Lees el reglamento, pides boleta, reportas al INDECOPI. Las normas existen por algo.",
+    rasgos: ["Pide comprobante de pago", "Conoce sus derechos de memoria", "Reporta antes de reclamar", "Su arma: el reglamento"],
+  },
+  mediatico: {
+    id: "mediatico",
+    nombre: "EL MEDIÁTICO",
+    emoji: "📱",
+    color: "#FF6B00",
+    descripcion: "Vives en TikTok y Twitter, opinas antes de leer y te guías por el show y el qué dirán.",
+    rasgos: ["Comparte antes de verificar", "El primero en opinar", "Vive por las views", "Si no está en redes, no existe"],
+  },
+  pituco: {
+    id: "pituco",
+    nombre: "EL PITUCO",
+    emoji: "🕶️",
+    color: "#FFFF00",
+    descripcion: "Te crees en otro país. Prefieres el mall al mercado y te da vergüenza la informalidad.",
+    rasgos: ["Habla de 'primer mundo'", "Le da vergüenza la combi", "Paga más por lo mismo en Miraflores", "Sueña con mudarse a Europa"],
+  },
+  resistente: {
+    id: "resistente",
+    nombre: "EL RESISTENTE",
+    emoji: "💪",
+    color: "#00FF41",
+    descripcion: "Trabajador silencioso que no se queja pero tampoco se rinde. El Perú profundo que aguanta y construye.",
+    rasgos: ["Levanta sin quejarse", "Fuerza sin esperar aplauso", "Su arma: la constancia", "El que de verdad mueve el Perú"],
+  },
+};
+
+// ─── 20 PREGUNTAS NACIONALES (formato Tinder: solo 2 opciones) ─────────────
+export const PREGUNTAS = [
+  {
+    id: 1,
+    texto: "El de adelante se está colando en la cola del banco.",
+    izquierda: { texto: "Le armo el show frente a todos 🗣️", perfil: "radical" },
+    derecha:   { texto: "Me hago el loco, no es mi problema 😶", perfil: "tranquilo" },
+  },
+  {
+    id: 2,
+    texto: "El micro está lleno pero el cobrador te dice 'sí hay sitio'.",
+    izquierda: { texto: "Me bajo y espero el siguiente 🚶", perfil: "tecnico" },
+    derecha:   { texto: "Me aprieto nomás, ya llegamos 🤷", perfil: "tranquilo" },
+  },
+  {
+    id: 3,
+    texto: "Tu vecino pone huayno a todo volumen a las 11pm.",
+    izquierda: { texto: "Toco la puerta y le pido que baje 🤝", perfil: "negociador" },
+    derecha:   { texto: "Llamo a serenazgo directo 📞", perfil: "tecnico" },
+  },
+  {
+    id: 4,
+    texto: "Te piden propina en la Sunat para 'agilizar' tu trámite.",
+    izquierda: { texto: "Pago y salgo rápido, ya pues 💸", perfil: "vivillo" },
+    derecha:   { texto: "Denuncio en el Libro de Reclamaciones 📋", perfil: "tecnico" },
+  },
+  {
+    id: 5,
+    texto: "Sale un video viral del alcalde de tu distrito bailando en una discoteca.",
+    izquierda: { texto: "Lo comparto con meme incluido 📱", perfil: "mediatico" },
+    derecha:   { texto: "Qué le importa, mientras trabaje 🤷", perfil: "tranquilo" },
+  },
+  {
+    id: 6,
+    texto: "Tienes que pagar una multa de tránsito pero conoces al jefe de la oficina.",
+    izquierda: { texto: "Le llamo, para qué están los contactos 📲", perfil: "vivillo" },
+    derecha:   { texto: "Pago la multa, la regla es la regla ✅", perfil: "tecnico" },
+  },
+  {
+    id: 7,
+    texto: "En el trabajo te piden hacer horas extras sin pago extra.",
+    izquierda: { texto: "Me quedo, necesito el trabajo 😤", perfil: "resistente" },
+    derecha:   { texto: "Les recuerdo mis derechos laborales 📋", perfil: "tecnico" },
+  },
+  {
+    id: 8,
+    texto: "Tu candidato favorito salió en un escándalo de corrupción.",
+    izquierda: { texto: "Todos roban, al menos hace obras 🤷", perfil: "tranquilo" },
+    derecha:   { texto: "Retiro mi apoyo, sin importar qué 🔥", perfil: "radical" },
+  },
+  {
+    id: 9,
+    texto: "El delivery llegó tarde y la comida está fría.",
+    izquierda: { texto: "Pido reembolso en la app inmediato 📱", perfil: "tecnico" },
+    derecha:   { texto: "Lo como igual, da fiaca reclamar 😔", perfil: "tranquilo" },
+  },
+  {
+    id: 10,
+    texto: "Un familiar te pide que le firmes como avalista de un préstamo.",
+    izquierda: { texto: "Firmo, es familia, no puedo fallarle ❤️", perfil: "resistente" },
+    derecha:   { texto: "Le explico por qué no puedo hacerlo 🤝", perfil: "negociador" },
+  },
+  {
+    id: 11,
+    texto: "Ves a un policía recibiendo algo de un motorista en plena calle.",
+    izquierda: { texto: "Grabo y lo subo a redes 📹", perfil: "mediatico" },
+    derecha:   { texto: "Sigo caminando, eso es normal acá 😶", perfil: "tranquilo" },
+  },
+  {
+    id: 12,
+    texto: "El mercado sube el precio de la canasta básica esta semana.",
+    izquierda: { texto: "Organizo protesta con los vecinos ✊", perfil: "radical" },
+    derecha:   { texto: "Busco ofertas en otro lado 🔍", perfil: "vivillo" },
+  },
+  {
+    id: 13,
+    texto: "Tu jefe llega tarde todos los días pero te descuenta si llegas tarde tú.",
+    izquierda: { texto: "Le reclamo en privado con educación 🤝", perfil: "negociador" },
+    derecha:   { texto: "Renuncio y lo escracho en LinkedIn 🔥", perfil: "radical" },
+  },
+  {
+    id: 14,
+    texto: "Un tiktoker famoso dice que el nuevo presidente es un traidor.",
+    izquierda: { texto: "Lo comparto, tiene razón seguro 📲", perfil: "mediatico" },
+    derecha:   { texto: "Busco la fuente original antes de opinar 🔍", perfil: "tecnico" },
+  },
+  {
+    id: 15,
+    texto: "Te toca hacer servicio comunal por papeleta. Es sábado.",
+    izquierda: { texto: "Voy, es mi responsabilidad ciudadana 💪", perfil: "resistente" },
+    derecha:   { texto: "Mando a alguien o pago para no ir 💸", perfil: "vivillo" },
+  },
+  {
+    id: 16,
+    texto: "Tu congresista propone una ley que no entiendes bien.",
+    izquierda: { texto: "La comparto igual porque es de mi partido 📱", perfil: "mediatico" },
+    derecha:   { texto: "Leo el texto completo antes de opinar 📋", perfil: "tecnico" },
+  },
+  {
+    id: 17,
+    texto: "Hay huelga de transportistas. Tienes reunión importante.",
+    izquierda: { texto: "Madrugó, salgo tempranísimo para llegar ⏰", perfil: "resistente" },
+    derecha:   { texto: "Llamo a un conocido que tiene carro 📞", perfil: "vivillo" },
+  },
+  {
+    id: 18,
+    texto: "El restaurante te cobra de más en la cuenta.",
+    izquierda: { texto: "Lo señalo y pido que corrijan 🧾", perfil: "tecnico" },
+    derecha:   { texto: "Pago nomás pa no hacer escena 😅", perfil: "pituco" },
+  },
+  {
+    id: 19,
+    texto: "Tu amigo te pide que le 'jales' en el trabajo donde laboras.",
+    izquierda: { texto: "Lo recomiendo si cumple el perfil ✅", perfil: "negociador" },
+    derecha:   { texto: "Lo meto aunque sea para el puesto 😏", perfil: "vivillo" },
+  },
+  {
+    id: 20,
+    texto: "Terminaste las 20 preguntas. ¿Cómo te sientes?",
+    izquierda: { texto: "Listo para ver mi ficha 🎉", perfil: "resistente" },
+    derecha:   { texto: "Quiero hacer otra vuelta 🔄", perfil: "mediatico" },
+  },
+];
+
+// ─── 20 CHISMES PREDETERMINADOS ─────────────────────────────────────────────
+export const CHISMES_INICIALES = [
+  {
+    id: "c1",
+    texto: "En la Sunat de Breña hay una ventanilla que 'solo funciona' si llegas con tamales.",
+    region: "Lima",
+    reacciones: { fuego: 234, risa: 189, sorpresa: 67 },
+  },
+  {
+    id: "c2",
+    texto: "El alcalde de mi distrito inauguró el mismo parque tres veces con tres diferentes placas.",
+    region: "Lima",
+    reacciones: { fuego: 445, risa: 312, sorpresa: 98 },
+  },
+  {
+    id: "c3",
+    texto: "En Piura los mototaxistas tienen su propio sistema de semáforos: verde = van, rojo = también van.",
+    region: "Piura",
+    reacciones: { fuego: 178, risa: 567, sorpresa: 234 },
+  },
+  {
+    id: "c4",
+    texto: "En Cusco un guía turístico lleva 15 años diciéndoles a los gringos que Machu Picchu 'aún no está terminado'.",
+    region: "Cusco",
+    reacciones: { fuego: 89, risa: 678, sorpresa: 145 },
+  },
+  {
+    id: "c5",
+    texto: "Un regidor de Arequipa votó en contra de su propio proyecto porque 'lo leyó mal'.",
+    region: "Arequipa",
+    reacciones: { fuego: 567, risa: 423, sorpresa: 312 },
+  },
+  {
+    id: "c6",
+    texto: "En Cajamarca hay un tramitador que garantiza tu DNI en 2 días o te devuelve el 'porcentaje'.",
+    region: "Cajamarca",
+    reacciones: { fuego: 234, risa: 156, sorpresa: 445 },
+  },
+  {
+    id: "c7",
+    texto: "El Wi-Fi del Congreso tiene contraseña pero cualquier periodista ya la sabe de memoria.",
+    region: "Nacional",
+    reacciones: { fuego: 789, risa: 534, sorpresa: 267 },
+  },
+  {
+    id: "c8",
+    texto: "Hay un congresista que ha pedido 'cuarto intermedio' 47 veces en lo que va del año.",
+    region: "Nacional",
+    reacciones: { fuego: 654, risa: 445, sorpresa: 189 },
+  },
+  {
+    id: "c9",
+    texto: "En el mercado de Surquillo hay una señora que sabe más de economía que el MEF.",
+    region: "Lima",
+    reacciones: { fuego: 345, risa: 678, sorpresa: 123 },
+  },
+  {
+    id: "c10",
+    texto: "Un funcionario de la Municipalidad de Lima se fue de vacaciones y nadie notó que faltaba por 3 semanas.",
+    region: "Lima",
+    reacciones: { fuego: 456, risa: 789, sorpresa: 234 },
+  },
+  {
+    id: "c11",
+    texto: "En Arequipa dicen que si un proyecto demora más de 10 años, ya es considerado patrimonio cultural.",
+    region: "Arequipa",
+    reacciones: { fuego: 567, risa: 445, sorpresa: 178 },
+  },
+  {
+    id: "c12",
+    texto: "El candidato que prometió 'obras en 100 días' lleva 3 años inaugurando la maqueta.",
+    region: "Nacional",
+    reacciones: { fuego: 890, risa: 345, sorpresa: 456 },
+  },
+  {
+    id: "c13",
+    texto: "En Piura los buses tienen horario de salida pero el chofer sale cuando 'siente que ya están listos'.",
+    region: "Piura",
+    reacciones: { fuego: 123, risa: 678, sorpresa: 89 },
+  },
+  {
+    id: "c14",
+    texto: "Un inspector de la Municipalidad multó a una señora por vender anticuchos sin permiso. Ella era su tía.",
+    region: "Nacional",
+    reacciones: { fuego: 234, risa: 567, sorpresa: 345 },
+  },
+  {
+    id: "c15",
+    texto: "En Cusco hay hostales que cobran 'precio gringo' y 'precio real'. La diferencia es 10 veces.",
+    region: "Cusco",
+    reacciones: { fuego: 445, risa: 234, sorpresa: 678 },
+  },
+  {
+    id: "c16",
+    texto: "El semáforo de mi esquina lleva 8 meses en 'reparación'. Ya lo usamos de referencia para las instrucciones.",
+    region: "Nacional",
+    reacciones: { fuego: 678, risa: 789, sorpresa: 234 },
+  },
+  {
+    id: "c17",
+    texto: "En Cajamarca hay un abogado que resuelve todo con una llamada. Nadie sabe a quién llama.",
+    region: "Cajamarca",
+    reacciones: { fuego: 345, risa: 456, sorpresa: 567 },
+  },
+  {
+    id: "c18",
+    texto: "Una regidora propuso en sesión que los baches 'se arreglen solos con el tiempo'. Salió aprobado.",
+    region: "Nacional",
+    reacciones: { fuego: 890, risa: 678, sorpresa: 456 },
+  },
+  {
+    id: "c19",
+    texto: "El Yape más grande registrado en el Perú fue para pagar una coima de 5 soles en la comisaría.",
+    region: "Nacional",
+    reacciones: { fuego: 789, risa: 890, sorpresa: 345 },
+  },
+  {
+    id: "c20",
+    texto: "En Lima hay un edificio que tiene 12 pisos pero en el ascensor el botón del 4 lleva al 7. Nadie lo ha reportado.",
+    region: "Lima",
+    reacciones: { fuego: 234, risa: 567, sorpresa: 890 },
+  },
+];

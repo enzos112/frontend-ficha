@@ -1,362 +1,368 @@
-import { useState, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import ChismeModal from "./ChismeModal";
+import { CHISMES_INICIALES } from "./data";
 
-const LOADING_PHRASES = [
-  "Buscando en el padrón...",
-  "Escaneando tu ADN criollo...",
-  "Consultando el archivo secreto...",
-  "Verificando antecedentes...",
-];
+const CHISME_CADA = 5; // mostrar chisme cada N preguntas
 
-export default function QuizView({ preguntas = [], onAnswer, onFinish, totalRespondidas = 0, chismes = [], onEnviarChisme }) {
-  const [current, setCurrent]       = useState(0);
-  const [seleccionado, setSelec]    = useState(null);
-  const [animState, setAnim]        = useState("idle");
+export default function QuizView({ preguntas, onAnswer, onFinish, totalRespondidas = 0 }) {
+  const [current, setCurrent]     = useState(0);
+  const [elegido, setElegido]     = useState(null); // "izquierda" | "derecha"
+  const [drag, setDrag]           = useState(0);    // px de desplazamiento
+  const [isDragging, setIsDrag]   = useState(false);
   const [showChisme, setShowChisme] = useState(false);
-  const [chismeActual, setChisme]   = useState(null);
-  const [cargando, setCargando]     = useState(false);
-  const [phrase]                    = useState(() => LOADING_PHRASES[Math.floor(Math.random() * LOADING_PHRASES.length)]);
+  const [chismeData, setChisme]   = useState(null);
+  const [animSalida, setAnimSal]  = useState(null); // "left" | "right"
+  const [animEntrada, setAnimEnt] = useState(false);
+
+  const cardRef   = useRef(null);
+  const startX    = useRef(0);
+  const UMBRAL    = 80; // px para confirmar swipe
 
   const pregunta = preguntas[current];
-  const totalAhora = totalRespondidas + current;
-  const totalFinal = totalRespondidas + preguntas.length;
-  const pct = totalFinal > 0 ? Math.round(((totalAhora) / totalFinal) * 100) : 0;
+  const pct = Math.round(((current) / preguntas.length) * 100);
 
+  // Entrada de nueva tarjeta
   useEffect(() => {
-    setAnim("enter");
-    const t = setTimeout(() => setAnim("idle"), 30);
+    setAnimEnt(true);
+    const t = setTimeout(() => setAnimEnt(false), 400);
     return () => clearTimeout(t);
   }, [current]);
 
-  function elegir(opcion) {
-    if (seleccionado) return;
-    setSelec(opcion.id);
-    onAnswer({ pregunta_id: pregunta.id, opcion_id: opcion.id, perfil_id: opcion.perfil_id });
-
-    setTimeout(() => {
-      setAnim("exit");
-      setTimeout(() => {
-        const next = current + 1;
-        const respondidas = totalRespondidas + current + 1;
-
-        if (respondidas % 5 === 0 && chismes.length > 0) {
-          setChisme(chismes[Math.floor(Math.random() * chismes.length)]);
-          setShowChisme(true);
-        }
-
-        if (next >= preguntas.length) {
-          setCargando(true);
-          setTimeout(() => onFinish(), 1400);
-        } else {
-          setCurrent(next);
-          setSelec(null);
-        }
-      }, 350);
-    }, 280);
+  // ── Lógica de swipe ──────────────────────────────────────────
+  function onPointerDown(e) {
+    setIsDrag(true);
+    startX.current = e.touches ? e.touches[0].clientX : e.clientX;
+  }
+  function onPointerMove(e) {
+    if (!isDragging) return;
+    const x = e.touches ? e.touches[0].clientX : e.clientX;
+    setDrag(x - startX.current);
+  }
+  function onPointerUp() {
+    if (!isDragging) return;
+    setIsDrag(false);
+    if (drag < -UMBRAL) confirmarElecion("izquierda");
+    else if (drag > UMBRAL) confirmarElecion("derecha");
+    else setDrag(0);
   }
 
-  if (cargando) return <Cargando phrase={phrase} />;
+  function confirmarElecion(lado) {
+    if (elegido) return;
+    setElegido(lado);
+    setAnimSal(lado === "izquierda" ? "left" : "right");
+    setDrag(0);
+
+    const opcion = lado === "izquierda" ? pregunta.izquierda : pregunta.derecha;
+    onAnswer({ pregunta_id: pregunta.id, lado, perfil_id: opcion.perfil });
+
+    setTimeout(() => {
+      const next = current + 1;
+      const respondidas = totalRespondidas + next;
+
+      // Chisme cada CHISME_CADA preguntas
+      if (respondidas % CHISME_CADA === 0 && next < preguntas.length) {
+        const pool = CHISMES_INICIALES;
+        setChisme(pool[Math.floor(Math.random() * pool.length)]);
+        setShowChisme(true);
+      }
+
+      setAnimSal(null);
+      setElegido(null);
+
+      if (next >= preguntas.length) {
+        onFinish();
+      } else {
+        setCurrent(next);
+      }
+    }, 500);
+  }
+
   if (!pregunta) return null;
 
+  const rotacion = drag / 12;
+  const opacIzq  = drag < 0 ? Math.min(1, Math.abs(drag) / UMBRAL) : 0;
+  const opacDer  = drag > 0 ? Math.min(1, drag / UMBRAL) : 0;
+
   return (
-    <div className="quiz-root">
-      {/* Header sticky */}
-      <header className="quiz-header">
-        <span className="quiz-logo">Saca tu Ficha</span>
-        <div className="quiz-prog-wrap">
-          <div className="quiz-prog-bar">
-            <div className="quiz-prog-fill" style={{ width: `${pct}%` }} />
+    <div className="qv-root">
+      {/* Header */}
+      <header className="qv-header">
+        <span className="qv-logo">Saca tu Ficha</span>
+        <div className="qv-prog-wrap">
+          <div className="qv-prog-bar">
+            <div className="qv-prog-fill" style={{ width: `${pct}%` }} />
           </div>
-          <span className="quiz-pct">{pct}%</span>
+          <span className="qv-pct">{current}/{preguntas.length}</span>
         </div>
       </header>
 
-      <main className="quiz-main">
-        {/* Meta */}
-        <div className="quiz-meta">
-          <span className="quiz-num">PREGUNTA {totalRespondidas + current + 1}</span>
-          <div className="quiz-marcas">
-            {Array.from({ length: Math.min(preguntas.length, 10) }).map((_, i) => (
-              <div key={i} className={`marca ${i < current ? "m-done" : i === current ? "m-active" : ""}`} />
-            ))}
+      <main className="qv-main">
+        {/* Indicadores laterales */}
+        <div className="qv-indicators">
+          <div className="qv-ind-izq" style={{ opacity: opacIzq }}>
+            <span className="qv-ind-emoji">👈</span>
+            <span className="qv-ind-txt">{pregunta.izquierda.texto}</span>
+          </div>
+          <div className="qv-ind-der" style={{ opacity: opacDer }}>
+            <span className="qv-ind-txt">{pregunta.derecha.texto}</span>
+            <span className="qv-ind-emoji">👉</span>
           </div>
         </div>
 
-        {/* Tarjeta pregunta */}
-        <div className={`quiz-card anim-${animState}`}>
-          <div className="quiz-card-stripe" />
-          <div className="quiz-card-num-badge">P</div>
-          <p className="quiz-pregunta-txt">{pregunta.texto}</p>
+        {/* Stack de tarjetas */}
+        <div className="qv-stack">
+          {/* Tarjeta fantasma de atrás */}
+          <div className="qv-card-bg" />
+
+          {/* Tarjeta principal */}
+          <div
+            ref={cardRef}
+            className={`qv-card ${animEntrada ? "qv-card-enter" : ""} ${animSalida === "left" ? "qv-card-exit-left" : ""} ${animSalida === "right" ? "qv-card-exit-right" : ""}`}
+            style={{
+              transform: !animSalida ? `translateX(${drag}px) rotate(${rotacion}deg)` : undefined,
+              transition: isDragging ? "none" : undefined,
+              cursor: isDragging ? "grabbing" : "grab",
+            }}
+            onMouseDown={onPointerDown}
+            onMouseMove={onPointerMove}
+            onMouseUp={onPointerUp}
+            onMouseLeave={onPointerUp}
+            onTouchStart={onPointerDown}
+            onTouchMove={onPointerMove}
+            onTouchEnd={onPointerUp}
+          >
+            {/* Stripe top */}
+            <div className="qv-card-stripe" />
+
+            {/* Badge número */}
+            <div className="qv-num-badge">
+              <span className="qv-num-txt">{current + 1}</span>
+              <span className="qv-num-of">/{preguntas.length}</span>
+            </div>
+
+            {/* Sello de elección (aparece al arrastrar) */}
+            {drag < -30 && (
+              <div className="qv-sello-izq" style={{ opacity: opacIzq }}>
+                <span>◀</span>
+              </div>
+            )}
+            {drag > 30 && (
+              <div className="qv-sello-der" style={{ opacity: opacDer }}>
+                <span>▶</span>
+              </div>
+            )}
+
+            {/* Pregunta */}
+            <div className="qv-pregunta-wrap">
+              <p className="qv-pregunta">{pregunta.texto}</p>
+            </div>
+
+            {/* Hint swipe */}
+            <p className="qv-hint">← desliza para elegir →</p>
+          </div>
         </div>
 
-        {/* Opciones */}
-        <div className={`quiz-opciones anim-${animState}`}>
-          {pregunta.opciones?.map((op, i) => {
-            const COLORES = ["#FF6B00","#FFFF00","#FF00AA","#00FF41"];
-            const col = COLORES[i % COLORES.length];
-            const isSelected = seleccionado === op.id;
-            const isFaded = seleccionado && !isSelected;
-            return (
-              <button
-                key={op.id}
-                className={`opcion-btn ${isSelected ? "op-selected" : ""} ${isFaded ? "op-faded" : ""}`}
-                style={isSelected ? { borderColor: col, background: col + "15" } : {}}
-                onClick={() => elegir(op)}
-              >
-                <span
-                  className="op-letra"
-                  style={isSelected ? { background: col, borderColor: col, color: "#000" } : { color: col, borderColor: col + "55" }}
-                >
-                  {String.fromCharCode(65 + i)}
-                </span>
-                <span className="op-texto">{op.texto}</span>
-                {isSelected && <span className="op-check" style={{ color: col }}>✓</span>}
-              </button>
-            );
-          })}
+        {/* Botones de opción (tap) */}
+        <div className="qv-botones">
+          <button
+            className="qv-btn qv-btn-izq"
+            onClick={() => confirmarElecion("izquierda")}
+            disabled={!!elegido}
+          >
+            <span className="qv-btn-arrow">👈</span>
+            <span className="qv-btn-txt">{pregunta.izquierda.texto}</span>
+          </button>
+          <button
+            className="qv-btn qv-btn-der"
+            onClick={() => confirmarElecion("derecha")}
+            disabled={!!elegido}
+          >
+            <span className="qv-btn-txt">{pregunta.derecha.texto}</span>
+            <span className="qv-btn-arrow">👉</span>
+          </button>
         </div>
 
-        <p className="quiz-footer-note">Responde con sinceridad. El padrón sabe.</p>
+        {/* Puntos de progreso */}
+        <div className="qv-dots">
+          {preguntas.map((_, i) => (
+            <div key={i} className={`qv-dot ${i < current ? "qv-dot-done" : i === current ? "qv-dot-active" : ""}`} />
+          ))}
+        </div>
       </main>
 
-      {showChisme && chismeActual && (
+      {showChisme && chismeData && (
         <ChismeModal
-          chisme={chismeActual}
+          chisme={chismeData}
+          soloVer={true}
           onClose={() => setShowChisme(false)}
-          onEnviarChisme={onEnviarChisme}
         />
       )}
 
-      <QuizStyles />
+      <QvStyles />
     </div>
   );
 }
 
-function Cargando({ phrase }) {
-  return (
-    <div style={{ minHeight:"100vh", background:"#0A0A0A", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", gap:20 }}>
-      <div style={{ width:44, height:44, border:"3px solid #1a1a1a", borderTopColor:"#FF6B00", borderRadius:"50%", animation:"spin 0.8s linear infinite" }} />
-      <p style={{ fontFamily:"'Courier Prime',monospace", fontSize:13, color:"#888", letterSpacing:1 }}>{phrase}</p>
-      <div style={{ display:"flex", gap:8 }}>
-        {["#FF6B00","#FFFF00","#FF00AA"].map((c,i) => (
-          <div key={i} style={{ width:8, height:8, borderRadius:"50%", background:c, animation:`bounce 1.2s ease-in-out ${i*0.2}s infinite` }} />
-        ))}
-      </div>
-      <style>{`
-        @keyframes spin   { to { transform: rotate(360deg); } }
-        @keyframes bounce { 0%,60%,100% { transform:translateY(0); opacity:0.4; } 30% { transform:translateY(-10px); opacity:1; } }
-      `}</style>
-    </div>
-  );
-}
-
-function QuizStyles() {
+function QvStyles() {
   return (
     <style>{`
       @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Public+Sans:wght@400;600;700&family=Special+Elite&family=Courier+Prime:wght@400;700&display=swap');
 
-      .quiz-root {
-        min-height: 100vh;
-        background: #0A0A0A;
-        color: #fff;
+      .qv-root {
+        min-height: 100vh; background: #0A0A0A; color: #fff;
         font-family: 'Public Sans', sans-serif;
-        max-width: 480px;
-        margin: 0 auto;
+        max-width: 480px; margin: 0 auto;
+        display: flex; flex-direction: column;
+        user-select: none;
       }
 
       /* Header */
-      .quiz-header {
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        background: #0f0f0f;
-        border-bottom: 1px solid #1a1a1a;
+      .qv-header {
+        position: sticky; top: 0; z-index: 10;
+        background: #0f0f0f; border-bottom: 1px solid #1a1a1a;
         padding: 10px 16px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
+        display: flex; align-items: center; justify-content: space-between; gap: 14px;
       }
-      .quiz-logo {
-        font-family: 'Bebas Neue', sans-serif;
-        font-size: 18px;
-        letter-spacing: 2px;
+      .qv-logo {
+        font-family: 'Bebas Neue', sans-serif; font-size: 17px; letter-spacing: 2px;
         background: linear-gradient(90deg, #FF6B00, #FF00AA);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         white-space: nowrap;
       }
-      .quiz-prog-wrap { display:flex; align-items:center; gap:8px; flex:1; }
-      .quiz-prog-bar  {
-        flex: 1;
-        height: 5px;
-        background: #1a1a1a;
-        border-radius: 3px;
-        overflow: hidden;
-      }
-      .quiz-prog-fill {
-        height: 100%;
-        background: linear-gradient(90deg, #FF6B00, #FFFF00);
-        border-radius: 3px;
-        transition: width 0.5s ease;
-      }
-      .quiz-pct {
-        font-family: 'Courier Prime', monospace;
-        font-size: 11px;
-        color: #FFFF00;
-        min-width: 30px;
-        text-align: right;
-      }
+      .qv-prog-wrap { display: flex; align-items: center; gap: 8px; flex: 1; }
+      .qv-prog-bar  { flex: 1; height: 4px; background: #1a1a1a; border-radius: 2px; overflow: hidden; }
+      .qv-prog-fill { height: 100%; background: linear-gradient(90deg, #FF6B00, #FFFF00); border-radius: 2px; transition: width 0.4s ease; }
+      .qv-pct       { font-family: 'Courier Prime', monospace; font-size: 11px; color: #FFFF00; min-width: 36px; text-align: right; }
 
       /* Main */
-      .quiz-main {
-        padding: 20px 16px 40px;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
+      .qv-main {
+        flex: 1; padding: 16px 16px 24px;
+        display: flex; flex-direction: column; align-items: center; gap: 16px;
       }
 
-      /* Meta */
-      .quiz-meta {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+      /* Indicadores laterales */
+      .qv-indicators {
+        width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 8px;
+        min-height: 36px;
       }
-      .quiz-num {
-        font-family: 'Courier Prime', monospace;
-        font-size: 10px;
-        font-weight: 700;
-        color: #FF6B00;
-        letter-spacing: 2px;
+      .qv-ind-izq, .qv-ind-der {
+        display: flex; align-items: center; gap: 6px;
+        max-width: 44%; transition: opacity 0.1s;
       }
-      .quiz-marcas { display: flex; gap: 4px; }
-      .marca {
-        width: 18px;
-        height: 3px;
-        background: #222;
-        border-radius: 2px;
-        transition: background 0.3s, transform 0.3s;
+      .qv-ind-izq { flex-direction: row; }
+      .qv-ind-der { flex-direction: row-reverse; }
+      .qv-ind-emoji { font-size: 18px; }
+      .qv-ind-txt {
+        font-family: 'Special Elite', system-ui; font-size: 11px;
+        line-height: 1.3; color: #fff; text-align: center;
       }
-      .m-done   { background: #FF6B00; }
-      .m-active { background: #FFFF00; transform: scaleY(1.6); }
+      .qv-ind-izq .qv-ind-txt { color: #FF00AA; }
+      .qv-ind-der .qv-ind-txt { color: #00FF41; }
 
-      /* Tarjeta pregunta */
-      .quiz-card {
-        background: #111;
-        border: 1px solid #2a2a2a;
-        border-radius: 12px;
-        padding: 24px 18px 20px;
-        position: relative;
-        overflow: hidden;
-        min-height: 110px;
+      /* Stack */
+      .qv-stack {
+        width: 100%; position: relative;
+        height: clamp(220px, 50vw, 280px);
+        display: flex; align-items: center; justify-content: center;
       }
-      .quiz-card-stripe {
-        position: absolute;
-        top: 0; left: 0; right: 0;
-        height: 3px;
+
+      /* Tarjeta fantasma */
+      .qv-card-bg {
+        position: absolute; inset: 8px; border-radius: 16px;
+        background: #151515; border: 1px solid #222; transform: scale(0.95);
+      }
+
+      /* Tarjeta principal */
+      .qv-card {
+        position: absolute; inset: 0;
+        background: #111; border: 1px solid #2a2a2a; border-radius: 16px;
+        padding: 20px 18px 16px; overflow: hidden;
+        display: flex; flex-direction: column; justify-content: space-between;
+        will-change: transform;
+        touch-action: pan-y;
+      }
+      .qv-card-enter {
+        animation: card-in 0.35s cubic-bezier(0.175,0.885,0.32,1.275);
+      }
+      @keyframes card-in {
+        from { opacity: 0; transform: scale(0.85) translateY(20px); }
+        to   { opacity: 1; transform: scale(1) translateY(0); }
+      }
+      .qv-card-exit-left  { animation: exit-left  0.45s ease forwards; }
+      .qv-card-exit-right { animation: exit-right 0.45s ease forwards; }
+      @keyframes exit-left  { to { transform: translateX(-120%) rotate(-20deg); opacity: 0; } }
+      @keyframes exit-right { to { transform: translateX(120%)  rotate(20deg);  opacity: 0; } }
+
+      .qv-card-stripe {
+        position: absolute; top: 0; left: 0; right: 0; height: 3px;
         background: linear-gradient(90deg, #FF6B00, #FFFF00, #FF00AA, #00FF41);
       }
-      .quiz-card-num-badge {
-        position: absolute;
-        top: 0; left: 0;
-        width: 28px; height: 28px;
-        background: #FF6B00;
-        color: #000;
-        font-family: 'Bebas Neue', sans-serif;
-        font-size: 14px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 0 0 8px 0;
+
+      /* Badge número */
+      .qv-num-badge {
+        position: absolute; top: 10px; right: 12px;
+        display: flex; align-items: baseline; gap: 2px;
       }
-      .quiz-pregunta-txt {
+      .qv-num-txt { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: #FF6B00; line-height: 1; }
+      .qv-num-of  { font-family: 'Courier Prime', monospace; font-size: 10px; color: #444; }
+
+      /* Sellos de swipe */
+      .qv-sello-izq, .qv-sello-der {
+        position: absolute; top: 16px;
+        font-family: 'Bebas Neue', sans-serif; font-size: 40px;
+        pointer-events: none; transition: opacity 0.1s;
+      }
+      .qv-sello-izq { left: 14px;  color: #FF00AA; transform: rotate(-15deg); }
+      .qv-sello-der { right: 14px; color: #00FF41; transform: rotate(15deg); }
+
+      /* Pregunta */
+      .qv-pregunta-wrap {
+        flex: 1; display: flex; align-items: center; justify-content: center;
+        padding: 16px 8px 0;
+      }
+      .qv-pregunta {
         font-family: 'Special Elite', system-ui;
-        font-size: clamp(17px, 4.5vw, 21px);
-        color: #fff;
-        line-height: 1.45;
-        margin-top: 4px;
+        font-size: clamp(16px, 4.5vw, 20px);
+        color: #fff; text-align: center; line-height: 1.45;
       }
 
-      /* Opciones */
-      .quiz-opciones {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-      .opcion-btn {
-        width: 100%;
-        padding: 13px 14px;
-        background: #111;
-        border: 1px solid #2a2a2a;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        cursor: pointer;
-        text-align: left;
-        transition: border-color 0.15s, background 0.15s, transform 0.15s, opacity 0.25s;
-        animation: opcion-in 0.3s ease both;
-      }
-      @keyframes opcion-in {
-        from { opacity:0; transform: translateX(-10px); }
-        to   { opacity:1; transform: translateX(0); }
-      }
-      .opcion-btn:nth-child(1) { animation-delay: 0ms; }
-      .opcion-btn:nth-child(2) { animation-delay: 60ms; }
-      .opcion-btn:nth-child(3) { animation-delay: 120ms; }
-      .opcion-btn:nth-child(4) { animation-delay: 180ms; }
-
-      .opcion-btn:hover:not(.op-selected):not(.op-faded) {
-        border-color: #444;
-        transform: translateX(3px);
-      }
-      .op-faded { opacity: 0.3; }
-
-      .op-letra {
-        min-width: 28px;
-        height: 28px;
-        border-radius: 50%;
-        border: 1.5px solid;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: 'Bebas Neue', sans-serif;
-        font-size: 14px;
-        transition: background 0.2s, color 0.2s;
-        flex-shrink: 0;
-      }
-      .op-texto {
-        font-family: 'Public Sans', sans-serif;
-        font-size: 14px;
-        color: #ddd;
-        line-height: 1.4;
-        flex: 1;
-      }
-      .op-check {
-        font-size: 16px;
-        font-weight: 700;
-        animation: pop 0.25s ease;
-        flex-shrink: 0;
-      }
-      @keyframes pop {
-        from { transform: scale(0); }
-        to   { transform: scale(1); }
+      .qv-hint {
+        font-family: 'Courier Prime', monospace; font-size: 9px;
+        color: #333; text-align: center; margin-top: 8px; letter-spacing: 1px;
       }
 
-      /* Animaciones de tarjeta */
-      .anim-enter { opacity:0; transform:translateY(18px); }
-      .anim-idle  { opacity:1; transform:translateY(0); transition: opacity 0.35s ease, transform 0.35s ease; }
-      .anim-exit  { opacity:0; transform:translateY(-18px); transition: opacity 0.28s ease, transform 0.28s ease; }
-
-      .quiz-footer-note {
-        font-family: 'Courier Prime', monospace;
-        font-size: 10px;
-        color: #333;
-        text-align: center;
-        letter-spacing: 0.5px;
-        margin-top: 4px;
+      /* Botones */
+      .qv-botones { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+      .qv-btn {
+        padding: 12px 10px; border-radius: 10px; border: 1.5px solid;
+        display: flex; align-items: center; gap: 6px;
+        font-family: 'Public Sans', sans-serif; font-size: 13px; font-weight: 600;
+        cursor: pointer; transition: transform 0.1s, opacity 0.2s;
+        min-height: 60px;
       }
+      .qv-btn:active:not(:disabled) { transform: scale(0.96); }
+      .qv-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+      .qv-btn-izq {
+        background: rgba(255,0,170,0.08); border-color: #FF00AA;
+        color: #fff; flex-direction: row; text-align: left;
+      }
+      .qv-btn-izq:hover:not(:disabled) { background: rgba(255,0,170,0.15); }
+
+      .qv-btn-der {
+        background: rgba(0,255,65,0.08); border-color: #00FF41;
+        color: #fff; flex-direction: row-reverse; text-align: right;
+      }
+      .qv-btn-der:hover:not(:disabled) { background: rgba(0,255,65,0.15); }
+
+      .qv-btn-arrow { font-size: 18px; flex-shrink: 0; }
+      .qv-btn-txt   { font-size: 12px; line-height: 1.35; flex: 1; }
+
+      /* Dots de progreso */
+      .qv-dots { display: flex; gap: 4px; flex-wrap: wrap; justify-content: center; max-width: 280px; }
+      .qv-dot { width: 8px; height: 8px; border-radius: 50%; background: #222; transition: background 0.3s, transform 0.3s; }
+      .qv-dot-done   { background: #FF6B00; }
+      .qv-dot-active { background: #FFFF00; transform: scale(1.4); }
     `}</style>
   );
 }
