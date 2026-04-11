@@ -1,15 +1,14 @@
 import { useState } from "react";
 
+// Regiones filtradas según el nuevo plan
 const REGIONES = [
-  "Amazonas","Áncash","Apurímac","Arequipa","Ayacucho",
-  "Cajamarca","Callao","Cusco","Huancavelica","Huánuco",
-  "Ica","Junín","La Libertad","Lambayeque","Lima",
-  "Loreto","Madre de Dios","Moquegua","Pasco","Piura",
-  "Puno","San Martín","Tacna","Tumbes","Ucayali",
+  "Lima", "Arequipa", "Cajamarca", "Cusco", "Piura", "Otras Regiones"
 ];
 
-export default function HomeView({ onStart, onVerChismes }) {
+export default function HomeView({ onStart, onVerChismes, onRecover }) {
   const [region, setRegion] = useState("");
+  const [modoRecuperar, setModoRecuperar] = useState(false);
+  const [codigoInput, setCodigoInput] = useState("");
 
   return (
     <div className="hv-root">
@@ -59,29 +58,72 @@ export default function HomeView({ onStart, onVerChismes }) {
           <p className="hv-swipe-desc">Desliza o toca para elegir · 20 preguntas · 3 segundos cada una</p>
         </div>
 
-        {/* Card */}
+        {/* Card Principal: Alterna entre Nuevo Trámite y Recuperar */}
         <div className="hv-card">
           <div className="hv-card-stripe" />
-          <label className="hv-label">TU DEPARTAMENTO</label>
-          <div className="hv-sel-wrap">
-            <select
-              className="hv-select"
-              value={region}
-              onChange={e => setRegion(e.target.value)}
-            >
-              <option value="">— Elige tu tierra —</option>
-              {REGIONES.map(r => <option key={r} value={r}>{r}</option>)}
-            </select>
-            <span className="hv-sel-arrow">▾</span>
-          </div>
-          <button
-            className={`hv-btn ${!region ? "hv-btn-off" : ""}`}
-            disabled={!region}
-            onClick={() => region && onStart(region)}
-          >
-            TRAMITAR MI FICHA →
-          </button>
-          <p className="hv-disclaimer">Anónimo · Satírico · Sin datos personales</p>
+          
+          {!modoRecuperar ? (
+            <>
+              {/* --- MODO: NUEVO TRÁMITE --- */}
+              <label className="hv-label">TU DEPARTAMENTO</label>
+              <div className="hv-sel-wrap">
+                <select
+                  className="hv-select"
+                  value={region}
+                  onChange={e => setRegion(e.target.value)}
+                >
+                  <option value="">— Elige tu tierra —</option>
+                  {REGIONES.map(r => <option key={r} value={r}>{r}</option>)}
+                </select>
+                <span className="hv-sel-arrow">▾</span>
+              </div>
+              <button
+                className={`hv-btn ${!region ? "hv-btn-off" : ""}`}
+                disabled={!region}
+                onClick={() => region && onStart(region)}
+              >
+                TRAMITAR MI FICHA →
+              </button>
+              
+              <button 
+                onClick={() => setModoRecuperar(true)}
+                className="hv-link-btn"
+              >
+                ¿Ya tienes un código de trámite?
+              </button>
+              <p className="hv-disclaimer" style={{ marginTop: '8px' }}>Anónimo · Satírico · Sin datos personales</p>
+            </>
+          ) : (
+            <>
+              {/* --- MODO: RECUPERAR TRÁMITE --- */}
+              <label className="hv-label">CÓDIGO DE TRÁMITE</label>
+              <div className="hv-sel-wrap">
+                <input
+                  type="text"
+                  className="hv-select"
+                  style={{ textAlign: 'center', fontFamily: "'Courier Prime', monospace", letterSpacing: '3px', color: '#FFFF00' }}
+                  placeholder="FCH-XXXX"
+                  value={codigoInput}
+                  onChange={(e) => setCodigoInput(e.target.value.toUpperCase())}
+                />
+              </div>
+              <button
+                className={`hv-btn ${codigoInput.length < 8 ? "hv-btn-off" : ""}`}
+                style={{ background: '#FF00AA', color: '#fff' }}
+                disabled={codigoInput.length < 8}
+                onClick={() => codigoInput.length >= 8 && onRecover(codigoInput)}
+              >
+                RECUPERAR FICHA ↺
+              </button>
+              
+              <button 
+                onClick={() => setModoRecuperar(false)}
+                className="hv-link-btn"
+              >
+                Volver a Nuevo Trámite
+              </button>
+            </>
+          )}
         </div>
 
         {/* Stats */}
@@ -225,6 +267,14 @@ export default function HomeView({ onStart, onVerChismes }) {
         }
         .hv-btn:not(.hv-btn-off):active { transform: scale(0.97); }
         .hv-btn-off { background: #1a1a1a !important; color: #333 !important; border: 1px solid #222; cursor: not-allowed; }
+        
+        .hv-link-btn {
+          width: 100%; background: transparent; border: none; color: #888;
+          font-family: 'Courier Prime', monospace; font-size: 10px; text-decoration: underline;
+          margin-top: 10px; cursor: pointer; transition: color 0.2s;
+        }
+        .hv-link-btn:hover { color: #FF6B00; }
+        
         .hv-disclaimer { font-family: 'Courier Prime', monospace; font-size: 10px; color: #444; text-align: center; }
 
         .hv-stats { display: flex; justify-content: center; gap: 28px; padding: 14px 0; border-top: 1px solid #1a1a1a; width: 100%; }
