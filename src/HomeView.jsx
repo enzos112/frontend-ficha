@@ -1,8 +1,7 @@
 import { useState } from "react";
 
 const REGIONES = [
-  "Amazonas","Arequipa","Cajamarca","Lima","Trujillo",
-  
+    "Amazonas","Arequipa","Cajamarca","Lima","Trujillo",
 ];
 
 const EDADES = [
