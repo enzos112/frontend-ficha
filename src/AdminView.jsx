@@ -22,6 +22,8 @@ export default function AdminView({ onClose }) {
   const [chismes,     setChismes]= useState(MOCK_PENDIENTES);
   const [procesando,  setProc]   = useState({});
   const [toast,       setToast]  = useState(null);
+  const [editandoId,  setEditId] = useState(null);
+  const [editDraft,   setDraft]  = useState({ texto: "", region: "" });
 
   function login() {
     if (passInput === PASS) { setAuth(true); setPassErr(false); }
@@ -34,15 +36,54 @@ export default function AdminView({ onClose }) {
   }
 
   async function accion(id, estado) {
+    if (editandoId === id) {
+      const t = editDraft.texto.trim();
+      if (!t) {
+        showToast("El texto no puede quedar vacío", "#FF00AA");
+        return;
+      }
+    }
     setProc(prev => ({ ...prev, [id]: true }));
-    // TODO (Enzo): await fetch("/api/update-chisme", { method:"POST", body: JSON.stringify({ id, estado }) });
+    // TODO (Enzo): si editandoId===id, incluir texto/region del borrador en el body del POST
+    // await fetch("/api/update-chisme", { method:"POST", body: JSON.stringify({ id, estado, texto?, region? }) });
     await new Promise(r => setTimeout(r, 600));
     setChismes(prev => prev.filter(c => c.id !== id));
     setProc(prev => ({ ...prev, [id]: false }));
+    if (editandoId === id) cerrarEdicion();
     showToast(
       estado === "aprobado" ? "✓ Chisme aprobado — ya está en el canal" : "✕ Chisme rechazado",
       estado === "aprobado" ? "#00FF41" : "#FF00AA"
     );
+  }
+
+  function abrirEdicion(c) {
+    setEditId(c.id);
+    setDraft({ texto: c.texto, region: c.region });
+  }
+
+  function cerrarEdicion() {
+    setEditId(null);
+    setDraft({ texto: "", region: "" });
+  }
+
+  async function guardarEdicion(id) {
+    const t = editDraft.texto.trim();
+    if (!t) {
+      showToast("El texto no puede quedar vacío", "#FF00AA");
+      return;
+    }
+    setProc(prev => ({ ...prev, [id]: true }));
+    // TODO (Enzo): await fetch("/api/update-chisme", { method:"POST", body: JSON.stringify({ id, estado: "pendiente", texto: t, region: editDraft.region.trim() }) });
+    await new Promise(r => setTimeout(r, 500));
+    const reg = editDraft.region.trim();
+    setChismes(prev =>
+      prev.map(c =>
+        c.id === id ? { ...c, texto: t, region: reg || c.region } : c
+      )
+    );
+    setProc(prev => ({ ...prev, [id]: false }));
+    cerrarEdicion();
+    showToast("✎ Chisme editado y guardado", "#FF6B00");
   }
 
   // ── Login ────────────────────────────────────────────────────────────────
@@ -108,7 +149,7 @@ export default function AdminView({ onClose }) {
         ) : (
           <>
             <p className="av-instruccion">
-              Revisa cada chisme y decide si va al canal o al tacho.
+              Revisa cada chisme: puedes corregir texto o región, luego aprobar o rechazar.
             </p>
             <div className="av-lista">
               {chismes.map((c, i) => (
@@ -125,25 +166,102 @@ export default function AdminView({ onClose }) {
                     <span className="av-card-fecha">{c.fecha}</span>
                   </div>
 
-                  {/* Texto */}
-                  <p className="av-card-texto">"{c.texto}"</p>
+                  {/* Texto o edición */}
+                  {editandoId === c.id ? (
+                    <div className="av-edit-block">
+                      <label className="av-edit-label">Texto del chisme</label>
+                      <textarea
+                        className="av-edit-textarea"
+                        value={editDraft.texto}
+                        onChange={e => setDraft(d => ({ ...d, texto: e.target.value }))}
+                        rows={5}
+                        disabled={procesando[c.id]}
+                      />
+                      <label className="av-edit-label">Región</label>
+                      <input
+                        type="text"
+                        className="av-edit-input"
+                        value={editDraft.region}
+                        onChange={e => setDraft(d => ({ ...d, region: e.target.value }))}
+                        placeholder="Ej. Lima"
+                        disabled={procesando[c.id]}
+                      />
+                    </div>
+                  ) : (
+                    <p className="av-card-texto">"{c.texto}"</p>
+                  )}
 
                   {/* Botones */}
                   <div className="av-card-btns">
-                    <button
-                      className="av-btn av-btn-aprobar"
-                      onClick={() => accion(c.id, "aprobado")}
-                      disabled={procesando[c.id]}
-                    >
-                      {procesando[c.id] ? "..." : "✓ APROBAR"}
-                    </button>
-                    <button
-                      className="av-btn av-btn-rechazar"
-                      onClick={() => accion(c.id, "rechazado")}
-                      disabled={procesando[c.id]}
-                    >
-                      {procesando[c.id] ? "..." : "✕ RECHAZAR"}
-                    </button>
+                    {editandoId === c.id ? (
+                      <>
+                        <div className="av-btn-row-double">
+                          <button
+                            type="button"
+                            className="av-btn av-btn-guardar"
+                            onClick={() => guardarEdicion(c.id)}
+                            disabled={procesando[c.id]}
+                          >
+                            {procesando[c.id] ? "..." : "GUARDAR"}
+                          </button>
+                        <button
+                          type="button"
+                          className="av-btn av-btn-cancelar"
+                          onClick={cerrarEdicion}
+                          disabled={procesando[c.id]}
+                        >
+                          CANCELAR
+                        </button>
+                        </div>
+                        <div className="av-btn-row-double">
+                          <button
+                            type="button"
+                            className="av-btn av-btn-aprobar"
+                            onClick={() => accion(c.id, "aprobado")}
+                            disabled={procesando[c.id]}
+                          >
+                            {procesando[c.id] ? "..." : "✓ APROBAR"}
+                          </button>
+                          <button
+                            type="button"
+                            className="av-btn av-btn-rechazar"
+                            onClick={() => accion(c.id, "rechazado")}
+                            disabled={procesando[c.id]}
+                          >
+                            {procesando[c.id] ? "..." : "✕ RECHAZAR"}
+                          </button>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <button
+                          type="button"
+                          className="av-btn av-btn-editar"
+                          onClick={() => abrirEdicion(c)}
+                          disabled={procesando[c.id]}
+                        >
+                          ✎ EDITAR CHISME
+                        </button>
+                        <div className="av-btn-row-double">
+                          <button
+                            type="button"
+                            className="av-btn av-btn-aprobar"
+                            onClick={() => accion(c.id, "aprobado")}
+                            disabled={procesando[c.id]}
+                          >
+                            {procesando[c.id] ? "..." : "✓ APROBAR"}
+                          </button>
+                          <button
+                            type="button"
+                            className="av-btn av-btn-rechazar"
+                            onClick={() => accion(c.id, "rechazado")}
+                            disabled={procesando[c.id]}
+                          >
+                            {procesando[c.id] ? "..." : "✕ RECHAZAR"}
+                          </button>
+                        </div>
+                      </>
+                    )}
                   </div>
                 </div>
               ))}
@@ -255,7 +373,8 @@ function AvStyles() {
         line-height: 1.5; font-style: italic; margin-bottom: 14px;
       }
 
-      .av-card-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+      .av-card-btns { display: flex; flex-direction: column; gap: 8px; }
+      .av-btn-row-double { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
       .av-btn {
         padding: 11px 8px; border: none; border-radius: 8px;
         font-family: var(--f-bloque); font-size: 13px; letter-spacing: 1px;
@@ -265,6 +384,25 @@ function AvStyles() {
       .av-btn:disabled { opacity: 0.4; cursor: not-allowed; }
       .av-btn-aprobar  { background: #00FF41; color: #000; }
       .av-btn-rechazar { background: #1a1a1a; color: #FF00AA; border: 1.5px solid #FF00AA; }
+      .av-btn-editar {
+        width: 100%; background: transparent; color: #FF6B00;
+        border: 1.5px solid #FF6B00;
+      }
+      .av-btn-guardar  { background: #FF6B00; color: #000; }
+      .av-btn-cancelar { background: #1a1a1a; color: #888; border: 1.5px solid #333; }
+
+      .av-edit-block { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+      .av-edit-label {
+        font-family: var(--f-bloque); font-size: 9px; color: #555;
+        text-transform: uppercase; letter-spacing: 1px;
+      }
+      .av-edit-textarea, .av-edit-input {
+        width: 100%; padding: 12px; background: #1a1a1a; border: 1.5px solid #333;
+        border-radius: 8px; color: #fff; font-family: var(--f-cuerpo); font-size: 14px;
+        outline: none; resize: vertical; box-sizing: border-box;
+      }
+      .av-edit-textarea:focus, .av-edit-input:focus { border-color: #FF6B00; }
+      .av-edit-textarea { min-height: 100px; line-height: 1.5; }
 
       /* Empty */
       .av-empty { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; padding: 40px 0; }
