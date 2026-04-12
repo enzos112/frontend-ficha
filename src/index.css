@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Public+Sans:wght@400;600;700&family=Special+Elite&family=Courier+Prime:wght@400;700&display=swap');
 @import "tailwindcss";
 
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Black+Han+Sans&family=Public+Sans:wght@400;700&family=Courier+Prime:wght@400;700&display=swap');
+
 @theme {
-  --font-sello:   'Special Elite', system-ui;
-  --font-titular: 'Bebas Neue', sans-serif;
+  --font-titular: 'Black Han Sans', sans-serif;
+  --font-bloque:  'Archivo Black', sans-serif;
   --font-oficial: 'Public Sans', sans-serif;
   --font-codigo:  'Courier Prime', monospace;
 

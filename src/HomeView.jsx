@@ -1,14 +1,27 @@
 import { useState } from "react";
 
-// Regiones filtradas según el nuevo plan
 const REGIONES = [
-  "Lima", "Arequipa", "Cajamarca", "Cusco", "Piura", "Otras Regiones"
+  "Amazonas","Arequipa","Cajamarca","Lima","Trujillo",
+  
 ];
 
-export default function HomeView({ onStart, onVerChismes, onRecover }) {
+const EDADES = [
+  { id: "18-30", label: "18 – 30", emoji: "⚡" },
+  { id: "31+",   label: "31 a más", emoji: "👊" },
+];
+
+const GENEROS = [
+  { id: "hombre",  label: "Hombre",            emoji: "♂️", color: "#FF6B00" },
+  { id: "mujer",   label: "Mujer",              emoji: "♀️", color: "#FF00AA" },
+  { id: "nd",      label: "Prefiero no decirlo",emoji: "✦",  color: "#FFFF00" },
+];
+
+export default function HomeView({ onStart, onVerChismes, onVerStats, onVerTerms, onVerAdmin }) {
   const [region, setRegion] = useState("");
-  const [modoRecuperar, setModoRecuperar] = useState(false);
-  const [codigoInput, setCodigoInput] = useState("");
+  const [edad,   setEdad]   = useState("");
+  const [genero, setGenero] = useState("");
+
+  const listo = region && edad && genero;
 
   return (
     <div className="hv-root">
@@ -18,9 +31,10 @@ export default function HomeView({ onStart, onVerChismes, onRecover }) {
       {/* Header */}
       <header className="hv-header">
         <span className="hv-header-left">RNIF · 2026</span>
-        <button className="hv-chismes-btn" onClick={onVerChismes}>
-          🗞️ CHISMES
-        </button>
+        <div className="hv-header-btns">
+          <button className="hv-chismes-btn" onClick={onVerStats}>📊 PADRÓN</button>
+          <button className="hv-chismes-btn" onClick={onVerChismes}>🗞️ CHISMES</button>
+        </div>
       </header>
 
       <main className="hv-main">
@@ -58,72 +72,71 @@ export default function HomeView({ onStart, onVerChismes, onRecover }) {
           <p className="hv-swipe-desc">Desliza o toca para elegir · 20 preguntas · 3 segundos cada una</p>
         </div>
 
-        {/* Card Principal: Alterna entre Nuevo Trámite y Recuperar */}
+        {/* Card */}
         <div className="hv-card">
           <div className="hv-card-stripe" />
-          
-          {!modoRecuperar ? (
-            <>
-              {/* --- MODO: NUEVO TRÁMITE --- */}
-              <label className="hv-label">TU DEPARTAMENTO</label>
-              <div className="hv-sel-wrap">
-                <select
-                  className="hv-select"
-                  value={region}
-                  onChange={e => setRegion(e.target.value)}
-                >
-                  <option value="">— Elige tu tierra —</option>
-                  {REGIONES.map(r => <option key={r} value={r}>{r}</option>)}
-                </select>
-                <span className="hv-sel-arrow">▾</span>
-              </div>
+          {/* Departamento */}
+          <label className="hv-label">📍 TU DEPARTAMENTO</label>
+          <div className="hv-sel-wrap">
+            <select
+              className="hv-select"
+              value={region}
+              onChange={e => setRegion(e.target.value)}
+            >
+              <option value="">— Elige tu tierra —</option>
+              {REGIONES.map(r => <option key={r} value={r}>{r}</option>)}
+            </select>
+            <span className="hv-sel-arrow">▾</span>
+          </div>
+
+          {/* Edad */}
+          <label className="hv-label">⚡ TU RANGO DE EDAD</label>
+          <div className="hv-toggle-group" style={{marginBottom:16}}>
+            {EDADES.map(e => (
               <button
-                className={`hv-btn ${!region ? "hv-btn-off" : ""}`}
-                disabled={!region}
-                onClick={() => region && onStart(region)}
+                key={e.id}
+                className={`hv-toggle ${edad === e.id ? "hv-toggle-edad-on" : ""}`}
+                onClick={() => setEdad(e.id)}
+                style={edad === e.id ? {
+                  background: "rgba(255,255,0,0.15)",
+                  borderColor: "#FFFF00",
+                  color: "#FFFF00",
+                } : {}}
               >
-                TRAMITAR MI FICHA →
+                <span className="hv-toggle-emoji">{e.emoji}</span>
+                <span className="hv-toggle-lbl">{e.label}</span>
               </button>
-              
-              <button 
-                onClick={() => setModoRecuperar(true)}
-                className="hv-link-btn"
-              >
-                ¿Ya tienes un código de trámite?
-              </button>
-              <p className="hv-disclaimer" style={{ marginTop: '8px' }}>Anónimo · Satírico · Sin datos personales</p>
-            </>
-          ) : (
-            <>
-              {/* --- MODO: RECUPERAR TRÁMITE --- */}
-              <label className="hv-label">CÓDIGO DE TRÁMITE</label>
-              <div className="hv-sel-wrap">
-                <input
-                  type="text"
-                  className="hv-select"
-                  style={{ textAlign: 'center', fontFamily: "'Courier Prime', monospace", letterSpacing: '3px', color: '#FFFF00' }}
-                  placeholder="FCH-XXXX"
-                  value={codigoInput}
-                  onChange={(e) => setCodigoInput(e.target.value.toUpperCase())}
-                />
-              </div>
+            ))}
+          </div>
+
+          {/* Género */}
+          <label className="hv-label">✦ TU GÉNERO</label>
+          <div className="hv-toggle-group" style={{marginBottom:20}}>
+            {GENEROS.map(g => (
               <button
-                className={`hv-btn ${codigoInput.length < 8 ? "hv-btn-off" : ""}`}
-                style={{ background: '#FF00AA', color: '#fff' }}
-                disabled={codigoInput.length < 8}
-                onClick={() => codigoInput.length >= 8 && onRecover(codigoInput)}
+                key={g.id}
+                className={`hv-toggle ${genero === g.id ? "hv-toggle-genero-on" : ""}`}
+                onClick={() => setGenero(g.id)}
+                style={genero === g.id ? {
+                  background: `${g.color}22`,
+                  borderColor: g.color,
+                  color: g.color,
+                } : {}}
               >
-                RECUPERAR FICHA ↺
+                <span className="hv-toggle-emoji">{g.emoji}</span>
+                <span className="hv-toggle-lbl">{g.label}</span>
               </button>
-              
-              <button 
-                onClick={() => setModoRecuperar(false)}
-                className="hv-link-btn"
-              >
-                Volver a Nuevo Trámite
-              </button>
-            </>
-          )}
+            ))}
+          </div>
+
+          <button
+            className={`hv-btn ${!listo ? "hv-btn-off" : ""}`}
+            disabled={!listo}
+            onClick={() => listo && onStart({ region, edad, genero })}
+          >
+            TRAMITAR MI FICHA →
+          </button>
+          <p className="hv-disclaimer">Anónimo · Satírico · Sin datos personales</p>
         </div>
 
         {/* Stats */}
@@ -137,66 +150,94 @@ export default function HomeView({ onStart, onVerChismes, onRecover }) {
         </div>
       </main>
 
-      <footer className="hv-footer">© 2026 Saca tu Ficha — Sátira electoral peruana</footer>
+      <footer className="hv-footer">
+        <p>© 2026 Saca tu Ficha — Sátira electoral peruana</p>
+        <div className="hv-footer-links">
+          <button className="hv-footer-link" onClick={onVerTerms}>Términos y Condiciones</button>
+          <span className="hv-footer-sep">·</span>
+          <button className="hv-footer-link" onClick={onVerAdmin}>Admin</button>
+        </div>
+      </footer>
 
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Public+Sans:wght@400;600;700&family=Special+Elite&family=Courier+Prime:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Black+Han+Sans&family=Public+Sans:wght@400;700&family=Courier+Prime:wght@400;700&display=swap');
+
+        /* ── Variables de fuente chicha ── */
+        :root {
+          --f-titulo:  'Black Han Sans', sans-serif;
+          --f-bloque:  'Archivo Black', sans-serif;
+          --f-cuerpo:  'Public Sans', sans-serif;
+          --f-codigo:  'Courier Prime', monospace;
+        }
 
         .hv-root {
           min-height: 100vh; background: #0A0A0A; color: #fff;
-          font-family: 'Public Sans', sans-serif;
+          font-family: var(--f-cuerpo);
           max-width: 480px; margin: 0 auto;
           position: relative; overflow-x: hidden;
         }
         .hv-bg-glow {
           position: fixed; top: -100px; left: 50%; transform: translateX(-50%);
           width: 300px; height: 300px; border-radius: 50%;
-          background: radial-gradient(circle, rgba(255,107,0,0.12) 0%, transparent 70%);
+          background: radial-gradient(circle, rgba(255,107,0,0.14) 0%, transparent 70%);
           pointer-events: none; z-index: 0;
         }
+
+        /* ── Header ── */
         .hv-header {
           position: relative; z-index: 1;
           display: flex; justify-content: space-between; align-items: center;
           padding: 12px 16px; border-bottom: 1px solid #1a1a1a;
         }
         .hv-header-left {
-          font-family: 'Courier Prime', monospace; font-size: 9px;
+          font-family: var(--f-codigo); font-size: 9px;
           color: #444; letter-spacing: 2px;
         }
+        .hv-header-btns { display: flex; gap: 6px; align-items: center; }
         .hv-chismes-btn {
           background: #1a1a1a; border: 1px solid #333; border-radius: 20px;
-          padding: 5px 12px; font-family: 'Courier Prime', monospace;
-          font-size: 10px; font-weight: 700; color: #FF6B00;
-          letter-spacing: 1px; cursor: pointer; transition: border-color 0.2s;
+          padding: 5px 11px; font-family: var(--f-bloque);
+          font-size: 10px; color: #FF6B00;
+          letter-spacing: 0.5px; cursor: pointer; transition: border-color 0.2s;
+          white-space: nowrap;
         }
         .hv-chismes-btn:hover { border-color: #FF6B00; }
 
+        /* ── Main ── */
         .hv-main {
           position: relative; z-index: 1;
           padding: 24px 16px 32px;
           display: flex; flex-direction: column; align-items: center; gap: 20px;
         }
+
+        /* ── Pill ── */
         .hv-pill {
           display: flex; align-items: center; gap: 8px;
           background: #111; padding: 6px 14px; border-radius: 100px;
           border: 1px solid #2a2a2a;
         }
-        .hv-dot { width: 6px; height: 6px; border-radius: 50%; }
+        .hv-dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
         .hv-pill-txt {
-          font-family: 'Courier Prime', monospace; font-size: 10px;
-          color: #888; letter-spacing: 2px;
+          font-family: var(--f-bloque); font-size: 10px;
+          color: #888; letter-spacing: 1.5px;
+          text-transform: uppercase;
         }
+
+        /* ── Título ── */
         .hv-titulo { text-align: center; position: relative; line-height: 1; width: 100%; }
         .hv-pre {
-          font-family: 'Bebas Neue', sans-serif; font-size: 44px;
-          color: #fff; letter-spacing: 8px; line-height: 1;
+          font-family: var(--f-bloque);
+          font-size: clamp(32px, 9vw, 42px);
+          color: #ccc; letter-spacing: 6px; line-height: 1;
+          text-transform: uppercase;
         }
         .hv-ficha {
-          font-family: 'Bebas Neue', sans-serif;
-          font-size: clamp(80px, 22vw, 100px);
-          letter-spacing: 10px; line-height: 0.85;
+          font-family: var(--f-titulo);
+          font-size: clamp(78px, 22vw, 102px);
+          letter-spacing: 4px; line-height: 0.88;
           background: linear-gradient(135deg, #FF6B00 0%, #FFFF00 35%, #FF00AA 65%, #00FF41 100%);
           -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+          text-transform: uppercase;
         }
         .hv-sello-circle {
           position: absolute; top: 8px; right: 8px;
@@ -205,18 +246,18 @@ export default function HomeView({ onStart, onVerChismes, onRecover }) {
           display: flex; align-items: center; justify-content: center;
           transform: rotate(15deg); opacity: 0.7;
         }
-        .hv-sello-txt { font-family: 'Special Elite', system-ui; font-size: 8px; color: #FF00AA; }
+        .hv-sello-txt { font-family: var(--f-bloque); font-size: 7px; color: #FF00AA; letter-spacing: 1px; }
 
-        /* Instrucción swipe */
+        /* ── Swipe demo ── */
         .hv-instruccion { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 8px; }
-        .hv-swipe-demo { display: flex; align-items: center; gap: 12px; }
+        .hv-swipe-demo  { display: flex; align-items: center; gap: 12px; }
         .hv-swipe-left, .hv-swipe-right {
           display: flex; align-items: center; gap: 4px;
-          font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 1px;
+          font-family: var(--f-bloque); font-size: 12px; letter-spacing: 1px;
         }
         .hv-swipe-left  { color: #FF00AA; }
         .hv-swipe-right { color: #00FF41; }
-        .hv-swipe-lbl { font-size: 11px; }
+        .hv-swipe-lbl   { font-size: 10px; }
         .hv-swipe-card-mini {
           width: 48px; height: 60px;
           background: #111; border: 1px solid #333; border-radius: 8px;
@@ -228,29 +269,30 @@ export default function HomeView({ onStart, onVerChismes, onRecover }) {
           50%      { transform: rotate(3deg); }
         }
         .hv-swipe-desc {
-          font-family: 'Courier Prime', monospace; font-size: 10px;
+          font-family: var(--f-bloque); font-size: 11px;
           color: #555; text-align: center; letter-spacing: 0.5px;
+          text-transform: uppercase;
         }
 
-        /* Card */
+        /* ── Card formulario ── */
         .hv-card {
           width: 100%; background: #111; border: 1px solid #222;
           border-radius: 12px; padding: 22px 18px; position: relative; overflow: hidden;
         }
         .hv-card-stripe {
-          position: absolute; top: 0; left: 0; right: 0; height: 3px;
+          position: absolute; top: 0; left: 0; right: 0; height: 4px;
           background: linear-gradient(90deg, #FF6B00, #FFFF00, #FF00AA, #00FF41);
         }
         .hv-label {
-          display: block; font-family: 'Courier Prime', monospace;
-          font-size: 10px; font-weight: 700; letter-spacing: 2px;
-          color: #FF6B00; margin-bottom: 10px;
+          display: block; font-family: var(--f-bloque);
+          font-size: 11px; letter-spacing: 2px;
+          color: #FF6B00; margin-bottom: 10px; text-transform: uppercase;
         }
-        .hv-sel-wrap { position: relative; margin-bottom: 14px; }
+        .hv-sel-wrap { position: relative; margin-bottom: 16px; }
         .hv-select {
           width: 100%; padding: 13px 38px 13px 14px;
           background: #1a1a1a; border: 1px solid #333; border-radius: 8px;
-          color: #fff; font-family: 'Public Sans', sans-serif; font-size: 15px;
+          color: #fff; font-family: var(--f-cuerpo); font-size: 15px;
           appearance: none; cursor: pointer; outline: none; transition: border-color 0.2s;
         }
         .hv-select:focus { border-color: #FF6B00; }
@@ -259,30 +301,75 @@ export default function HomeView({ onStart, onVerChismes, onRecover }) {
           position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
           color: #FF6B00; font-size: 16px; pointer-events: none;
         }
+
+        /* ── Botón principal ── */
         .hv-btn {
-          width: 100%; padding: 15px; background: #FF6B00; color: #000;
-          border: none; border-radius: 8px; font-family: 'Bebas Neue', sans-serif;
-          font-size: 20px; letter-spacing: 3px; cursor: pointer;
+          width: 100%; padding: 16px; background: #FF6B00; color: #000;
+          border: none; border-radius: 8px;
+          font-family: var(--f-titulo);
+          font-size: 22px; letter-spacing: 2px; cursor: pointer;
           margin-bottom: 10px; transition: opacity 0.2s, transform 0.1s;
+          text-transform: uppercase;
         }
         .hv-btn:not(.hv-btn-off):active { transform: scale(0.97); }
-        .hv-btn-off { background: #1a1a1a !important; color: #333 !important; border: 1px solid #222; cursor: not-allowed; }
-        
-        .hv-link-btn {
-          width: 100%; background: transparent; border: none; color: #888;
-          font-family: 'Courier Prime', monospace; font-size: 10px; text-decoration: underline;
-          margin-top: 10px; cursor: pointer; transition: color 0.2s;
+        .hv-btn-off {
+          background: #1a1a1a !important; color: #333 !important;
+          border: 1px solid #222; cursor: not-allowed;
         }
-        .hv-link-btn:hover { color: #FF6B00; }
-        
-        .hv-disclaimer { font-family: 'Courier Prime', monospace; font-size: 10px; color: #444; text-align: center; }
+        .hv-disclaimer {
+          font-family: var(--f-codigo); font-size: 10px;
+          color: #444; text-align: center;
+        }
 
-        .hv-stats { display: flex; justify-content: center; gap: 28px; padding: 14px 0; border-top: 1px solid #1a1a1a; width: 100%; }
+        /* ── Toggles edad / género ── */
+        .hv-toggle-group { display: flex; gap: 8px; width: 100%; }
+        .hv-toggle {
+          flex: 1; min-width: 0; padding: 12px 6px;
+          background: #1a1a1a; border: 2px solid #222; border-radius: 10px;
+          display: flex; flex-direction: column; align-items: center; gap: 5px;
+          cursor: pointer;
+          transition: border-color 0.15s, background 0.15s, color 0.15s, transform 0.1s;
+          color: #555;
+        }
+        .hv-toggle:active { transform: scale(0.93); }
+        .hv-toggle-emoji { font-size: 20px; line-height: 1; }
+        .hv-toggle-lbl {
+          font-family: var(--f-bloque);
+          font-size: 11px; letter-spacing: 0.5px;
+          text-align: center; line-height: 1.2;
+          text-transform: uppercase;
+        }
+
+        /* ── Stats ── */
+        .hv-stats {
+          display: flex; justify-content: center; gap: 28px;
+          padding: 14px 0; border-top: 1px solid #1a1a1a; width: 100%;
+        }
         .hv-stat  { display: flex; flex-direction: column; align-items: center; gap: 2px; }
-        .hv-stat-n { font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: #FFFF00; line-height: 1; }
-        .hv-stat-l { font-family: 'Courier Prime', monospace; font-size: 9px; color: #555; letter-spacing: 1px; text-transform: uppercase; }
+        .hv-stat-n {
+          font-family: var(--f-titulo); font-size: 28px;
+          color: #FFFF00; line-height: 1;
+        }
+        .hv-stat-l {
+          font-family: var(--f-codigo); font-size: 9px;
+          color: #555; letter-spacing: 1px; text-transform: uppercase;
+        }
 
-        .hv-footer { text-align: center; padding: 16px; border-top: 1px solid #1a1a1a; font-family: 'Courier Prime', monospace; font-size: 9px; color: #333; }
+        /* ── Footer ── */
+        .hv-footer {
+          text-align: center; padding: 14px 16px; border-top: 1px solid #1a1a1a;
+          display: flex; flex-direction: column; gap: 6px;
+        }
+        .hv-footer p { font-family: var(--f-codigo); font-size: 9px; color: #333; }
+        .hv-footer-links { display: flex; justify-content: center; align-items: center; gap: 8px; }
+        .hv-footer-link {
+          background: transparent; border: none;
+          font-family: var(--f-bloque); font-size: 9px; color: #333;
+          cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px;
+          text-decoration: underline; transition: color 0.2s;
+        }
+        .hv-footer-link:hover { color: #FF6B00; }
+        .hv-footer-sep { color: #2a2a2a; font-size: 10px; }
       `}</style>
     </div>
   );
