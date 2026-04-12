@@ -1,38 +1,33 @@
 import { useState, useRef, useEffect } from "react";
 import ChismeModal from "./ChismeModal";
-// Nota: Si ya borraron "./data", pueden comentar esta línea y usar chismes pasados por props
 import { CHISMES_INICIALES } from "./data"; 
 
 export default function QuizView({ preguntas, onAnswer, onFinish, totalRespondidas = 0 }) {
   const [current, setCurrent]     = useState(0);
-  const [elegido, setElegido]     = useState(null); // "izquierda" | "derecha"
-  const [drag, setDrag]           = useState(0);    // px de desplazamiento
+  const [elegido, setElegido]     = useState(null); 
+  const [drag, setDrag]           = useState(0);    
   const [isDragging, setIsDrag]   = useState(false);
   const [showChisme, setShowChisme] = useState(false);
   const [chismeData, setChisme]   = useState(null);
-  const [animSalida, setAnimSal]  = useState(null); // "left" | "right"
+  const [animSalida, setAnimSal]  = useState(null); 
   const [animEntrada, setAnimEnt] = useState(false);
-  
-  // 👉 NUEVO ESTADO: Para el Efecto Espejo (Validación)
   const [feedback, setFeedback]   = useState(null); 
 
   const cardRef   = useRef(null);
   const startX    = useRef(0);
-  const UMBRAL    = 80; // px para confirmar swipe
+  const UMBRAL    = 80; 
 
   const pregunta = preguntas[current];
   const pct = Math.round(((current) / preguntas.length) * 100);
 
-  // Entrada de nueva tarjeta
   useEffect(() => {
     setAnimEnt(true);
     const t = setTimeout(() => setAnimEnt(false), 400);
     return () => clearTimeout(t);
   }, [current]);
 
-  // ── Lógica de swipe ──────────────────────────────────────────
   function onPointerDown(e) {
-    if (feedback) return; // Si hay feedback en pantalla, bloqueamos el drag
+    if (feedback) return; 
     setIsDrag(true);
     startX.current = e.touches ? e.touches[0].clientX : e.clientX;
   }
@@ -49,41 +44,34 @@ export default function QuizView({ preguntas, onAnswer, onFinish, totalRespondid
     else setDrag(0);
   }
 
-  function confirmarElecion(lado) {
+  // ── LA MAGIA ASÍNCRONA: ESPERAR EL PORCENTAJE DE LA BD ──
+  async function confirmarElecion(lado) {
     if (elegido) return;
     setElegido(lado);
     setAnimSal(lado === "izquierda" ? "left" : "right");
     setDrag(0);
 
     const opcion = lado === "izquierda" ? pregunta.izquierda : pregunta.derecha;
-    onAnswer({ pregunta_id: pregunta.id, lado, perfil_id: opcion.perfil });
+    
+    // 👉 Esperamos que la base de datos nos devuelva el cálculo
+    const porcentajeReal = await onAnswer({ pregunta_id: pregunta.id, lado, perfil_id: opcion.perfil });
 
-    // ── LÓGICA DE VALIDACIÓN SOCIAL REAL (Efecto Espejo) ──
-    // Asumimos que en el futuro la BD enviará "opcion.porcentaje".
     let mensajeFeedback = "";
-    if (opcion.porcentaje && opcion.porcentaje > 0) {
-      if (opcion.porcentaje > 50) {
-        mensajeFeedback = `🔥 El ${opcion.porcentaje}% piensa igual que tú`;
-      } else {
-        mensajeFeedback = `💀 Uy, solo el ${opcion.porcentaje}% eligió esto`;
-      }
+    if (porcentajeReal === 100) {
+      mensajeFeedback = "🚀 ¡Eres el primero, marcando tendencia!";
+    } else if (porcentajeReal >= 50) {
+      mensajeFeedback = `🔥 El ${porcentajeReal}% piensa igual que tú`;
     } else {
-      mensajeFeedback = "🚀 ¡Eres el primero en responder esto!";
+      mensajeFeedback = `💀 Uy, solo el ${porcentajeReal}% eligió esto`;
     }
     
-    // Mostramos el mensaje en pantalla
     setFeedback(mensajeFeedback);
 
-    // Esperamos 1.5 segundos para que el usuario lea su validación antes de pasar a la siguiente
     setTimeout(() => {
       const next = current + 1;
-
-      // ── LÓGICA TIKTOK: Chisme Aleatorio (Lootbox) ──
-      // Probabilidad del 20% de que salga un chisme, pero nunca en la primera pregunta
       const probabilidadChisme = Math.random() > 0.80; 
       
       if (next > 1 && probabilidadChisme && next < preguntas.length) {
-        // En el futuro puedes reemplazar CHISMES_INICIALES por los chismes que vengan de tu BD
         const pool = CHISMES_INICIALES || [{ texto: "Alguien se robó el microondas de la ofi..." }];
         setChisme(pool[Math.floor(Math.random() * pool.length)]);
         setShowChisme(true);
@@ -91,14 +79,14 @@ export default function QuizView({ preguntas, onAnswer, onFinish, totalRespondid
 
       setAnimSal(null);
       setElegido(null);
-      setFeedback(null); // Ocultamos el mensaje
+      setFeedback(null); 
 
       if (next >= preguntas.length) {
         onFinish();
       } else {
         setCurrent(next);
       }
-    }, 1500); // 1.5 segundos de pausa dramática
+    }, 600); 
   }
 
   if (!pregunta) return null;
@@ -109,19 +97,17 @@ export default function QuizView({ preguntas, onAnswer, onFinish, totalRespondid
 
   return (
     <div className="qv-root">
-      {/* Header */}
       <header className="qv-header">
         <span className="qv-logo">Saca tu Ficha</span>
-        <div className="qv-prog-wrap">
-          <div className="qv-prog-bar">
-            <div className="qv-prog-fill" style={{ width: `${pct}%` }} />
-          </div>
-          <span className="qv-pct">{current}/{preguntas.length}</span>
-        </div>
+        <button 
+          onClick={onFinish} 
+          style={{ background: 'transparent', border: '1px solid #FF6B00', color: '#FF6B00', padding: '6px 12px', borderRadius: '20px', fontFamily: 'Public Sans', fontSize: '12px', cursor: 'pointer' }}
+        >
+          📊 Ver mi Ficha
+        </button>
       </header>
 
       <main className="qv-main">
-        {/* Indicadores laterales */}
         <div className="qv-indicators" style={{ opacity: feedback ? 0 : 1, transition: 'opacity 0.2s' }}>
           <div className="qv-ind-izq" style={{ opacity: opacIzq }}>
             <span className="qv-ind-emoji">👈</span>
@@ -133,19 +119,15 @@ export default function QuizView({ preguntas, onAnswer, onFinish, totalRespondid
           </div>
         </div>
 
-        {/* Stack de tarjetas */}
         <div className="qv-stack">
-          {/* Tarjeta fantasma de atrás */}
           <div className="qv-card-bg" />
 
-          {/* MENSAJE DE VALIDACIÓN (Aparece tras el swipe) */}
           {feedback && (
             <div className="qv-feedback-overlay">
               <span className="qv-feedback-txt">{feedback}</span>
             </div>
           )}
 
-          {/* Tarjeta principal */}
           <div
             ref={cardRef}
             className={`qv-card ${animEntrada ? "qv-card-enter" : ""} ${animSalida === "left" ? "qv-card-exit-left" : ""} ${animSalida === "right" ? "qv-card-exit-right" : ""}`}
@@ -153,7 +135,7 @@ export default function QuizView({ preguntas, onAnswer, onFinish, totalRespondid
               transform: !animSalida ? `translateX(${drag}px) rotate(${rotacion}deg)` : undefined,
               transition: isDragging ? "none" : undefined,
               cursor: isDragging ? "grabbing" : "grab",
-              pointerEvents: feedback ? "none" : "auto" // Desactiva clics mientras lee el feedback
+              pointerEvents: feedback ? "none" : "auto" 
             }}
             onMouseDown={onPointerDown}
             onMouseMove={onPointerMove}
@@ -179,7 +161,6 @@ export default function QuizView({ preguntas, onAnswer, onFinish, totalRespondid
           </div>
         </div>
 
-        {/* Botones de opción */}
         <div className="qv-botones" style={{ opacity: feedback ? 0.3 : 1, transition: 'opacity 0.2s' }}>
           <button
             className="qv-btn qv-btn-izq"
@@ -199,7 +180,6 @@ export default function QuizView({ preguntas, onAnswer, onFinish, totalRespondid
           </button>
         </div>
 
-        {/* Puntos de progreso */}
         <div className="qv-dots">
           {preguntas.map((_, i) => (
             <div key={i} className={`qv-dot ${i < current ? "qv-dot-done" : i === current ? "qv-dot-active" : ""}`} />

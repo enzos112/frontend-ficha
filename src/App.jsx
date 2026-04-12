@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import HomeView             from "./HomeView";
 import QuizView             from "./QuizView";
 import ResultView           from "./ResultView";
@@ -34,9 +34,9 @@ export default function App() {
   const [vista,      setVista]   = useState("home");  // home | quiz | result | canal
   const [region,     setRegion]  = useState("");
   const [sesion,     setSesion]  = useState(null);
-  const [preguntas,  setPreg]    = useState([]);      // Guardará las preguntas
+  const [preguntas,  setPreg]    = useState([]);      
   const [perfilId,   setPerfil]  = useState(null);
-  const [chismesU,   setChismesU]= useState([]);      // chismes de usuarios
+  const [chismesU,   setChismesU]= useState([]);      
   const [cargando,   setCarg]    = useState(false);
 
   useEffect(() => { setSesion(getOrCreateSesion()); }, []);
@@ -47,20 +47,16 @@ export default function App() {
     setCarg(true);
     
     try {
-      // Registrar en Neon
       await fetch("/api/init-session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ uuid: sesion.uuid, codigo_tramite: sesion.codigo, region: reg })
       });
 
-      // Traer preguntas
       const resPreg = await fetch(`/api/get-preguntas?uuid=${sesion.uuid}`);
       let dataPreg = await resPreg.json();
 
-      // PARACAÍDAS Y TRADUCCIÓN A FORMATO TINDER (Izquierda / Derecha)
       if (!dataPreg || dataPreg.length === 0 || dataPreg.finished) {
-        // Datos de prueba si la base de datos está vacía
         dataPreg = [{
           id: 999,
           texto: "Pregunta de prueba: ¿El de atrás se cuela en el banco, qué haces?",
@@ -68,10 +64,9 @@ export default function App() {
           derecha: { id: 102, texto: "Me hago el loco 🦊", perfil: "vivillo" }
         }];
       } else {
-        // Convertimos el array "opciones" que manda Neon a "izquierda" y "derecha"
         dataPreg = dataPreg.map(p => ({
           id: p.id,
-          texto: p.texto_pregunta,
+          texto: p.texto,
           izquierda: p.opciones && p.opciones.length > 0 ? p.opciones[0] : { id: 1, texto: "Opción A", perfil: "tranquilo" },
           derecha: p.opciones && p.opciones.length > 1 ? p.opciones[1] : { id: 2, texto: "Opción B", perfil: "radical" }
         }));
@@ -87,22 +82,29 @@ export default function App() {
     }
   }
 
-  // ── 2. GUARDAR RESPUESTA DEL SWIPE ──
-  const handleAnswer = useCallback(async ({ pregunta_id, lado, perfil_id }) => {
-    // Obtenemos el ID de la opción basándonos en si hizo swipe a izquierda o derecha
+  // ── 2. GUARDAR RESPUESTA Y DEVOLVER PORCENTAJE AL QUIZVIEW ──
+  const handleAnswer = async ({ pregunta_id, lado, perfil_id }) => {
     const preguntaActual = preguntas.find(p => p.id === pregunta_id);
     const opcionId = lado === "izquierda" ? preguntaActual.izquierda.id : preguntaActual.derecha.id;
 
     try {
-      await fetch("/api/save-respuesta", {
+      const res = await fetch("/api/save-respuesta", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ uuid: sesion.uuid, pregunta_id, opcion_id: opcionId })
       });
+      const data = await res.json();
+      
+      // Retornamos el porcentaje matemático que nos da Neon
+      if (data.success) {
+        return data.porcentaje;
+      }
+      return 100; 
     } catch (error) {
       console.error("Error guardando respuesta:", error);
+      return 100;
     }
-  }, [sesion, preguntas]);
+  };
 
   // ── 3. FINALIZAR Y CALCULAR FICHA ──
   async function handleFinish() {
@@ -123,7 +125,6 @@ export default function App() {
         });
         setVista("result");
       } else {
-        // Si no hay suficientes respuestas en BD para calcular
         setPerfil({ nombre: "EL TRANQUILO", frase: "Faltan datos, pero fluyes bien.", codigo: sesion.codigo });
         setVista("result");
       }
@@ -155,7 +156,6 @@ export default function App() {
     setVista("home");
   }
 
-  // ── PANTALLA DE CARGA GLOBAL ──
   if (cargando) return (
     <div style={{ minHeight:"100vh", background:"#0A0A0A", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", gap:16 }}>
       <div style={{ width:40, height:40, border:"3px solid #1a1a1a", borderTopColor:"#FF6B00", borderRadius:"50%", animation:"spin 0.8s linear infinite" }} />
@@ -164,7 +164,6 @@ export default function App() {
     </div>
   );
 
-  // ── RENDER DE VISTAS ──
   if (vista === "home") {
     return <HomeView onStart={handleStart} onVerChismes={() => setVista("canal")} />;
   }
