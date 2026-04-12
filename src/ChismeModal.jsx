@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { CHISMES_INICIALES } from "./data";
+import { useState, useEffect } from "react";
 
+// ── CONFIGURACIÓN DE REACCIONES ───────────────────────────────────────────
 const EMOJIS_REACCION = [
   { key: "fuego",    emoji: "🔥", label: "Fuego"    },
   { key: "risa",     emoji: "😂", label: "Jajaja"   },
@@ -9,14 +9,19 @@ const EMOJIS_REACCION = [
 
 // ─── Vista: solo un chisme (intersticial durante el quiz) ───────────────────
 export function ChismeIntersticial({ chisme, onClose }) {
-  const [reacciones, setReac] = useState({ ...chisme.reacciones });
+  // Paracaídas por si las reacciones vienen nulas de la BD
+  const initialReactions = chisme?.reacciones || { fuego: 0, risa: 0, sorpresa: 0 };
+  const [reacciones, setReac] = useState(initialReactions);
   const [yaReaccione, setYaR] = useState(null);
 
   function reaccionar(key) {
     if (yaReaccione) return;
     setReac(prev => ({ ...prev, [key]: prev[key] + 1 }));
     setYaR(key);
+    // TODO: Enviar reacción a la base de datos vía API
   }
+
+  if (!chisme) return null;
 
   return (
     <div className="ci-overlay" onClick={e => e.target === e.currentTarget && onClose()}>
@@ -29,7 +34,7 @@ export function ChismeIntersticial({ chisme, onClose }) {
         </div>
         <div className="ci-body">
           <div className="ci-sello">FILTRADO</div>
-          <p className="ci-region">{chisme.region}</p>
+          <p className="ci-region">{chisme.region || 'Nacional'}</p>
           <blockquote className="ci-quote">
             <span className="ci-comilla">"</span>
             {chisme.texto}
@@ -55,9 +60,11 @@ export function ChismeIntersticial({ chisme, onClose }) {
   );
 }
 
-// ─── Vista: canal de chismes completo (todos los chismes, agregar uno) ──────
+// ─── Vista: canal de chismes completo ──────────────────────────────────────
 export function ChismesCanal({ chismesExtra = [], onNuevoChisme, onClose }) {
-  const [todos, setTodos]       = useState([...CHISMES_INICIALES, ...chismesExtra]);
+  // ⚠️ CAMBIO CLAVE: Ya no importamos CHISMES_INICIALES de ./data
+  // Ahora manejamos un array que se alimentará de los props (que vienen de la API en App.jsx)
+  const [todos, setTodos]       = useState([...chismesExtra]);
   const [yaReaccioné, setYaR]  = useState({});
   const [vistaEnvio, setVistaE] = useState(false);
   const [texto, setTexto]       = useState("");
@@ -66,35 +73,42 @@ export function ChismesCanal({ chismesExtra = [], onNuevoChisme, onClose }) {
   const [enviado, setEnviado]   = useState(false);
   const MAX = 280;
 
+  // Sincronizar chismes cuando cambien los props
+  useEffect(() => {
+    setTodos(chismesExtra);
+  }, [chismesExtra]);
+
   function reaccionar(id, key) {
     const mapKey = `${id}-${key}`;
     if (yaReaccioné[mapKey]) return;
     setYaR(prev => ({ ...prev, [mapKey]: true }));
     setTodos(prev => prev.map(c =>
-      c.id === id ? { ...c, reacciones: { ...c.reacciones, [key]: c.reacciones[key] + 1 } } : c
+      c.id === id ? { ...c, reacciones: { ...c.reacciones, [key]: (c.reacciones?.[key] || 0) + 1 } } : c
     ));
   }
 
   async function enviarChisme() {
     if (texto.trim().length < 20) return;
     setEnv(true);
-    await new Promise(r => setTimeout(r, 700));
+    
+    // Aquí el objeto que mandaremos a tu nueva API save-chisme
     const nuevo = {
-      id: `u${Date.now()}`,
       texto: texto.trim(),
       region,
       reacciones: { fuego: 0, risa: 0, sorpresa: 0 },
       nuevo: true,
     };
+
+    // Avisamos al componente padre (App.jsx) para que haga el fetch a Neon
+    await onNuevoChisme?.(nuevo);
+
     setTodos(prev => [nuevo, ...prev]);
-    onNuevoChisme?.(nuevo);
     setTexto(""); setEnv(false); setEnviado(true); setVistaE(false);
     setTimeout(() => setEnviado(false), 3000);
   }
 
   return (
     <div className="cc-root">
-      {/* Header */}
       <div className="cc-header">
         <button className="cc-back" onClick={onClose}>← Volver</button>
         <div className="cc-header-center">
@@ -104,19 +118,16 @@ export function ChismesCanal({ chismesExtra = [], onNuevoChisme, onClose }) {
         <button className="cc-nuevo-btn" onClick={() => setVistaE(true)}>+ Soltar</button>
       </div>
 
-      {/* Toast enviado */}
-      {enviado && (
-        <div className="cc-toast">✓ ¡Chisme recibido! Pendiente de revisión 🔥</div>
-      )}
+      {enviado && <div className="cc-toast">✓ ¡Chisme recibido! Pendiente de revisión 🔥</div>}
 
-      {/* Lista de chismes */}
       <div className="cc-lista">
+        {todos.length === 0 && <p style={{textAlign:'center', color:'#333', marginTop: '40px', fontFamily: 'Courier Prime'}}>No hay chismes en esta zona... aún.</p>}
         {todos.map((c, i) => (
-          <div key={c.id} className={`cc-item ${c.nuevo ? "cc-item-nuevo" : ""}`}
+          <div key={c.id || i} className={`cc-item ${c.nuevo ? "cc-item-nuevo" : ""}`}
             style={{ animationDelay: `${i * 30}ms` }}>
             {c.nuevo && <div className="cc-nuevo-badge">NUEVO</div>}
             <div className="cc-item-header">
-              <span className="cc-item-region">{c.region}</span>
+              <span className="cc-item-region">{c.region || 'Nacional'}</span>
               <span className="cc-item-dot" />
             </div>
             <p className="cc-item-txt">{c.texto}</p>
@@ -129,7 +140,7 @@ export function ChismesCanal({ chismesExtra = [], onNuevoChisme, onClose }) {
                     className={`cc-reac-btn ${yaReaccioné[mapKey] ? "cc-reac-on" : ""}`}
                     onClick={() => reaccionar(c.id, r.key)}
                   >
-                    {r.emoji} <span>{c.reacciones[r.key]}</span>
+                    {r.emoji} <span>{c.reacciones?.[r.key] || 0}</span>
                   </button>
                 );
               })}
@@ -138,7 +149,6 @@ export function ChismesCanal({ chismesExtra = [], onNuevoChisme, onClose }) {
         ))}
       </div>
 
-      {/* Bottom sheet: enviar chisme */}
       {vistaEnvio && (
         <div className="cc-sheet-overlay" onClick={e => e.target === e.currentTarget && setVistaE(false)}>
           <div className="cc-sheet">
@@ -177,13 +187,11 @@ export function ChismesCanal({ chismesExtra = [], onNuevoChisme, onClose }) {
           </div>
         </div>
       )}
-
       <CcStyles />
     </div>
   );
 }
 
-// ─── Export default: wrapper que decide qué mostrar ─────────────────────────
 export default function ChismeModal({ chisme, soloVer, onClose, chismesExtra, onNuevoChisme }) {
   if (soloVer && chisme) return <ChismeIntersticial chisme={chisme} onClose={onClose} />;
   return <ChismesCanal chismesExtra={chismesExtra} onNuevoChisme={onNuevoChisme} onClose={onClose} />;
