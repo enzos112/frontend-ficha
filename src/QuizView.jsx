@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from "react";
 import ChismeModal from "./ChismeModal";
-import { CHISMES_INICIALES } from "./data"; 
 
 export default function QuizView({ preguntas, onAnswer, onFinish, totalRespondidas = 0 }) {
   const [current, setCurrent]     = useState(0);
@@ -72,7 +71,7 @@ export default function QuizView({ preguntas, onAnswer, onFinish, totalRespondid
       const probabilidadChisme = Math.random() > 0.80; 
       
       if (next > 1 && probabilidadChisme && next < preguntas.length) {
-        const pool = CHISMES_INICIALES || [{ texto: "Alguien se robó el microondas de la ofi..." }];
+        const pool = [{ texto: "Buscando chismes calientitos..." }];  
         setChisme(pool[Math.floor(Math.random() * pool.length)]);
         setShowChisme(true);
       }
