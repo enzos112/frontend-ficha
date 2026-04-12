@@ -2,23 +2,51 @@ import { useState, useEffect } from "react";
 
 // ── CONFIGURACIÓN DE REACCIONES ───────────────────────────────────────────
 const EMOJIS_REACCION = [
-  { key: "fuego",    emoji: "🔥", label: "Fuego"    },
-  { key: "risa",     emoji: "😂", label: "Jajaja"   },
-  { key: "sorpresa", emoji: "😱", label: "Ajá"      },
+  { key: 'risa',     char: '😂' },
+  { key: 'enojo',    char: '😡' }, 
+  { key: 'fuego',    char: '🔥' },
+  { key: 'sorpresa', char: '😱' }
 ];
 
 // ─── Vista: solo un chisme (intersticial durante el quiz) ───────────────────
-export function ChismeIntersticial({ chisme, onClose }) {
-  // Paracaídas por si las reacciones vienen nulas de la BD
-  const initialReactions = chisme?.reacciones || { fuego: 0, risa: 0, sorpresa: 0 };
+export function ChismeIntersticial({ chisme, sesionId, onClose }) {
+  // Paracaídas para inicializar todos los contadores en 0 si no vienen de la BD
+  const initialReactions = chisme?.reacciones || { risa: 0, enojo: 0, fuego: 0, sorpresa: 0 };
   const [reacciones, setReac] = useState(initialReactions);
   const [yaReaccione, setYaR] = useState(null);
 
-  function reaccionar(key) {
-    if (yaReaccione) return;
-    setReac(prev => ({ ...prev, [key]: prev[key] + 1 }));
-    setYaR(key);
-    // TODO: Enviar reacción a la base de datos vía API
+  async function reaccionar(key) {
+    const esMismo = yaReaccione === key;
+    const anterior = yaReaccione;
+
+    // 1. Actualización visual rápida (Optimistic UI)
+    setReac(prev => {
+      let nuevo = { ...prev };
+      if (esMismo) {
+        nuevo[key] = Math.max(0, (nuevo[key] || 0) - 1);
+      } else {
+        if (anterior) nuevo[anterior] = Math.max(0, (nuevo[anterior] || 0) - 1);
+        nuevo[key] = (nuevo[key] || 0) + 1;
+      }
+      return nuevo;
+    });
+
+    setYaR(esMismo ? null : key);
+
+    // 2. Sincronización con Neon
+    try {
+      await fetch('/api/save-reaccion', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          uuid: sesionId, 
+          chisme_id: chisme.id, 
+          emoji_key: key 
+        })
+      });
+    } catch (err) {
+      console.error("Error al sincronizar reacción:", err);
+    }
   }
 
   if (!chisme) return null;
@@ -47,8 +75,8 @@ export function ChismeIntersticial({ chisme, onClose }) {
                 className={`ci-reac-btn ${yaReaccione === r.key ? "ci-reac-active" : ""}`}
                 onClick={() => reaccionar(r.key)}
               >
-                <span className="ci-reac-emoji">{r.emoji}</span>
-                <span className="ci-reac-num">{reacciones[r.key]}</span>
+                <span className="ci-reac-emoji">{r.char}</span>
+                <span className="ci-reac-num">{reacciones[r.key] || 0}</span>
               </button>
             ))}
           </div>
@@ -61,11 +89,9 @@ export function ChismeIntersticial({ chisme, onClose }) {
 }
 
 // ─── Vista: canal de chismes completo ──────────────────────────────────────
-export function ChismesCanal({ chismesExtra = [], onNuevoChisme, onClose }) {
-  // ⚠️ CAMBIO CLAVE: Ya no importamos CHISMES_INICIALES de ./data
-  // Ahora manejamos un array que se alimentará de los props (que vienen de la API en App.jsx)
+export function ChismesCanal({ chismesExtra = [], sesionId, onNuevoChisme, onClose }) {
   const [todos, setTodos]       = useState([...chismesExtra]);
-  const [yaReaccioné, setYaR]  = useState({});
+  const [yaReaccioné, setYaR]   = useState({}); // { "id-key": true }
   const [vistaEnvio, setVistaE] = useState(false);
   const [texto, setTexto]       = useState("");
   const [region, setRegion]     = useState("Nacional");
@@ -73,34 +99,42 @@ export function ChismesCanal({ chismesExtra = [], onNuevoChisme, onClose }) {
   const [enviado, setEnviado]   = useState(false);
   const MAX = 280;
 
-  // Sincronizar chismes cuando cambien los props
   useEffect(() => {
     setTodos(chismesExtra);
   }, [chismesExtra]);
 
-  function reaccionar(id, key) {
+  async function handleCanalReaccion(id, key) {
     const mapKey = `${id}-${key}`;
     if (yaReaccioné[mapKey]) return;
+
     setYaR(prev => ({ ...prev, [mapKey]: true }));
     setTodos(prev => prev.map(c =>
       c.id === id ? { ...c, reacciones: { ...c.reacciones, [key]: (c.reacciones?.[key] || 0) + 1 } } : c
     ));
+
+    try {
+      await fetch('/api/save-reaccion', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ uuid: sesionId, chisme_id: id, emoji_key: key })
+      });
+    } catch (err) {
+      console.error("Error en reacción canal:", err);
+    }
   }
 
   async function enviarChisme() {
     if (texto.trim().length < 20) return;
     setEnv(true);
     
-    // Aquí el objeto que mandaremos a tu nueva API save-chisme
     const nuevo = {
       texto: texto.trim(),
       region,
-      reacciones: { fuego: 0, risa: 0, sorpresa: 0 },
+      reacciones: { risa: 0, enojo: 0, fuego: 0, sorpresa: 0 },
       nuevo: true,
     };
 
-    // Avisamos al componente padre (App.jsx) para que haga el fetch a Neon
-    await onNuevoChisme?.(nuevo);
+    await onNuevoChisme?.(nuevo.texto); // Enviamos solo el texto al padre para el fetch
 
     setTodos(prev => [nuevo, ...prev]);
     setTexto(""); setEnv(false); setEnviado(true); setVistaE(false);
@@ -132,18 +166,15 @@ export function ChismesCanal({ chismesExtra = [], onNuevoChisme, onClose }) {
             </div>
             <p className="cc-item-txt">{c.texto}</p>
             <div className="cc-item-reac">
-              {EMOJIS_REACCION.map(r => {
-                const mapKey = `${c.id}-${r.key}`;
-                return (
-                  <button
-                    key={r.key}
-                    className={`cc-reac-btn ${yaReaccioné[mapKey] ? "cc-reac-on" : ""}`}
-                    onClick={() => reaccionar(c.id, r.key)}
-                  >
-                    {r.emoji} <span>{c.reacciones?.[r.key] || 0}</span>
-                  </button>
-                );
-              })}
+              {EMOJIS_REACCION.map(r => (
+                <button
+                  key={r.key}
+                  className={`cc-reac-btn ${yaReaccioné[`${c.id}-${r.key}`] ? "cc-reac-on" : ""}`}
+                  onClick={() => handleCanalReaccion(c.id, r.key)}
+                >
+                  {r.char} <span>{c.reacciones?.[r.key] || 0}</span>
+                </button>
+              ))}
             </div>
           </div>
         ))}
@@ -192,9 +223,9 @@ export function ChismesCanal({ chismesExtra = [], onNuevoChisme, onClose }) {
   );
 }
 
-export default function ChismeModal({ chisme, soloVer, onClose, chismesExtra, onNuevoChisme }) {
-  if (soloVer && chisme) return <ChismeIntersticial chisme={chisme} onClose={onClose} />;
-  return <ChismesCanal chismesExtra={chismesExtra} onNuevoChisme={onNuevoChisme} onClose={onClose} />;
+export default function ChismeModal({ chisme, soloVer, sesionId, onClose, chismesExtra, onNuevoChisme }) {
+  if (soloVer && chisme) return <ChismeIntersticial chisme={chisme} sesionId={sesionId} onClose={onClose} />;
+  return <ChismesCanal chismesExtra={chismesExtra} sesionId={sesionId} onNuevoChisme={onNuevoChisme} onClose={onClose} />;
 }
 
 // ─── Estilos intersticial ───────────────────────────────────────────────────
@@ -237,9 +268,9 @@ function CiStyles() {
         border-radius:0 8px 8px 0;font-style:italic;margin-bottom:16px;
       }
       .ci-comilla { color:#FFFF00;font-size:1.3em;line-height:0;vertical-align:-0.2em;font-style:normal; }
-      .ci-reacciones { display:flex;gap:8px; }
+      .ci-reacciones { display:grid; grid-template-columns: repeat(4, 1fr); gap:8px; }
       .ci-reac-btn {
-        flex:1;padding:10px 6px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:8px;
+        padding:10px 4px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:8px;
         display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;
         transition:border-color 0.2s,transform 0.1s;
       }
@@ -282,88 +313,32 @@ function CcStyles() {
         font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:1px;
         padding:6px 10px;cursor:pointer;white-space:nowrap;
       }
-
-      /* Toast */
-      .cc-toast {
-        background:#00FF41;color:#000;font-family:'Courier Prime',monospace;font-size:11px;
-        font-weight:700;text-align:center;padding:10px;letter-spacing:1px;
-        animation:toast-in 0.3s ease;
-      }
+      .cc-toast { background:#00FF41;color:#000;font-family:'Courier Prime',monospace;font-size:11px; font-weight:700;text-align:center;padding:10px;letter-spacing:1px; animation:toast-in 0.3s ease; }
       @keyframes toast-in { from{opacity:0;transform:translateY(-10px)} to{opacity:1;transform:translateY(0)} }
-
-      /* Lista */
       .cc-lista { flex:1;padding:12px 16px;display:flex;flex-direction:column;gap:10px; }
-      .cc-item {
-        background:#111;border:1px solid #1a1a1a;border-radius:12px;padding:14px 14px 10px;
-        position:relative;overflow:hidden;
-        animation:item-in 0.3s ease both;
-      }
+      .cc-item { background:#111;border:1px solid #1a1a1a;border-radius:12px;padding:14px 14px 10px; position:relative;overflow:hidden; animation:item-in 0.3s ease both; }
       @keyframes item-in { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
       .cc-item-nuevo { border-color:#FF6B00 !important; }
-      .cc-nuevo-badge {
-        position:absolute;top:0;right:0;background:#FF6B00;color:#000;
-        font-family:'Bebas Neue',sans-serif;font-size:10px;letter-spacing:1px;
-        padding:2px 8px;border-radius:0 12px 0 8px;
-      }
+      .cc-nuevo-badge { position:absolute;top:0;right:0;background:#FF6B00;color:#000; font-family:'Bebas Neue',sans-serif;font-size:10px;letter-spacing:1px; padding:2px 8px;border-radius:0 12px 0 8px; }
       .cc-item-header { display:flex;align-items:center;gap:8px;margin-bottom:8px; }
       .cc-item-region { font-family:'Courier Prime',monospace;font-size:9px;color:#FF6B00;letter-spacing:1.5px; }
       .cc-item-dot    { width:4px;height:4px;border-radius:50%;background:#333; }
       .cc-item-txt    { font-family:'Special Elite',system-ui;font-size:14px;color:#ddd;line-height:1.5;margin-bottom:10px; }
       .cc-item-reac   { display:flex;gap:6px; }
-      .cc-reac-btn {
-        display:flex;align-items:center;gap:4px;padding:5px 10px;
-        background:#1a1a1a;border:1px solid #2a2a2a;border-radius:20px;
-        font-family:'Courier Prime',monospace;font-size:11px;color:#888;
-        cursor:pointer;transition:border-color 0.15s,transform 0.1s;
-      }
-      .cc-reac-btn:hover { border-color:#444; }
-      .cc-reac-btn:active { transform:scale(0.93); }
+      .cc-reac-btn { display:flex;align-items:center;gap:4px;padding:5px 10px; background:#1a1a1a;border:1px solid #2a2a2a;border-radius:20px; font-family:'Courier Prime',monospace;font-size:11px;color:#888; cursor:pointer;transition:border-color 0.15s,transform 0.1s; }
       .cc-reac-on { border-color:#FF6B00 !important;color:#FF6B00 !important;background:rgba(255,107,0,0.1) !important; }
-
-      /* Bottom sheet envío */
-      .cc-sheet-overlay {
-        position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:100;
-        display:flex;align-items:flex-end;justify-content:center;
-        animation:fade-in 0.2s ease;
-      }
-      @keyframes fade-in { from{opacity:0} to{opacity:1} }
-      .cc-sheet {
-        width:100%;max-width:480px;background:#111;border-radius:16px 16px 0 0;
-        padding:16px 18px 32px;animation:slide-up 0.3s cubic-bezier(0.175,0.885,0.32,1.275);
-      }
-      @keyframes slide-up { from{transform:translateY(100%)} to{transform:translateY(0)} }
+      .cc-sheet-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:100; display:flex;align-items:flex-end;justify-content:center; animation:fade-in 0.2s ease; }
+      .cc-sheet { width:100%;max-width:480px;background:#111;border-radius:16px 16px 0 0; padding:16px 18px 32px;animation:slide-up 0.3s cubic-bezier(0.175,0.885,0.32,1.275); }
       .cc-sheet-handle { width:40px;height:4px;background:#333;border-radius:2px;margin:0 auto 16px; }
       .cc-sheet-titulo { font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;color:#FF6B00;margin-bottom:4px; }
       .cc-sheet-sub    { font-family:'Special Elite',system-ui;font-size:12px;color:#555;font-style:italic;margin-bottom:12px; }
       .cc-ta-wrap      { position:relative;margin-bottom:10px; }
-      .cc-textarea {
-        width:100%;padding:12px 14px;background:#1a1a1a;border:1px solid #333;border-radius:8px;
-        color:#fff;font-family:'Public Sans',sans-serif;font-size:14px;line-height:1.5;
-        resize:none;min-height:100px;outline:none;transition:border-color 0.2s;
-      }
-      .cc-textarea:focus { border-color:#FF6B00; }
-      .cc-textarea::placeholder { color:#444;font-style:italic; }
+      .cc-textarea { width:100%;padding:12px 14px;background:#1a1a1a;border:1px solid #333;border-radius:8px; color:#fff;font-family:'Public Sans',sans-serif;font-size:14px;line-height:1.5; resize:none;min-height:100px;outline:none; }
       .cc-chars { position:absolute;bottom:8px;right:10px;font-family:'Courier Prime',monospace;font-size:10px;color:#444; }
-      .cc-chars-warn { color:#FF6B00 !important; }
       .cc-region-row { display:flex;align-items:center;gap:10px;margin-bottom:12px; }
       .cc-region-lbl { font-family:'Courier Prime',monospace;font-size:10px;color:#555;letter-spacing:1px; }
-      .cc-region-sel {
-        flex:1;padding:8px 12px;background:#1a1a1a;border:1px solid #333;border-radius:6px;
-        color:#fff;font-family:'Public Sans',sans-serif;font-size:13px;outline:none;appearance:none;
-      }
-      .cc-error { font-family:'Courier Prime',monospace;font-size:10px;color:#FF00AA;margin-bottom:8px; }
-      .cc-sheet-btns { display:flex;flex-direction:column;gap:8px; }
-      .cc-btn-enviar {
-        width:100%;padding:14px;background:#FF6B00;color:#000;border:none;border-radius:8px;
-        font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;cursor:pointer;
-        transition:opacity 0.2s;
-      }
-      .cc-btn-enviar:disabled { opacity:0.4;cursor:not-allowed; }
-      .cc-btn-cancel {
-        background:transparent;border:1px solid #222;border-radius:8px;padding:10px;
-        font-family:'Courier Prime',monospace;font-size:11px;color:#444;cursor:pointer;
-      }
-      .cc-btn-cancel:hover { border-color:#333;color:#888; }
+      .cc-region-sel { flex:1;padding:8px 12px;background:#1a1a1a;border:1px solid #333;border-radius:6px; color:#fff; }
+      .cc-btn-enviar { width:100%;padding:14px;background:#FF6B00;color:#000;border:none;border-radius:8px; font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;cursor:pointer; }
     `}</style>
   );
 }

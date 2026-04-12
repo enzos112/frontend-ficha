@@ -31,51 +31,68 @@ function getOrCreateSesion() {
 
 // ── App Principal ──────────────────────────────────────────────────────────
 export default function App() {
-  const [vista,      setVista]   = useState("home");  // home | quiz | result | canal
+  const [vista,      setVista]   = useState("home"); 
   const [region,     setRegion]  = useState("");
   const [sesion,     setSesion]  = useState(null);
   const [preguntas,  setPreg]    = useState([]);      
   const [perfilId,   setPerfil]  = useState(null);
-  const [chismesU,   setChismesU]= useState([]);      
+  const [chismesU,   setChismesU]= useState([]); // Chismes que sube el usuario
+  const [chismesPool, setChismesPool] = useState([]); // 👈 Chismes que vienen de la BD
   const [cargando,   setCarg]    = useState(false);
 
   useEffect(() => { setSesion(getOrCreateSesion()); }, []);
 
   // ── 1. INICIAR TRÁMITE Y TRAER PREGUNTAS ──
-  async function handleStart(reg) {
+ // ── 1. INICIAR TRÁMITE Y TRAER PREGUNTAS ──
+  async function handleStart(datosHome) {
+    // Extraemos la región del objeto { region, edad, genero }
+    const reg = datosHome.region || "Nacional"; 
+    
     setRegion(reg);
     setCarg(true);
     
     try {
+      // 1. Iniciar sesión (pasamos todo el objeto datosHome)
       await fetch("/api/init-session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ uuid: sesion.uuid, codigo_tramite: sesion.codigo, region: reg })
+        body: JSON.stringify({ 
+          uuid: sesion.uuid, 
+          codigo_tramite: sesion.codigo, 
+          ...datosHome 
+        })
       });
 
+      // 2. Traer Preguntas
       const resPreg = await fetch(`/api/get-preguntas?uuid=${sesion.uuid}`);
+      if (!resPreg.ok) throw new Error("Error en preguntas");
       let dataPreg = await resPreg.json();
 
-      if (!dataPreg || dataPreg.length === 0 || dataPreg.finished) {
-        dataPreg = [{
-          id: 999,
-          texto: "Pregunta de prueba: ¿El de atrás se cuela en el banco, qué haces?",
-          izquierda: { id: 101, texto: "Le armo chongo 🗣️", perfil: "radical" },
-          derecha: { id: 102, texto: "Me hago el loco 🦊", perfil: "vivillo" }
-        }];
-      } else {
-        dataPreg = dataPreg.map(p => ({
-          id: p.id,
-          texto: p.texto,
-          izquierda: p.opciones && p.opciones.length > 0 ? p.opciones[0] : { id: 1, texto: "Opción A", perfil: "tranquilo" },
-          derecha: p.opciones && p.opciones.length > 1 ? p.opciones[1] : { id: 2, texto: "Opción B", perfil: "radical" }
-        }));
+      dataPreg = dataPreg.map(p => ({
+        id: p.id,
+        texto: p.texto,
+        izquierda: p.opciones?.[0] || { id: 1, texto: "A", perfil: "T" },
+        derecha: p.opciones?.[1] || { id: 2, texto: "B", perfil: "R" }
+      }));
+      setPreg(dataPreg);
+
+      // 3. Traer Chismes (Asegúrate que el archivo sea get-chismes.js con S)
+      try {
+        const resChis = await fetch(`/api/get-chismes?region=${encodeURIComponent(reg)}`);
+        if (resChis.ok) {
+          const dataChis = await resChis.json();
+          setChismesPool(dataChis);
+        } else {
+          console.warn("API de chismes no encontrada, usando lista vacía.");
+          setChismesPool([]);
+        }
+      } catch (errChis) {
+        setChismesPool([]);
       }
 
-      setPreg(dataPreg);
       setVista("quiz");
     } catch (error) {
-      console.error("Error al iniciar:", error);
+      console.error("Error crítico al iniciar:", error);
       alert("Hubo un error al conectar con el padrón.");
     } finally {
       setCarg(false);
@@ -169,7 +186,15 @@ export default function App() {
   }
 
   if (vista === "quiz") {
-    return <QuizView preguntas={preguntas} onAnswer={handleAnswer} onFinish={handleFinish} totalRespondidas={0} />;
+    return (
+      <QuizView 
+        preguntas={preguntas} 
+        chismes={chismesPool} 
+        onAnswer={handleAnswer} 
+        onFinish={handleFinish} 
+        sesionId={sesion.uuid}
+      />
+    );
   }
 
   if (vista === "result") {
