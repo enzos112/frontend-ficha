@@ -1,0 +1,4018 @@
+[
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Estás en la combi apretado y el cobrador grita 'al fondo hay sitio, avancen'.",
+    "etiquetas": ["transporte", "calle", "picante_bajo"],
+    "izquierda": { "texto": "Me planto firme como estatua", "perfil": "radical" },
+    "derecha": { "texto": "Avanzo pisando zapatos y pidiendo perdón", "perfil": "negociador" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Terminas tu menú de 12 soles y te das cuenta que Yape y Plin están caídos.",
+    "etiquetas": ["tecnologia", "roche", "picante_alto"],
+    "izquierda": { "texto": "Dejo mi DNI y voy por cash", "perfil": "tecnico" },
+    "derecha": { "texto": "Hago hora pidiendo un anís", "perfil": "vivillo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Recibes un billete de 50 lucas que parece dibujado con crayolas en el mercado.",
+    "etiquetas": ["dinero", "calle", "picante_medio"],
+    "izquierda": { "texto": "Lo paso en la bodega del barrio", "perfil": "vivillo" },
+    "derecha": { "texto": "Le reclamo a la casera de inmediato", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Tu grupo de la universidad no hizo nada y tienes que exponer tú solo.",
+    "etiquetas": ["universidad", "estudio", "roche"],
+    "izquierda": { "texto": "Los echo con el profe sin asco", "perfil": "radical" },
+    "derecha": { "texto": "Expongo todo pero les cobro por Yape", "perfil": "negociador" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "F",
+    "texto": "Tu amiga te confiesa llorando que volvió con el tóxico por quinta vez.",
+    "etiquetas": ["amigos", "chisme", "picante_medio"],
+    "izquierda": { "texto": "Le digo sus verdades y me voy", "perfil": "radical" },
+    "derecha": { "texto": "La escucho pero ya no le aconsejo", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "M",
+    "texto": "Final de la Champions y pichanga con los patas, pero es aniversario con tu flaca.",
+    "etiquetas": ["pareja", "pichanga", "picante_alto"],
+    "izquierda": { "texto": "Le digo que estoy enfermo y juego", "perfil": "vivillo" },
+    "derecha": { "texto": "Llevo a mi flaca a ver la pichanga", "perfil": "negociador" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "El alcalde inaugura una réplica gigante de un huaco erótico en tu parque.",
+    "etiquetas": ["politica", "barrio", "bizarro"],
+    "izquierda": { "texto": "Hago un TikTok burlándome de la obra", "perfil": "mediatico" },
+    "derecha": { "texto": "Junto firmas vecinales para que lo saquen", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "La SUNAT te notifica una deuda de 5 céntimos por un error de cálculo.",
+    "etiquetas": ["burocracia", "adulto", "roche"],
+    "izquierda": { "texto": "Hago un hilo furioso en Twitter", "perfil": "mediatico" },
+    "derecha": { "texto": "Pago 1 sol para que no molesten", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Llevas esperando 40 minutos en el banco y la señora de adelante mete a 5 familiares.",
+    "etiquetas": ["banco", "calle", "picante_alto"],
+    "izquierda": { "texto": "Grito '¡Hagan cola, oiga!'", "perfil": "radical" },
+    "derecha": { "texto": "Grabo con el celular para subirlo", "perfil": "mediatico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Entras a Tinder y la primera persona que te sale es tu profesor de Tesis.",
+    "etiquetas": ["tinder", "roche", "universidad"],
+    "izquierda": { "texto": "Le doy 'Super Like' por la nota", "perfil": "vivillo" },
+    "derecha": { "texto": "Cierro la cuenta y desinstalo la app", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Pides tu cuarto de pollo a la brasa y te toca una pechuga recontra seca.",
+    "etiquetas": ["comida", "roche", "picante_bajo"],
+    "izquierda": { "texto": "Lo baño en harta mayonesa y ají", "perfil": "tecnico" },
+    "derecha": { "texto": "Le lloro al mozo por una pierna", "perfil": "negociador" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Tu jefe te agrega al grupo de WhatsApp 'Familia Empresarial' un domingo en la tarde.",
+    "etiquetas": ["trabajo", "adulto", "picante_medio"],
+    "izquierda": { "texto": "Lo silencio por un año sin roche", "perfil": "tranquilo" },
+    "derecha": { "texto": "Mando un sticker inapropiado por 'error'", "perfil": "vivillo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Se te cruza un mototaxi temerario en plena vía rápida y te frena en seco.",
+    "etiquetas": ["trafico", "calle", "picante_alto"],
+    "izquierda": { "texto": "Le meto bocinazo por 10 minutos", "perfil": "radical" },
+    "derecha": { "texto": "Apunto la placa para quejarme online", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "El de seguridad te pide DNI para entrar al bar y tú lo olvidaste en otra casaca.",
+    "etiquetas": ["juerga", "calle", "roche"],
+    "izquierda": { "texto": "Le lloro diciendo que mis amigos entraron", "perfil": "negociador" },
+    "derecha": { "texto": "Le ofrezco 20 lucas para que no vea", "perfil": "vivillo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "M",
+    "texto": "Falta uno para la pichanga y te quieren mandar al arco porque llegaste último.",
+    "etiquetas": ["pichanga", "amigos", "deporte"],
+    "izquierda": { "texto": "Digo que me lesioné y me voy", "perfil": "tranquilo" },
+    "derecha": { "texto": "Tapo, pero no pago el alquiler", "perfil": "negociador" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te enteras que el presi del sombrero va a dar un mensaje a la nación sorpresa.",
+    "etiquetas": ["politica", "nacional", "chisme"],
+    "izquierda": { "texto": "Hago memes mientras habla en vivo", "perfil": "mediatico" },
+    "derecha": { "texto": "Saco mis dólares por si acaso", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Empieza a sonar a todo volumen la alarma del celular del MTC en plena reunión seria.",
+    "etiquetas": ["trabajo", "roche", "tecnologia"],
+    "izquierda": { "texto": "Digo que es el remix de moda", "perfil": "vivillo" },
+    "derecha": { "texto": "Me hago el loco y no reviso", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Tu tía en el almuerzo te pregunta delante de todos: '¿Y para cuándo te casas?'",
+    "etiquetas": ["familia", "chisme", "roche"],
+    "izquierda": { "texto": "Le pregunto por los terrenos del abuelo", "perfil": "radical" },
+    "derecha": { "texto": "Sonrío y digo 'pronto, tía, pronto'", "perfil": "negociador" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Un pata del colegio te cita para un café y resulta ser un esquema piramidal.",
+    "etiquetas": ["amigos", "dinero", "bizarro"],
+    "izquierda": { "texto": "Me tomo el café gratis y huyo", "perfil": "vivillo" },
+    "derecha": { "texto": "Le explico estadísticamente por qué va a quebrar", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "F",
+    "texto": "Ves en las historias que tu mejor amiga fue a una fiesta sin avisarte.",
+    "etiquetas": ["amigos", "chisme", "redes"],
+    "izquierda": { "texto": "Le mando una indirecta por TikTok", "perfil": "mediatico" },
+    "derecha": { "texto": "La archivo y dejo de hablarle", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Estás en pleno tráfico de Javier Prado y te dan ganas urgentes de ir al baño.",
+    "etiquetas": ["trafico", "calle", "emergencia"],
+    "izquierda": { "texto": "Me bajo en pleno paradero a buscar", "perfil": "tecnico" },
+    "derecha": { "texto": "Sufro en silencio rezando padrenuestros", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "El del banco te llama a las 7 AM un sábado para ofrecerte un seguro oncológico.",
+    "etiquetas": ["banco", "adulto", "roche"],
+    "izquierda": { "texto": "Le dejo el celular prendido hablando solo", "perfil": "vivillo" },
+    "derecha": { "texto": "Le exijo que me borre de su base", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te invitan a un matrimonio civil pero dice clarito 'Cero niños y trago por tu cuenta'.",
+    "etiquetas": ["fiesta", "roche", "dinero"],
+    "izquierda": { "texto": "Llevo mi propia anforita escondida", "perfil": "vivillo" },
+    "derecha": { "texto": "No voy y mando regalo barato", "perfil": "negociador" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Compras un ceviche carretillero de noche y presientes que el pescado no es de hoy.",
+    "etiquetas": ["comida", "calle", "salud"],
+    "izquierda": { "texto": "Le echo más limón para matar bacterias", "perfil": "tecnico" },
+    "derecha": { "texto": "Me lo como igual, hay hambre", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Ves a tu jefe en el cine con alguien que definitivamente no es su esposa.",
+    "etiquetas": ["trabajo", "chisme", "roche"],
+    "izquierda": { "texto": "Le pido un aumento discretamente el lunes", "perfil": "vivillo" },
+    "derecha": { "texto": "Tomo foto y la paso al grupo anónimo", "perfil": "mediatico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "El chofer del micro se pone a hacer carreritas con otro por ganar pasajeros.",
+    "etiquetas": ["transporte", "calle", "peligro"],
+    "izquierda": { "texto": "Grito '¡Baja maestro, tengo familia!'", "perfil": "mediatico" },
+    "derecha": { "texto": "Me agarro fuerte y disfruto la adrenalina", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "M",
+    "texto": "Piden cuenta dividida, pero tú solo pediste un vaso de agua y ellos chifa completo.",
+    "etiquetas": ["dinero", "amigos", "roche"],
+    "izquierda": { "texto": "Digo firme 'yo pago solo lo mío'", "perfil": "tecnico" },
+    "derecha": { "texto": "Pago callado para no hacer roche", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "La vecina saca a su perrito a ensuciar justo en la puerta de tu casa nueva.",
+    "etiquetas": ["barrio", "vecinos", "roche"],
+    "izquierda": { "texto": "Le tiro el regalito de vuelta a su puerta", "perfil": "radical" },
+    "derecha": { "texto": "Pongo letreros de 'Multa por basura'", "perfil": "negociador" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "En la combi se sube un cómico ambulante y empieza a agarrarte de punto.",
+    "etiquetas": ["transporte", "comedia", "roche"],
+    "izquierda": { "texto": "Le sigo la broma para el público", "perfil": "mediatico" },
+    "derecha": { "texto": "Me hago el dormido mágicamente", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te dicen que tu zona es 'picante' pero el alquiler está regalado y tiene balcón.",
+    "etiquetas": ["vivienda", "barrio", "peligro"],
+    "izquierda": { "texto": "Me mudo y me hago amigo del guachimán", "perfil": "vivillo" },
+    "derecha": { "texto": "Prefiero vivir misio pero en zona segura", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "F",
+    "texto": "Estás en tu primera cita y el chico pide rebaja al mozo usando cupón vencido.",
+    "etiquetas": ["cita", "roche", "dinero"],
+    "izquierda": { "texto": "Digo que voy al baño y me escapo", "perfil": "radical" },
+    "derecha": { "texto": "Pago la mitad por pena y no lo veo más", "perfil": "negociador" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Haces huelga de hambre y al segundo día tu mamá prepara carapulcra con sopa seca.",
+    "etiquetas": ["comida", "familia", "dilema"],
+    "izquierda": { "texto": "Como a escondidas en la madrugada", "perfil": "vivillo" },
+    "derecha": { "texto": "Mantengo mis ideales y solo tomo agua", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Anuncian un nuevo retiro de AFP pero sabes que si lo sacas no tendrás pensión.",
+    "etiquetas": ["dinero", "adulto", "politica"],
+    "izquierda": { "texto": "Lo saco todo para abrir un negocio", "perfil": "vivillo" },
+    "derecha": { "texto": "Lo dejo ahí para asegurar mi vejez", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Encuentras un DNI en la calle con 100 soles metidos en la funda.",
+    "etiquetas": ["dinero", "etica", "calle"],
+    "izquierda": { "texto": "Busco al dueño en Facebook y se lo doy", "perfil": "negociador" },
+    "derecha": { "texto": "Me cobro los 100 por el trámite de entrega", "perfil": "vivillo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Falla el VAR en un partido decisivo de la selección y nos anulan un gol válido.",
+    "etiquetas": ["deporte", "nacional", "picante_alto"],
+    "izquierda": { "texto": "Hago una marcha virtual exigiendo justicia", "perfil": "mediatico" },
+    "derecha": { "texto": "Apago la tele y acepto nuestra realidad", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Estás a dieta estricta pero te invitan a un quinceañero con buffet criollo ilimitado.",
+    "etiquetas": ["comida", "fiesta", "roche"],
+    "izquierda": { "texto": "Rompo la dieta, vida hay una sola", "perfil": "radical" },
+    "derecha": { "texto": "Solo como ensalada y me amargo la noche", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Se corta la luz en tu barrio justo antes del capítulo final de tu novela/serie.",
+    "etiquetas": ["barrio", "tecnologia", "roche"],
+    "izquierda": { "texto": "Gasto mis datos viéndolo en el celular", "perfil": "tecnico" },
+    "derecha": { "texto": "Salgo a gritarle al poste de Enel", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "El taxista te empieza a hablar sobre teorías conspirativas de los políticos peruanos.",
+    "etiquetas": ["transporte", "calle", "chisme"],
+    "izquierda": { "texto": "Le doy la razón para que no se enoje", "perfil": "negociador" },
+    "derecha": { "texto": "Grabo el audio para mi podcast", "perfil": "mediatico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "M",
+    "texto": "Te compras ropa de marca y tu amigo del barrio te dice 'ah, te crees pituco'.",
+    "etiquetas": ["amigos", "barrio", "roche"],
+    "izquierda": { "texto": "Le digo que lo saqué en liquidación 3x1", "perfil": "negociador" },
+    "derecha": { "texto": "Le saco pica con el logo gigante", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "F",
+    "texto": "Subes una foto regia y tu tía comenta 'qué gordita estás, sobrina, cuídate'.",
+    "etiquetas": ["redes", "familia", "chisme"],
+    "izquierda": { "texto": "Borro su comentario y la restrinjo", "perfil": "tecnico" },
+    "derecha": { "texto": "Le respondo 'gracias tía, igual que tú'", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Ves en el mercado a un 'casero' pesando la papa con la balanza claramente arreglada.",
+    "etiquetas": ["comida", "calle", "etica"],
+    "izquierda": { "texto": "Le hago chongo delante de los clientes", "perfil": "mediatico" },
+    "derecha": { "texto": "Me voy a otro puesto más caleta", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Te toca ser miembro de mesa y el tercer titular nunca llega. Faltan 5 minutos.",
+    "etiquetas": ["politica", "burocracia", "nacional"],
+    "izquierda": { "texto": "Agarro a un pulpin de la cola obligado", "perfil": "radical" },
+    "derecha": { "texto": "Me ofrezco a pagarle el menú al suplente", "perfil": "negociador" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Llega Navidad y en la oficina proponen jugar amigo secreto con presupuesto de 100 soles.",
+    "etiquetas": ["trabajo", "dinero", "amigos"],
+    "izquierda": { "texto": "Digo que mi religión no me lo permite", "perfil": "vivillo" },
+    "derecha": { "texto": "Entro y exijo que mi regalo tenga ticket", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Vas a comer picarones y la señora usa el mismo aceite desde que naciste.",
+    "etiquetas": ["comida", "calle", "salud"],
+    "izquierda": { "texto": "Ese es el secreto del sabor, deme dos", "perfil": "tranquilo" },
+    "derecha": { "texto": "Paso de largo cuidando mi vesícula", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Tu crush te pide que le pases el link pirata para ver la película estreno.",
+    "etiquetas": ["tecnologia", "romance", "ilegal"],
+    "izquierda": { "texto": "Le mando virus para ir a 'arreglar' su PC", "perfil": "vivillo" },
+    "derecha": { "texto": "Le compro la entrada al cine mejor", "perfil": "negociador" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Descubres que el maestro de obra está metiendo materiales más baratos de lo acordado.",
+    "etiquetas": ["vivienda", "dinero", "roche"],
+    "izquierda": { "texto": "Lo despido en una sin pagarle nada", "perfil": "radical" },
+    "derecha": { "texto": "Le descuento de su pago semanal calladito", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "M",
+    "texto": "El guachimán te ve llegando de amanecida y te hace ojitos juzgadores.",
+    "etiquetas": ["juerga", "barrio", "roche"],
+    "izquierda": { "texto": "Le invito una gaseosa para que no sapeé", "perfil": "vivillo" },
+    "derecha": { "texto": "Paso de frente como si fuera el dueño", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "F",
+    "texto": "Te compras un vestido para una boda y ves a otra invitada con el mismo traje.",
+    "etiquetas": ["fiesta", "roche", "ropa"],
+    "izquierda": { "texto": "Me tomo foto con ella para la anécdota", "perfil": "mediatico" },
+    "derecha": { "texto": "Me pongo la casaca encima toda la noche", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "El congreso saca una ley de feriado largo justo cuando tienes entrega final de proyecto.",
+    "etiquetas": ["trabajo", "politica", "estudio"],
+    "izquierda": { "texto": "Aprovecho el feriado y que vuele el proyecto", "perfil": "tranquilo" },
+    "derecha": { "texto": "Avanzo el proyecto amargado en casa", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te dicen que te devuelven el vuelto en caramelos porque 'no hay sencillo joven'.",
+    "etiquetas": ["dinero", "calle", "negocio"],
+    "izquierda": { "texto": "Acepto, un dulce no hace daño a nadie", "perfil": "tranquilo" },
+    "derecha": { "texto": "Digo 'entonces le pago con caramelos mañana'", "perfil": "vivillo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Te exigen seguro internacional carísimo para tu beca de intercambio, pero querías usar esa plata para turistear.",
+    "etiquetas": ["viaje", "dinero", "estudio"],
+    "izquierda": { "texto": "Saco el seguro, las reglas son reglas", "perfil": "tecnico" },
+    "derecha": { "texto": "Busco el más trucho y barato por internet", "perfil": "vivillo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Hay un sismo fuerte de madrugada y estás durmiendo en ropa interior con huecos.",
+    "etiquetas": ["emergencia", "calle", "roche"],
+    "izquierda": { "texto": "Salgo a la calle así, la vida es primero", "perfil": "radical" },
+    "derecha": { "texto": "Me juego la vida buscando un pantalón", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Tu primo contador te avisa que la SUNAT te va a embargar por no declarar tus cachuelos.",
+    "etiquetas": ["burocracia", "dinero", "adulto"],
+    "izquierda": { "texto": "Paso todas mis cuentas a nombre de mi mamá", "perfil": "vivillo" },
+    "derecha": { "texto": "Voy a llorarle al de plataforma para fraccionar", "perfil": "negociador" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Tu app de microservicios funciona local, pero ante el jurado de tesis se cae todo el sistema.",
+    "etiquetas": ["universidad", "tecnologia", "roche"],
+    "izquierda": { "texto": "Le echo la culpa al internet de la U", "perfil": "mediatico" },
+    "derecha": { "texto": "Reinicio el Docker sudando frío en silencio", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Pagas tu salchipapa con Yape pero la app de pronto entra en 'mantenimiento'.",
+    "etiquetas": ["comida", "tecnologia", "calle"],
+    "izquierda": { "texto": "Le digo 'casera, se lo paso llegando a casa'", "perfil": "negociador" },
+    "derecha": { "texto": "Le dejo el DNI empeñado por dignidad", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Un amigo te invita a crear un SaaS para MYPEs, pero te quiere pagar en 'experiencia'.",
+    "etiquetas": ["trabajo", "amigos", "dinero"],
+    "izquierda": { "texto": "Acepto para meterlo a mi portafolio urgente", "perfil": "tecnico" },
+    "derecha": { "texto": "Le cobro la hora de programación a precio mercado", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "F",
+    "texto": "El chico te invita a un restaurante ficho, pero a la hora de pagar saca la calculadora.",
+    "etiquetas": ["cita", "roche", "dinero"],
+    "izquierda": { "texto": "Pago mi parte exacta y lo bloqueo", "perfil": "radical" },
+    "derecha": { "texto": "Me hago la ofendida y que pague todo", "perfil": "vivillo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "M",
+    "texto": "Compras chimpunes originales carísimos para la pichanga, pero te sientan de suplente todo el primer tiempo.",
+    "etiquetas": ["pichanga", "amigos", "deporte"],
+    "izquierda": { "texto": "Hago berrinche y amenazo con llevarme la pelota", "perfil": "mediatico" },
+    "derecha": { "texto": "Espero mi turno calentando como profesional", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "El vecino del costado empieza a techar su cuarto piso un domingo a las 7 AM.",
+    "etiquetas": ["barrio", "vecinos", "bulla"],
+    "izquierda": { "texto": "Saco mis parlantes y pongo cumbia a todo volumen", "perfil": "radical" },
+    "derecha": { "texto": "Pido hablar con el maestro de obra calmadamente", "perfil": "negociador" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Estás en el Metropolitano lleno, alguien suelta un gas tóxico y todos te miran a ti.",
+    "etiquetas": ["transporte", "roche", "calle"],
+    "izquierda": { "texto": "Miro al del costado con cara de asco", "perfil": "vivillo" },
+    "derecha": { "texto": "Me bajo en la siguiente estación por vergüenza", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "El menú ejecutivo dice 'Lomo Saltado' pero solo encuentras cebolla y un trozo de carne dudosa.",
+    "etiquetas": ["comida", "calle", "estafa"],
+    "izquierda": { "texto": "Exijo que me traigan a la cocinera", "perfil": "radical" },
+    "derecha": { "texto": "Me como la cebolla con arroz calladito", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Te vas de intercambio y en la primera fiesta te ofrecen un 'auténtico' Pisco Sour chileno.",
+    "etiquetas": ["fiesta", "nacional", "viaje"],
+    "izquierda": { "texto": "Doy una charla sobre la denominación de origen", "perfil": "tecnico" },
+    "derecha": { "texto": "Me lo tomo gratis, trago es trago", "perfil": "vivillo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Pierdes tu DNI a tres días de las elecciones presidenciales y la multa es carísima.",
+    "etiquetas": ["burocracia", "politica", "roche"],
+    "izquierda": { "texto": "Saco dispensa médica falsa en Azángaro", "perfil": "vivillo" },
+    "derecha": { "texto": "Hago cola de 10 horas en el RENIEC", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "El cobrador del Chosicano te dice 'baja al vuelo' porque hay un inspector en el paradero.",
+    "etiquetas": ["transporte", "peligro", "calle"],
+    "izquierda": { "texto": "Me lanzo como doble de riesgo de Hollywood", "perfil": "radical" },
+    "derecha": { "texto": "Me niego a bajar hasta que frene por completo", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "F",
+    "texto": "Tu suegra te regala ropa de dos tallas más grandes diciendo 'para que andes cómoda'.",
+    "etiquetas": ["familia", "ropa", "roche"],
+    "izquierda": { "texto": "La uso de pijama frente a ella", "perfil": "negociador" },
+    "derecha": { "texto": "Le digo que mejor la use ella", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "M",
+    "texto": "Tu flaca agarra tu celular desbloqueado 'solo para poner música' en Spotify.",
+    "etiquetas": ["pareja", "tecnologia", "peligro"],
+    "izquierda": { "texto": "Me da un microinfarto pero me hago el loco", "perfil": "tranquilo" },
+    "derecha": { "texto": "Se lo quito rápido diciendo que no hay megas", "perfil": "vivillo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "El alcalde distrital promete 'Wi-Fi gratis' en los parques pero la señal no carga ni Google.",
+    "etiquetas": ["politica", "tecnologia", "barrio"],
+    "izquierda": { "texto": "Le armo un hilo de Twitter con pruebas", "perfil": "mediatico" },
+    "derecha": { "texto": "Uso mis propios datos y sigo mi vida", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Pides un Uber económico y llega el ex tóxico de tu mejor amiga manejando.",
+    "etiquetas": ["transporte", "chisme", "roche"],
+    "izquierda": { "texto": "Me subo y le saco todo el chisme", "perfil": "vivillo" },
+    "derecha": { "texto": "Cancelo el viaje y pago la penalidad", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Te meten a un grupo de WhatsApp de apoderados del colegio y mandan 50 cadenas al día.",
+    "etiquetas": ["familia", "tecnologia", "adulto"],
+    "izquierda": { "texto": "Silencio el grupo y no leo nada nunca", "perfil": "tranquilo" },
+    "derecha": { "texto": "Mando las reglas de convivencia del grupo", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Estás a dieta pero llega octubre y en tu casa compran tres panetones en oferta.",
+    "etiquetas": ["comida", "salud", "dilema"],
+    "izquierda": { "texto": "Me como una tajada jurando que es la última", "perfil": "negociador" },
+    "derecha": { "texto": "Desaparezco los panetones vendiéndolos en mi trabajo", "perfil": "vivillo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Pides chifa para llevar, llegas a tu casa y no te han puesto sillao ni ají.",
+    "etiquetas": ["comida", "roche", "calidad"],
+    "izquierda": { "texto": "Como mi chaufa triste y seco", "perfil": "tranquilo" },
+    "derecha": { "texto": "Regreso al local a reclamar mis salsas", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "M",
+    "texto": "Vas a la barbería, te cortan de más, pero el barbero te pregunta '¿Qué tal quedó mano?'.",
+    "etiquetas": ["estetica", "calle", "roche"],
+    "izquierda": { "texto": "Le digo que está bravazo y me voy a llorar", "perfil": "tranquilo" },
+    "derecha": { "texto": "Exijo que no me cobre por la pelada", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "F",
+    "texto": "Llevas a tu nuevo flaco a conocer a tu familia y tu papá empieza a hablar de política.",
+    "etiquetas": ["familia", "cita", "politica"],
+    "izquierda": { "texto": "Interrumpo y saco el postre urgente", "perfil": "negociador" },
+    "derecha": { "texto": "Saco mi celular y grabo el debate", "perfil": "mediatico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Es fin de mes, no tienes plata y se te malogra el refrigerador con toda la comida.",
+    "etiquetas": ["dinero", "casa", "emergencia"],
+    "izquierda": { "texto": "Hago una parrillada urgente con los vecinos", "perfil": "vivillo" },
+    "derecha": { "texto": "Pido un préstamo al banco con 80% de interés", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Encuentras al perro de la calle del barrio orinando la llanta de tu carro recién lavado.",
+    "etiquetas": ["barrio", "vehiculo", "calidad"],
+    "izquierda": { "texto": "Lo asusto con la alarma desde lejos", "perfil": "tecnico" },
+    "derecha": { "texto": "Me resigno, la calle es de los perros", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "En la clínica, sacas ticket de espera y ves que el número va en 12 y tú tienes el 95.",
+    "etiquetas": ["salud", "burocracia", "espera"],
+    "izquierda": { "texto": "Me voy a desayunar un caldo de gallina", "perfil": "vivillo" },
+    "derecha": { "texto": "Me quedo parado mirando la pantalla furioso", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Preparas un 'Quizz' web para universitarios, pero un troll de internet mete bots y tumba tu servidor.",
+    "etiquetas": ["tecnologia", "estudio", "roche"],
+    "izquierda": { "texto": "Uso el ataque como excusa para no presentar", "perfil": "vivillo" },
+    "derecha": { "texto": "Implemento reCAPTCHA a las 3 de la mañana", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te invitan a una pollada bailable pro-salud pero el paciente es el que más chela está tomando.",
+    "etiquetas": ["fiesta", "barrio", "salud"],
+    "izquierda": { "texto": "Brindo con él, su cuerpo es su templo", "perfil": "tranquilo" },
+    "derecha": { "texto": "Pido que me devuelvan mi donación", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "M",
+    "texto": "Te empieza a salir panza chelera pero tus amigos te dicen que es 'curva de la felicidad'.",
+    "etiquetas": ["salud", "amigos", "deporte"],
+    "izquierda": { "texto": "Me meto al gimnasio mañana mismo", "perfil": "tecnico" },
+    "derecha": { "texto": "Abrazo mi nueva figura y sigo brindando", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "F",
+    "texto": "Vas a un tono en zapatos de taco aguja y tienes que caminar tres cuadras por calle de tierra.",
+    "etiquetas": ["fiesta", "ropa", "calle"],
+    "izquierda": { "texto": "Me quito los tacos y camino descalza", "perfil": "radical" },
+    "derecha": { "texto": "Camino en puntitas aunque me rompa el tobillo", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "El guachimán de la cuadra te cobra su mensualidad pero jamás lo ves de noche.",
+    "etiquetas": ["barrio", "dinero", "seguridad"],
+    "izquierda": { "texto": "Le pago nomás por si acaso me raye el carro", "perfil": "negociador" },
+    "derecha": { "texto": "Exijo ver su cuaderno de asistencia nocturna", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Consigues tu primer trabajo con planilla, pero ves el descuento de la AFP en tu boleta.",
+    "etiquetas": ["trabajo", "dinero", "adulto"],
+    "izquierda": { "texto": "Hago mi TikTok llorando por mis derechos", "perfil": "mediatico" },
+    "derecha": { "texto": "Averiguo cómo pasarme a la ONP", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "El congreso saca una ley de última hora prohibiendo los deliverys en moto pasada las 10 PM.",
+    "etiquetas": ["politica", "comida", "calle"],
+    "izquierda": { "texto": "Cocino un huevo frito y me resigno", "perfil": "tranquilo" },
+    "derecha": { "texto": "Le pido a la pollería que me lo mande en taxi", "perfil": "vivillo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Llega Navidad y el panetón de la canasta del trabajo tiene marcas de haber estado expuesto al sol.",
+    "etiquetas": ["trabajo", "comida", "fiesta"],
+    "izquierda": { "texto": "Lo corto en rodajas y lo tuesto", "perfil": "tecnico" },
+    "derecha": { "texto": "Lo regalo al intercambio de la oficina", "perfil": "vivillo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Descubres que tu vecino del frente está colgado de tu señal de cable Mágico.",
+    "etiquetas": ["vecinos", "tecnologia", "robo"],
+    "izquierda": { "texto": "Le corto el cable con un alicate", "perfil": "radical" },
+    "derecha": { "texto": "Le toco la puerta y le cobro alquiler", "perfil": "negociador" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "M",
+    "texto": "Falla la transmisión pirata justo cuando Paolo va a patear el penal decisivo.",
+    "etiquetas": ["deporte", "tecnologia", "nacional"],
+    "izquierda": { "texto": "Salgo a la ventana a escuchar si gritan gol", "perfil": "tecnico" },
+    "derecha": { "texto": "Golpeo el router rezando a todos los santos", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "F",
+    "texto": "Estás en el cine y la pareja de atrás no para de contarse toda la película.",
+    "etiquetas": ["cine", "roche", "bulla"],
+    "izquierda": { "texto": "Les digo 'shhhh' recontra fuerte y agresivo", "perfil": "radical" },
+    "derecha": { "texto": "Me cambio de asiento al otro lado de la sala", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Compras un tamal dominguero y al abrirlo te das cuenta que es 90% masa y no tiene carne.",
+    "etiquetas": ["comida", "estafa", "domingo"],
+    "izquierda": { "texto": "Lo ahogo en salsa criolla para que pase", "perfil": "negociador" },
+    "derecha": { "texto": "Le tomo foto y 'quemo' a la panadería en redes", "perfil": "mediatico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "F",
+    "texto": "La junta de propietarios quiere prohibir las mascotas pero tú tienes tres gatos.",
+    "etiquetas": ["casa", "vecinos", "mascotas"],
+    "izquierda": { "texto": "Escondo a mis gatos como si fueran ilegales", "perfil": "vivillo" },
+    "derecha": { "texto": "Llevo el código civil a la reunión para defenderme", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Un policía de tránsito te detiene por una 'falta invisible' y empieza a revisar tus faros buscando excusas.",
+    "etiquetas": ["calle", "vehiculo", "corrupcion"],
+    "izquierda": { "texto": "Saco mi celular y empiezo a grabar en vivo", "perfil": "mediatico" },
+    "derecha": { "texto": "Le recito el reglamento de tránsito de memoria", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Te dejan una tarea en grupo sobre 'responsabilidad social' y descubres que usaron ChatGPT para todo.",
+    "etiquetas": ["universidad", "tecnologia", "etica"],
+    "izquierda": { "texto": "Lo dejo así, mientras tengamos el 20 no importa", "perfil": "tranquilo" },
+    "derecha": { "texto": "Reescribo todo a mano para evitar la penalidad", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Subes a un taxi y el chofer tiene sintonizada la radio donde pasan puros casos de infidelidad.",
+    "etiquetas": ["transporte", "chisme", "calle"],
+    "izquierda": { "texto": "Le pido que suba el volumen, está buenazo", "perfil": "vivillo" },
+    "derecha": { "texto": "Me pongo mis audífonos para no escuchar", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Te toca renovar el pasaporte y la web de Migraciones te bota un error 404 constantemente.",
+    "etiquetas": ["burocracia", "tecnologia", "viaje"],
+    "izquierda": { "texto": "Compro pasaje falso para que me atiendan de urgencia", "perfil": "vivillo" },
+    "derecha": { "texto": "Me quedo dando F5 hasta las 4 de la madrugada", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "M",
+    "texto": "Estás en el gimnasio, levantas más peso del que puedes y te quedas atrapado en la máquina.",
+    "etiquetas": ["deporte", "roche", "salud"],
+    "izquierda": { "texto": "Fijo la mirada al techo como si fuera mi rutina", "perfil": "mediatico" },
+    "derecha": { "texto": "Grito 'auxilio mano' sin una gota de orgullo", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "F",
+    "texto": "Una vendedora de Gamarra te dice 'pase, amiga, hay tallas grandes para ti'.",
+    "etiquetas": ["ropa", "roche", "calle"],
+    "izquierda": { "texto": "La ignoro épicamente y cruzo la calle", "perfil": "tranquilo" },
+    "derecha": { "texto": "Entro a desordenarle la mercadería y me voy", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Tu papá descubre TikTok y empieza a mandar los mismos videos que tú viste hace tres semanas.",
+    "etiquetas": ["familia", "tecnologia", "redes"],
+    "izquierda": { "texto": "Le respondo con 'jajaja' por pena filial", "perfil": "negociador" },
+    "derecha": { "texto": "Le explico qué es el algoritmo y lo educo", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te equivocas y mandas un audio rajando de tu jefe al mismo grupo donde está tu jefe.",
+    "etiquetas": ["trabajo", "tecnologia", "roche"],
+    "izquierda": { "texto": "Elimino el mensaje para todos en un milisegundo", "perfil": "tecnico" },
+    "derecha": { "texto": "Digo 'me hackearon el WhatsApp' inmediatamente", "perfil": "vivillo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Vas a comprar un balón de gas y ves que le ha subido 15 soles desde la última vez.",
+    "etiquetas": ["dinero", "casa", "crisis"],
+    "izquierda": { "texto": "Compro una cocina eléctrica por internet", "perfil": "tecnico" },
+    "derecha": { "texto": "Regateo con el repartidor hasta dar pena", "perfil": "negociador" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te subes a un micro vacío, pagas con 20 soles y el cobrador te da todo el vuelto en monedas de 10 céntimos.",
+    "etiquetas": ["transporte", "dinero", "calle"],
+    "izquierda": { "texto": "Me siento a contar moneda por moneda hasta mi paradero", "perfil": "tecnico" },
+    "derecha": { "texto": "Le tiro las monedas en la caja y armo escándalo", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Organizan una chancha para el cumple del profe buena gente pero tú andas agujio.",
+    "etiquetas": ["universidad", "dinero", "amigos"],
+    "izquierda": { "texto": "Firmo la tarjeta grande sin dar un sol", "perfil": "vivillo" },
+    "derecha": { "texto": "Hago una manualidad barata para no quedar mal", "perfil": "negociador" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Tu backend guarda registros en UTC y el front muestra las fechas mal a todos los usuarios.",
+    "etiquetas": ["tecnologia", "trabajo", "roche"],
+    "izquierda": { "texto": "Le echo la culpa a la zona horaria", "perfil": "vivillo" },
+    "derecha": { "texto": "Reescribo la lógica sudando frío de madrugada", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "No sale tu beca internacional y tienes que hacer tu traslado de campus a la capital antes de junio.",
+    "etiquetas": ["universidad", "burocracia", "viaje"],
+    "izquierda": { "texto": "Muevo mis contactos para acelerar el trámite", "perfil": "negociador" },
+    "derecha": { "texto": "Me resigno y me quedo en mi sede", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Das una charla seria a escolares y te responden usando términos de 'Skibidi Toilet' y 'Mewing'.",
+    "etiquetas": ["educacion", "bizarro", "juventud"],
+    "izquierda": { "texto": "Les hablo en su idioma para conectar", "perfil": "mediatico" },
+    "derecha": { "texto": "Me pongo estricto y corto el brainrot", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Tus choferes interprovinciales se niegan a registrar sus viajes en el nuevo SaaS de la empresa.",
+    "etiquetas": ["trabajo", "tecnologia", "negocio"],
+    "izquierda": { "texto": "Les ofrezco un bono si lo usan bien", "perfil": "negociador" },
+    "derecha": { "texto": "Los obligo bajo amenaza de descuento", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "M",
+    "texto": "Un chibolo emocionado tira al piso y malogra el mando en tu negocio de alquiler de consolas.",
+    "etiquetas": ["negocio", "barrio", "roche"],
+    "izquierda": { "texto": "Le cobro el mando nuevo a su mamá", "perfil": "tecnico" },
+    "derecha": { "texto": "Le pongo cinta aislante y sigo alquilando", "perfil": "vivillo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "El cobrador del micro se hace el loco con tu vuelto de 50 céntimos mirando a la calle.",
+    "etiquetas": ["transporte", "dinero", "calle"],
+    "izquierda": { "texto": "Le grito mi vuelto desde el fondo", "perfil": "radical" },
+    "derecha": { "texto": "Se lo dejo de propina por pena", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Pides delivery por app y presientes que el motorizado se comió un triángulo de tu pizza.",
+    "etiquetas": ["comida", "calle", "estafa"],
+    "izquierda": { "texto": "Le tomo foto y pido reembolso total", "perfil": "tecnico" },
+    "derecha": { "texto": "Junto los pedazos para que parezca completa", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Vas a EsSalud de madrugada y te dan cita en gastroenterología para dentro de 8 meses.",
+    "etiquetas": ["salud", "burocracia", "adulto"],
+    "izquierda": { "texto": "Armo un escándalo en admisión con mi celular", "perfil": "mediatico" },
+    "derecha": { "texto": "Me voy a una clínica y rompo el chanchito", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te llaman supuestamente del penal diciendo que ganaste una camioneta 4x4 cero kilómetros.",
+    "etiquetas": ["calle", "peligro", "tecnologia"],
+    "izquierda": { "texto": "Les sigo la corriente para hacerles perder tiempo", "perfil": "vivillo" },
+    "derecha": { "texto": "Corto y bloqueo el número de inmediato", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Tu abuela te sirve un cerro de tallarines rojos, ya estás lleno y ella te mira fijamente.",
+    "etiquetas": ["familia", "comida", "roche"],
+    "izquierda": { "texto": "Me lo como todo por amor a mi abuela", "perfil": "tranquilo" },
+    "derecha": { "texto": "Lo escondo en un taper cuando se voltea", "perfil": "vivillo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Pagas la membresía Black del SmartFit por un año y solo fuiste la primera semana de enero.",
+    "etiquetas": ["salud", "dinero", "roche"],
+    "izquierda": { "texto": "Le presto mi QR a mis patas cobrándoles", "perfil": "vivillo" },
+    "derecha": { "texto": "Sigo pagando con la esperanza de volver", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Es quincena de julio, esperas tu gratificación y RRHH manda un correo de 'quiebra técnica'.",
+    "etiquetas": ["trabajo", "dinero", "crisis"],
+    "izquierda": { "texto": "Me encadeno en la puerta de la gerencia", "perfil": "radical" },
+    "derecha": { "texto": "Mando mi CV a la competencia ese mismo día", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Un limpiaparabrisas te echa agua de dudosa procedencia cuando le dijiste claramente que 'no joven'.",
+    "etiquetas": ["vehiculo", "calle", "trafico"],
+    "izquierda": { "texto": "Prendo los limpiaparabrisas para asustarlo", "perfil": "radical" },
+    "derecha": { "texto": "Le doy 20 céntimos para que no me raye", "perfil": "negociador" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "F",
+    "texto": "El chico te invita a una cita súper romántica pero te pide que tú pongas el carro.",
+    "etiquetas": ["cita", "vehiculo", "roche"],
+    "izquierda": { "texto": "Le digo que el carro está en el taller", "perfil": "vivillo" },
+    "derecha": { "texto": "Paso por él pero le cobro la gasolina", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "M",
+    "texto": "En la pichanga, el dueño de la pelota es malísimo pero amenaza con irse si lo sacan.",
+    "etiquetas": ["pichanga", "amigos", "deporte"],
+    "izquierda": { "texto": "Lo dejo de defensa central para que no estorbe", "perfil": "negociador" },
+    "derecha": { "texto": "Lo boto igual y compramos una de plástico", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Ves a tu tía mandando fake news de que los extraterrestres clonaron al presidente en el grupo familiar.",
+    "etiquetas": ["familia", "tecnologia", "chisme"],
+    "izquierda": { "texto": "Desmiento todo con links de fact-checking", "perfil": "tecnico" },
+    "derecha": { "texto": "Le mando un sticker de alienígenas burlón", "perfil": "mediatico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Llega tu banda favorita a Lima pero los revendedores acapararon todo y la entrada cuesta el triple.",
+    "etiquetas": ["musica", "dinero", "estafa"],
+    "izquierda": { "texto": "Me voy a escuchar el concierto desde la calle", "perfil": "vivillo" },
+    "derecha": { "texto": "Denuncio a las páginas de reventa en Indecopi", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Un tombo te para porque supuestamente 'pisaste la línea blanca' que está borrada hace cinco años.",
+    "etiquetas": ["calle", "corrupcion", "vehiculo"],
+    "izquierda": { "texto": "Me pongo faltoso pidiéndole su número de placa", "perfil": "radical" },
+    "derecha": { "texto": "Le lloro diciendo que estoy yendo al hospital", "perfil": "negociador" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te invitan a un restaurante pitucazo en San Isidro y no entiendes absolutamente nada de la carta.",
+    "etiquetas": ["comida", "roche", "calle"],
+    "izquierda": { "texto": "Pido lo más barato señalando con el dedo", "perfil": "tranquilo" },
+    "derecha": { "texto": "Busco los platos en Google debajo de la mesa", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Descubres que tu vecino roba tu internet porque le pusiste de clave el número de tu DNI.",
+    "etiquetas": ["tecnologia", "vecinos", "robo"],
+    "izquierda": { "texto": "Le cambio la clave y le pongo indirectas", "perfil": "mediatico" },
+    "derecha": { "texto": "Bloqueo su MAC address desde el router", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Encuentras a tu perro masticando alegremente tu pasaporte peruano un día antes de viajar.",
+    "etiquetas": ["mascotas", "viaje", "emergencia"],
+    "izquierda": { "texto": "Lo pego con goma rezando que migraciones no vea", "perfil": "vivillo" },
+    "derecha": { "texto": "Entro en crisis y reprogramo mi vuelo llorando", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Tu pata del colegio te invita a un zoom sobre 'ser tu propio jefe' y diamantes mentales.",
+    "etiquetas": ["amigos", "dinero", "estafa"],
+    "izquierda": { "texto": "Me meto al zoom a trollear la presentación", "perfil": "mediatico" },
+    "derecha": { "texto": "Le digo que no tengo internet y me pierdo", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Tienes que declarar impuestos urgentes, pero el sistema de la SUNAT está en 'mantenimiento programado'.",
+    "etiquetas": ["burocracia", "adulto", "tecnologia"],
+    "izquierda": { "texto": "Tomo pantallazos como prueba para no pagar multa", "perfil": "tecnico" },
+    "derecha": { "texto": "Me encomiendo al Señor de los Milagros", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "La notaría te quiere cobrar 80 soles por cada firma en un contrato de 15 páginas.",
+    "etiquetas": ["burocracia", "dinero", "robo"],
+    "izquierda": { "texto": "Hago mi chongazo exigiendo ver el tarifario", "perfil": "radical" },
+    "derecha": { "texto": "Le ofrezco 200 lucas por todo el paquete", "perfil": "negociador" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Sale un solazo en la mañana, te vas en polo, y a las 3 PM empieza a llover.",
+    "etiquetas": ["clima", "calle", "roche"],
+    "izquierda": { "texto": "Me compro un plástico de 1 sol en el paradero", "perfil": "vivillo" },
+    "derecha": { "texto": "Sufro el frío estoicamente y me enfermo", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "La cajera de Tottus demora media hora porque no pasa el código de barras de un jabón.",
+    "etiquetas": ["compras", "espera", "roche"],
+    "izquierda": { "texto": "Dejo el jabón tirado y pago lo demás", "perfil": "radical" },
+    "derecha": { "texto": "Espero paciente revisando mi celular mil veces", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te compras tu súper combo de cine carísimo y se te cae toda la canchita en la entrada.",
+    "etiquetas": ["cine", "roche", "comida"],
+    "izquierda": { "texto": "Recojo la de arriba que no tocó el piso", "perfil": "vivillo" },
+    "derecha": { "texto": "Le lloro al de la dulcería para un refill", "perfil": "negociador" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "M",
+    "texto": "En la primera cita ella pide el trago más caro, un piqueo gigante y deja casi todo.",
+    "etiquetas": ["cita", "dinero", "roche"],
+    "izquierda": { "texto": "Pido tuppers y me llevo todo a mi casa", "perfil": "tecnico" },
+    "derecha": { "texto": "Pago sonriendo y borro su contacto al salir", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Tu mamá te manda al mercado por culantro y regresas triunfante con un paquete de perejil.",
+    "etiquetas": ["familia", "compras", "roche"],
+    "izquierda": { "texto": "Le digo que el casero me estafó a propósito", "perfil": "vivillo" },
+    "derecha": { "texto": "Regreso corriendo al mercado a cambiarlo avergonzado", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Anuncian feriado largo y los pasajes terrestres a tu tierra suben misteriosamente un 400%.",
+    "etiquetas": ["viaje", "transporte", "dinero"],
+    "izquierda": { "texto": "Me voy en taxi colectivo pirata asumiendo el riesgo", "perfil": "radical" },
+    "derecha": { "texto": "Me quedo en casa a ver Netflix en pijama", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Se caen Instagram y TikTok al mismo tiempo por dos horas enteras en todo el Perú.",
+    "etiquetas": ["tecnologia", "redes", "crisis"],
+    "izquierda": { "texto": "Entro a Twitter a quejarme y hacer memes", "perfil": "mediatico" },
+    "derecha": { "texto": "Aprovecho para por fin bañar a mi perro", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te encuentras una moneda de 5 soles brillantita pero está pegada en la brea hirviendo de la pista.",
+    "etiquetas": ["dinero", "calle", "bizarro"],
+    "izquierda": { "texto": "La saco con mis llaves así me demore horas", "perfil": "tecnico" },
+    "derecha": { "texto": "Paso de largo, mi dignidad vale más", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Vas a la boda pituca de tu primo y en la hora loca solo reparten silbatos de plástico.",
+    "etiquetas": ["fiesta", "roche", "familia"],
+    "izquierda": { "texto": "Me robo el centro de mesa para compensar", "perfil": "vivillo" },
+    "derecha": { "texto": "Soplo el silbato con furia toda la noche", "perfil": "mediatico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "El Metropolitano se malogra en plena Vía Expresa en enero y el aire acondicionado no funciona.",
+    "etiquetas": ["transporte", "crisis", "clima"],
+    "izquierda": { "texto": "Fuerzo la escotilla del techo y exijo salir", "perfil": "radical" },
+    "derecha": { "texto": "Me abanico con mi pasaje sufriendo en silencio", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "F",
+    "texto": "Descubres que tu casi-algo le da 'Me encanta' a todas las fotos en bikini de tu prima.",
+    "etiquetas": ["romance", "redes", "chisme"],
+    "izquierda": { "texto": "Subo una foto mejor y bloqueo a los dos", "perfil": "mediatico" },
+    "derecha": { "texto": "Le pregunto sarcásticamente si le presento a mi prima", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Tu jefe les dice que hay que 'ponerse la camiseta' y trabajar gratis este sábado por un cliente.",
+    "etiquetas": ["trabajo", "abuso", "dinero"],
+    "izquierda": { "texto": "Apago mi celular el viernes a las 6 PM", "perfil": "tranquilo" },
+    "derecha": { "texto": "Voy pero marco horas extras en el sistema", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te roban el celular en el paradero y en la noche el choro te llama pidiéndote la clave de iCloud.",
+    "etiquetas": ["robo", "tecnologia", "calle"],
+    "izquierda": { "texto": "Le doy una clave falsa llena de insultos", "perfil": "vivillo" },
+    "derecha": { "texto": "Lo rastreo con 'Buscar mi iPhone' y llamo a la policía", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Te agachas a recoger una moneda de china en la calle y te suenan fuerte ambas rodillas.",
+    "etiquetas": ["salud", "adulto", "roche"],
+    "izquierda": { "texto": "Me hago el que busco mis llaves para disimular", "perfil": "mediatico" },
+    "derecha": { "texto": "Comienzo a tomar colágeno llegando a mi casa", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Vas a una discoteca carísima, entras al baño y está totalmente inundado y sin una gota de papel.",
+    "etiquetas": ["juerga", "roche", "calidad"],
+    "izquierda": { "texto": "Me aguanto hasta llegar al grifo más cercano", "perfil": "tranquilo" },
+    "derecha": { "texto": "Le hago chongo al VIP de la entrada", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Tu jurado de tesis te dice que tu tema no sirve exactamente dos días antes de tu sustentación.",
+    "etiquetas": ["universidad", "estudio", "crisis"],
+    "izquierda": { "texto": "Lloro y reprogramo todo para el próximo ciclo", "perfil": "tranquilo" },
+    "derecha": { "texto": "Le cito su propio libro para defender mi idea", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "El recibo de luz te llega por 450 soles, vives completamente solo y paras trabajando todo el día.",
+    "etiquetas": ["casa", "dinero", "burocracia"],
+    "izquierda": { "texto": "Bajo mi cuchilla en la noche para probar si roban", "perfil": "tecnico" },
+    "derecha": { "texto": "Hago mi reclamo formal en Osinergmin con fotos", "perfil": "negociador" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "F",
+    "texto": "Vas a la peluquería por 'solo las puntas' y la señora te deja con el corte de Dora la Exploradora.",
+    "etiquetas": ["estetica", "roche", "calle"],
+    "izquierda": { "texto": "Me niego a pagar y salgo llorando", "perfil": "radical" },
+    "derecha": { "texto": "Sonrío, pago y me compro gorros llegando a casa", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Retiras de un cajero del banco de la nación y te da puros billetes de 10 soles pegados con cinta.",
+    "etiquetas": ["banco", "dinero", "roche"],
+    "izquierda": { "texto": "Entro al banco a que me los cambien", "perfil": "tecnico" },
+    "derecha": { "texto": "Los meto en la máquina tragamonedas del barrio", "perfil": "vivillo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Un candidato a la alcaldía regala calendarios y tapers en tu barrio en época electoral.",
+    "etiquetas": ["politica", "barrio", "nacional"],
+    "izquierda": { "texto": "Recibo mi taper y voto por el otro", "perfil": "vivillo" },
+    "derecha": { "texto": "Le digo 'no gracias' en su cara", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Muerdes con confianza una empanada de carne carísima y te toca una aceituna gigante con pepa.",
+    "etiquetas": ["comida", "salud", "peligro"],
+    "izquierda": { "texto": "Me saco la muela rota y demando a la pastelería", "perfil": "radical" },
+    "derecha": { "texto": "Escupo la pepa disimuladamente en una servilleta", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Paras un taxi vacío, le dices que vas a San Juan de Lurigancho y arranca dejándote hablando solo.",
+    "etiquetas": ["transporte", "calle", "roche"],
+    "izquierda": { "texto": "Le miento mi destino y cuando subo lo cambio", "perfil": "vivillo" },
+    "derecha": { "texto": "Pido aplicativo, sale más caro pero al menos llega", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Haces match en Tinder, pero notas que todas sus fotos tienen 6 dedos generados por Inteligencia Artificial.",
+    "etiquetas": ["tinder", "tecnologia", "estafa"],
+    "izquierda": { "texto": "Le pregunto qué prompt usó para enamorarme", "perfil": "mediatico" },
+    "derecha": { "texto": "Reporto la cuenta como bot inmediatamente", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "En plena entrevista de trabajo grupal, RRHH te pide dibujar un animal que te represente bajo la lluvia.",
+    "etiquetas": ["trabajo", "bizarro", "roche"],
+    "izquierda": { "texto": "Dibujo un pato con paraguas, para asegurar", "perfil": "negociador" },
+    "derecha": { "texto": "Pregunto qué tiene que ver eso con el puesto", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "M",
+    "texto": "Apuestas todo tu sueldo a que Perú gana en las eliminatorias y nos meten el primer gol al minuto dos.",
+    "etiquetas": ["deporte", "dinero", "nacional"],
+    "izquierda": { "texto": "Hago cashout rápido perdiendo la mitad nomás", "perfil": "tecnico" },
+    "derecha": { "texto": "Apago la tele y me voy a dormir llorando", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Hay junta de propietarios para arreglar el ascensor y termina en pelea por si se permite hacer parrilladas.",
+    "etiquetas": ["vecinos", "casa", "bulla"],
+    "izquierda": { "texto": "Me ofrezco como mediador para calmar las aguas", "perfil": "negociador" },
+    "derecha": { "texto": "Grabo el pleito en secreto desde el fondo", "perfil": "mediatico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Se malogra el semáforo y un datero de combi empieza a dirigir el tránsito cobrando peaje.",
+    "etiquetas": ["calle", "trafico", "picante_medio"],
+    "izquierda": { "texto": "Le doy su china porque gracias a él avanzo", "perfil": "vivillo" },
+    "derecha": { "texto": "Le toco claxon y me niego a financiar la informalidad", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Entras a Inkafarma por un paracetamol y te quieren vender vitaminas, shampoo y un peluche.",
+    "etiquetas": ["compras", "salud", "roche"],
+    "izquierda": { "texto": "Compro el peluche por pena al vendedor", "perfil": "negociador" },
+    "derecha": { "texto": "Exijo mi pastilla seca y sin mirar a los ojos", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Te piden 'colaboración' para el vigilante de la cuadra pero a ti te robaron ayer.",
+    "etiquetas": ["barrio", "seguridad", "dinero"],
+    "izquierda": { "texto": "Les cierro la puerta en la cara bien indignado", "perfil": "radical" },
+    "derecha": { "texto": "Pago igual por miedo a que me roben de nuevo", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Tu jefa te dice 'somos una familia' para pedirte que te quedes hasta las 9 PM.",
+    "etiquetas": ["trabajo", "abuso", "roche"],
+    "izquierda": { "texto": "Le digo 'en mi familia no me explotan' y me voy", "perfil": "radical" },
+    "derecha": { "texto": "Me quedo trabajando mientras actualizo mi CV", "perfil": "vivillo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "El maestro de obra te pide 'para la gaseosa' pero ya le pagaste su jornal completo.",
+    "etiquetas": ["vivienda", "dinero", "calle"],
+    "izquierda": { "texto": "Le doy 5 lucas para asegurar que no haga mal la pared", "perfil": "negociador" },
+    "derecha": { "texto": "Le ofrezco un vaso de agua del caño bien frío", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Vas a comprar pan y te dan vuelto con un billete roto pegado con cinta scotch.",
+    "etiquetas": ["dinero", "compras", "calle"],
+    "izquierda": { "texto": "Lo recibo para pasarlo de vuelto en la combi", "perfil": "vivillo" },
+    "derecha": { "texto": "Me planto y exijo un billete sano", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Tu ex te escribe a las 3 AM diciendo 'perdí mi Yape, prestame 20 lucas'.",
+    "etiquetas": ["redes", "romance", "dinero"],
+    "izquierda": { "texto": "Tomo pantallazo para el grupo de amigos y bloqueo", "perfil": "mediatico" },
+    "derecha": { "texto": "Se los presto con 50% de interés diario", "perfil": "vivillo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "F",
+    "texto": "Llegas a la fiesta y ves a tres flacas con exactamente el mismo top de Shein que tú.",
+    "etiquetas": ["fiesta", "ropa", "roche"],
+    "izquierda": { "texto": "Me hago amiga de ellas para la foto grupal", "perfil": "mediatico" },
+    "derecha": { "texto": "Me pongo mi casaca hasta el cuello sudando", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "M",
+    "texto": "Tu compadre te pide ser garante de su préstamo en el banco 'solo por formalidad'.",
+    "etiquetas": ["banco", "amigos", "dinero"],
+    "izquierda": { "texto": "Le miento diciendo que estoy en Infocorp", "perfil": "vivillo" },
+    "derecha": { "texto": "Le explico el riesgo financiero y le digo que no", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "La de Recursos Humanos te descuenta 5 minutos de tardanza pero nunca paga extras.",
+    "etiquetas": ["trabajo", "dinero", "abuso"],
+    "izquierda": { "texto": "Me voy al baño 40 minutos para recuperar mi tiempo", "perfil": "vivillo" },
+    "derecha": { "texto": "Denuncio a la empresa en Sunafil anónimamente", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Compras un marciano de 'pura fresa' pero sabe a hielo con colorante y azúcar.",
+    "etiquetas": ["comida", "calle", "estafa"],
+    "izquierda": { "texto": "Lo chupo hasta que quede hielo blanco y lo boto", "perfil": "tranquilo" },
+    "derecha": { "texto": "Se lo devuelvo a la señora reclamando mi china", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "El guachimán no te deja entrar a tu propio edificio porque no trajiste el DNI físico.",
+    "etiquetas": ["seguridad", "casa", "roche"],
+    "izquierda": { "texto": "Le grito que yo pago su sueldo con mi mantenimiento", "perfil": "radical" },
+    "derecha": { "texto": "Espero en la vereda a que pase un vecino conocido", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "El menú cuesta 12 soles pero la chica te cobra 13 porque 'el limón ha subido'.",
+    "etiquetas": ["comida", "dinero", "calle"],
+    "izquierda": { "texto": "Pago el sol extra pero me llevo todas las servilletas", "perfil": "vivillo" },
+    "derecha": { "texto": "Le cito los precios actuales del mercado mayorista", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "En el amigo secreto te toca regalarle al gerente que gana cinco veces tu sueldo.",
+    "etiquetas": ["trabajo", "regalos", "roche"],
+    "izquierda": { "texto": "Le compro unas medias genéricas del supermercado", "perfil": "tranquilo" },
+    "derecha": { "texto": "Me endeudo con un reloj fino buscando un ascenso", "perfil": "vivillo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Estás haciendo dieta y tu abuela te sirve un lomo saltado con un cerro de papa y arroz.",
+    "etiquetas": ["comida", "familia", "salud"],
+    "izquierda": { "texto": "Rompo la dieta, el amor de abuela es primero", "perfil": "negociador" },
+    "derecha": { "texto": "Separo el arroz con pena frente a ella", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "M",
+    "texto": "En la pichanga, el dueño de la pelota se amarga por una falta, la agarra y se va a su casa.",
+    "etiquetas": ["deporte", "amigos", "roche"],
+    "izquierda": { "texto": "Le ruego que se quede y le doy la razón", "perfil": "negociador" },
+    "derecha": { "texto": "Le meto su chiquita por picón arruina partidos", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Compras entrada VIP para el concierto y ves que los de General saltaron la reja.",
+    "etiquetas": ["musica", "fiesta", "dinero"],
+    "izquierda": { "texto": "Me quejo con seguridad exigiendo que los boten", "perfil": "tecnico" },
+    "derecha": { "texto": "Me pongo a saltar con ellos olvidando mi VIP", "perfil": "mediatico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Te compras tu iPhone a 36 cuotas y al primer mes se te cae al inodoro.",
+    "etiquetas": ["tecnologia", "dinero", "emergencia"],
+    "izquierda": { "texto": "Lo meto en arroz llorando abrazado al router", "perfil": "tranquilo" },
+    "derecha": { "texto": "Lo saco, lo lavo y lo vendo como 'seminuevo'", "perfil": "vivillo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Vas a almorzar y en la tele del restaurante están pasando 'Laura en América' a todo volumen.",
+    "etiquetas": ["comida", "calle", "bizarro"],
+    "izquierda": { "texto": "Pido que pongan las noticias o me voy", "perfil": "tecnico" },
+    "derecha": { "texto": "Me quedo atrapado en el chisme y como lento", "perfil": "mediatico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Se te acerca un mimo en la calle de las Pizzas y empieza a imitar cómo caminas.",
+    "etiquetas": ["calle", "turismo", "roche"],
+    "izquierda": { "texto": "Le hago un corte de mangas y cruzo rápido", "perfil": "radical" },
+    "derecha": { "texto": "Le sigo el juego para no quedar como aburrido", "perfil": "negociador" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Tu primo se vuelve vegano justo el día de la pachamanca familiar por el Día de la Madre.",
+    "etiquetas": ["familia", "comida", "roche"],
+    "izquierda": { "texto": "Le doy humita y le miento que no tocó la carne", "perfil": "vivillo" },
+    "derecha": { "texto": "Le hago bulling en la mesa por alienado", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Pides taxi por app, te acepta, no se mueve por 15 minutos y espera que tú canceles.",
+    "etiquetas": ["transporte", "tecnologia", "pelea"],
+    "izquierda": { "texto": "No cancelo nada, que se pudra ahí esperando", "perfil": "tecnico" },
+    "derecha": { "texto": "Le mando audios insultándolo para que cancele él", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "La cajera del Tambo te mira feo porque quieres pagar tu sublime con un billete de 100.",
+    "etiquetas": ["compras", "dinero", "roche"],
+    "izquierda": { "texto": "Le digo 'es lo único que tengo, reina'", "perfil": "negociador" },
+    "derecha": { "texto": "Pido tres cosas inútiles más para justificar el billete", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Pagas Netflix Premium pero toda tu familia, amigos y hasta tu ex usan tu cuenta.",
+    "etiquetas": ["tecnologia", "dinero", "familia"],
+    "izquierda": { "texto": "Cambio la clave el fin de semana sin avisar", "perfil": "tecnico" },
+    "derecha": { "texto": "Les cobro 5 soles al mes a cada uno por Yape", "perfil": "vivillo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te llega un mensaje de WhatsApp que dice 'Gana 500 soles diarios dando likes en YouTube'.",
+    "etiquetas": ["tecnologia", "estafa", "robo"],
+    "izquierda": { "texto": "Les saco los primeros 20 soles gratis y los bloqueo", "perfil": "vivillo" },
+    "derecha": { "texto": "Borro el mensaje por terror a que me hackeen", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "En el micro sube un tipo vendiendo pomadas que curan desde el reumatismo hasta el mal de amor.",
+    "etiquetas": ["transporte", "compras", "bizarro"],
+    "izquierda": { "texto": "Compro tres potes 'por si acaso' funcionan", "perfil": "tranquilo" },
+    "derecha": { "texto": "Me pongo mis audífonos mirando fijamente al piso", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Estás chapando en el parque y de la nada aparece Serenazgo con su linterna en la cara.",
+    "etiquetas": ["romance", "calle", "roche"],
+    "izquierda": { "texto": "Me hago el ofendido pidiendo respeto a mi privacidad", "perfil": "radical" },
+    "derecha": { "texto": "Me separo a la velocidad de la luz asustado", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "F",
+    "texto": "En la peluquería te lavan el pelo con agua helada porque 'se malogró la terma caserita'.",
+    "etiquetas": ["estetica", "salud", "roche"],
+    "izquierda": { "texto": "Aguanto la neumonía porque ya me echó el shampoo", "perfil": "tranquilo" },
+    "derecha": { "texto": "Me paro con espuma y exijo que no me cobren", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "M",
+    "texto": "Tu pata saca su guitarra en la fogata y empieza a tocar Lamento Boliviano por quinta vez.",
+    "etiquetas": ["amigos", "musica", "fiesta"],
+    "izquierda": { "texto": "Le escondo la púa para que deje de tocar", "perfil": "vivillo" },
+    "derecha": { "texto": "Canto a todo pulmón abrazado de él", "perfil": "mediatico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "El bodeguero te dice 'no me sale a cuenta venderte con tarjeta' por una gaseosa de 3 soles.",
+    "etiquetas": ["compras", "dinero", "calle"],
+    "izquierda": { "texto": "Acepto que me cobre el infame '5% extra'", "perfil": "tranquilo" },
+    "derecha": { "texto": "Le reclamo que Indecopi prohíbe recargos abusivos", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Subes a la combi y el único asiento libre está hirviendo porque acaba de bajarse alguien.",
+    "etiquetas": ["transporte", "calle", "roche"],
+    "izquierda": { "texto": "Me siento nomás, el cansancio pesa más", "perfil": "tranquilo" },
+    "derecha": { "texto": "Prefiero viajar parado para cuidar mi retaguardia", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Vas a renovar el Brevete y la página del MTC te bota el sistema justo cuando vas a pagar.",
+    "etiquetas": ["burocracia", "tecnologia", "vehiculo"],
+    "izquierda": { "texto": "Rompo el teclado de la frustración total", "perfil": "radical" },
+    "derecha": { "texto": "Le pago a los tramitadores de la puerta para no sufrir", "perfil": "vivillo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "El candidato a la alcaldía regala cajas de fósforos con su cara a un mes de las elecciones.",
+    "etiquetas": ["politica", "calle", "roche"],
+    "izquierda": { "texto": "Las agarro todas para prender mi cocina gratis", "perfil": "vivillo" },
+    "derecha": { "texto": "Se la devuelvo diciendo que eso no compra mi voto", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Descubres que el 'queso paria' carísimo que compraste en el mercado es 80% papa prensada.",
+    "etiquetas": ["comida", "estafa", "mercado"],
+    "izquierda": { "texto": "Lo frío y hago causa rellena para no perder", "perfil": "tecnico" },
+    "derecha": { "texto": "Voy a buscar a la casera para tirarle el molde", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Entras al baño del centro comercial y la señora de limpieza te exige 50 céntimos de propina.",
+    "etiquetas": ["calle", "dinero", "roche"],
+    "izquierda": { "texto": "Finjo que no tengo sencillo y huyo lavándome rápido", "perfil": "vivillo" },
+    "derecha": { "texto": "Le pago, su chamba es difícil y el baño está limpio", "perfil": "negociador" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Tu pata limeño dice frente a todos que el Pisco Sour se inventó en Chile por un artículo de Wikipedia.",
+    "etiquetas": ["amigos", "nacional", "pelea"],
+    "izquierda": { "texto": "Le armo un debate histórico con fuentes bibliográficas", "perfil": "tecnico" },
+    "derecha": { "texto": "Lo boto de mi casa por traición a la patria", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "En la oficina compran pizza para todos pero a ti te toca el único pedazo de pura masa sin queso.",
+    "etiquetas": ["trabajo", "comida", "roche"],
+    "izquierda": { "texto": "Me lo como en silencio viendo cómo otros disfrutan", "perfil": "tranquilo" },
+    "derecha": { "texto": "Le robo el pepperoni al que está distraído", "perfil": "vivillo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Vas a una boda y el fotógrafo oficial te tapa la vista exactamente en el momento del 'sí, acepto'.",
+    "etiquetas": ["fiesta", "roche", "familia"],
+    "izquierda": { "texto": "Le meto un codazo 'sin querer' para que se mueva", "perfil": "vivillo" },
+    "derecha": { "texto": "Me estiro como jirafa para poder ver algo", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "El profe dice 'el examen estará fácil, es para marcar' y todas las opciones son 'A y B son correctas'.",
+    "etiquetas": ["universidad", "estudio", "roche"],
+    "izquierda": { "texto": "Marco la 'C' en todas y me encomiendo a Dios", "perfil": "tranquilo" },
+    "derecha": { "texto": "Me pongo a calcular probabilidades y descarte lógico", "perfil": "tecnico" }
+  },
+  {
+    "region": "nacional",
+    "edad": "18-30",
+    "genero": "F",
+    "texto": "Tu flaco te regala un peluche gigante en San Valentín y tienes que subir al Metropolitano con él.",
+    "etiquetas": ["romance", "transporte", "roche"],
+    "izquierda": { "texto": "Lo uso como escudo para que nadie me empuje", "perfil": "vivillo" },
+    "derecha": { "texto": "Paso la peor vergüenza de mi vida roja de calor", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "La vecina barre su vereda impecable pero tira toda la basura y la tierra para el lado de tu casa.",
+    "etiquetas": ["vecinos", "barrio", "pelea"],
+    "izquierda": { "texto": "Salgo y se la barro de vuelta a su puerta", "perfil": "radical" },
+    "derecha": { "texto": "Le toco la puerta y le hablo de convivencia vecinal", "perfil": "negociador" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Vas a la farmacia y te dicen 'no hay genérico joven, solo de marca que cuesta 15 veces más'.",
+    "etiquetas": ["salud", "compras", "corrupcion"],
+    "izquierda": { "texto": "Me voy a otra farmacia de barrio más lejana", "perfil": "tecnico" },
+    "derecha": { "texto": "Me peleo con la de mostrador exigiendo el genérico", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "En la pollada de tu cuadra se va la luz pero siguen bailando cumbia iluminados por los faros de un Tico.",
+    "etiquetas": ["fiesta", "barrio", "bizarro"],
+    "izquierda": { "texto": "Sigo bailando, la peruanidad nunca muere", "perfil": "mediatico" },
+    "derecha": { "texto": "Aprovecho la oscuridad para llevarme dos cervezas", "perfil": "vivillo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Quieres cancelar tu línea de celular y te pasan por 8 asesores diferentes para convencerte de no hacerlo.",
+    "etiquetas": ["burocracia", "tecnologia", "roche"],
+    "izquierda": { "texto": "Les digo que me voy del país para que me suelten", "perfil": "vivillo" },
+    "derecha": { "texto": "Amenazo con ir a Osiptel si no cortan ahorita", "perfil": "radical" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "M",
+    "texto": "Llevas tu auto al mecánico por un faro roto y te dice mirándote serio que hay que 'bajar el motor'.",
+    "etiquetas": ["vehiculo", "estafa", "dinero"],
+    "izquierda": { "texto": "Saco mi carro al instante y huyo de ahí", "perfil": "tecnico" },
+    "derecha": { "texto": "Le creo y me endeudo por 3 mil soles", "perfil": "tranquilo" }
+  },
+  {
+    "region": "nacional",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Terminas de pagar tu crédito de 5 años sufriendo y el banco te llama al día siguiente para ofrecerte otro igualito.",
+    "etiquetas": ["banco", "dinero", "adulto"],
+    "izquierda": { "texto": "Los mando al cuerno en todos los idiomas posibles", "perfil": "radical" },
+    "derecha": { "texto": "Digo 'no, gracias' y corto amablemente la llamada", "perfil": "negociador" }
+  },
+{
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Sales en polo bajo un solazo rumbo a la Plaza y de la nada cae un diluvio bíblico.",
+    "etiquetas": ["clima", "calle", "roche"],
+    "izquierda": { "texto": "Me meto a un café pitucazo y gasto 20 soles", "perfil": "vivillo" },
+    "derecha": { "texto": "Camino bajo la lluvia con orgullo cajamarquino", "perfil": "tranquilo" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Tu pata te dice 'acashito nomás es' y ya llevan caminando tres kilómetros en plena subida.",
+    "etiquetas": ["jerga", "amigos", "calle"],
+    "izquierda": { "texto": "Le hago chongo y exijo un mototaxi", "perfil": "radical" },
+    "derecha": { "texto": "Sigo caminando callado pero jurando venganza", "perfil": "tranquilo" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "F",
+    "texto": "Tu cita de Lima pide cuy frito, pero se asusta cuando le traen la cabeza con dientes.",
+    "etiquetas": ["cita", "comida", "roche"],
+    "izquierda": { "texto": "Me como la cabeza yo misma para asustarlo", "perfil": "radical" },
+    "derecha": { "texto": "Le pido al mozo que esconda la cabecita", "perfil": "negociador" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "El líder del paro antiminero de tu barrio te exige 'colaboración voluntaria' para no pinchar tus llantas.",
+    "etiquetas": ["politica", "calle", "vehiculo"],
+    "izquierda": { "texto": "Le doy 5 lucas para no hacerme paltas", "perfil": "tranquilo" },
+    "derecha": { "texto": "Lo grabo caleta con el celular y me fugo", "perfil": "mediatico" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Estás toda la semana esperando el frito cajamarquino del domingo, pero te despiertas a las 2 PM.",
+    "etiquetas": ["comida", "juerga", "domingo"],
+    "izquierda": { "texto": "Voy al mercado y le lloro a la casera", "perfil": "negociador" },
+    "derecha": { "texto": "Me meto un caldo de gallina y me resigno", "perfil": "tranquilo" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Es martes de Carnaval, vas recontra arreglado al banco y te cae un globozo de agua en la cara.",
+    "etiquetas": ["carnaval", "calle", "roche"],
+    "izquierda": { "texto": "Compro pintura y voy a cazar al culpable", "perfil": "radical" },
+    "derecha": { "texto": "Entro al banco escurriendo agua y riéndome", "perfil": "mediatico" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "M",
+    "texto": "Tus patas de la mina bajan de su turno de 14 días y quieren tomar hasta el miércoles.",
+    "etiquetas": ["amigos", "juerga", "trabajo"],
+    "izquierda": { "texto": "Le entro a la rumba, la plata sobra", "perfil": "vivillo" },
+    "derecha": { "texto": "Tomo dos chelas y huyo argumentando gastritis", "perfil": "tecnico" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Descubres que tu vecino está alquilando los cuartos de su casa a turistas por 500 soles diarios en febrero.",
+    "etiquetas": ["carnaval", "dinero", "vecinos"],
+    "izquierda": { "texto": "Le caigo de sorpresa a cobrarle una tajada", "perfil": "vivillo" },
+    "derecha": { "texto": "Boto a mis hijos al sofá y alquilo también", "perfil": "radical" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Una combi al Qhapac Ñan frena en seco y el cobrador te grita 'baja al vuelo, shulca'.",
+    "etiquetas": ["transporte", "jerga", "calle"],
+    "izquierda": { "texto": "Me lanzo estilo parkour para no pasar roche", "perfil": "mediatico" },
+    "derecha": { "texto": "Me quedo sentado hasta que frene por completo", "perfil": "tecnico" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "F",
+    "texto": "Estás laciada perfecta para la fiesta de patrullas y comparsas, pero empieza a llover con granizo.",
+    "etiquetas": ["carnaval", "clima", "estetica"],
+    "izquierda": { "texto": "Me pongo una bolsa de plástico en la cabeza", "perfil": "vivillo" },
+    "derecha": { "texto": "Bailo bajo el granizo y que mi pelo muera", "perfil": "radical" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "general",
+    "texto": "El mototaxista que te lleva a Baños del Inca tiene sanjuanitos a máximo volumen y los bajos distorsionados.",
+    "etiquetas": ["transporte", "musica", "bulla"],
+    "izquierda": { "texto": "Le pido cordialmente que baje a su discoteca", "perfil": "negociador" },
+    "derecha": { "texto": "Empiezo a cantar las coplas a todo pulmón", "perfil": "mediatico" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "En una reunión formal en el trabajo sueltas un 'di' gigante al final de una frase seria.",
+    "etiquetas": ["jerga", "trabajo", "roche"],
+    "izquierda": { "texto": "Me hago el loco y finjo acento neutral", "perfil": "vivillo" },
+    "derecha": { "texto": "Sigo usando 'di' con más fuerza y orgullo", "perfil": "radical" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "general",
+    "texto": "La casera te sirve tu caldo verde y ves que tiene tanta ruda que parece un árbol nadando.",
+    "etiquetas": ["comida", "mercado", "salud"],
+    "izquierda": { "texto": "Lo pesco con la cuchara y lo tiro disimulado", "perfil": "vivillo" },
+    "derecha": { "texto": "Me lo tomo todo, dicen que cura el susto", "perfil": "tranquilo" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Paseas por el Cuarto del Rescate y un turista gringo te pregunta dónde está el oro escondido.",
+    "etiquetas": ["turismo", "calle", "bizarro"],
+    "izquierda": { "texto": "Le cobro 10 dólares por inventarle una leyenda", "perfil": "vivillo" },
+    "derecha": { "texto": "Le cuento la historia real con datos históricos", "perfil": "tecnico" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "18-30",
+    "genero": "M",
+    "texto": "Tus patas te meten de arrastre a jalar la soga en la unsha de tu barrio, pero andas resaqueado.",
+    "etiquetas": ["carnaval", "barrio", "amigos"],
+    "izquierda": { "texto": "Jalo fingiendo fuerza pero solo hago bulto", "perfil": "vivillo" },
+    "derecha": { "texto": "Suelto la soga y voy directo a la chicha", "perfil": "tranquilo" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Vas a comer tus rosquitas de manteca y la primera está tan dura que casi te vuela un incisivo.",
+    "etiquetas": ["comida", "salud", "roche"],
+    "izquierda": { "texto": "Las remojo en café caliente media hora", "perfil": "tecnico" },
+    "derecha": { "texto": "Voy a reclamarle al de la panadería", "perfil": "radical" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Una camioneta 4x4 minera pasa a 100 por hora y te baña de lodo la camisa blanca nueva.",
+    "etiquetas": ["calle", "clima", "peligro"],
+    "izquierda": { "texto": "Apunto la placa y demando a la concesionaria", "perfil": "tecnico" },
+    "derecha": { "texto": "Le grito coplas insultantes desde la vereda", "perfil": "mediatico" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Cometes el error de pedir rebaja por un cuarto de quesillo y la vendedora te mete una resondrada pública.",
+    "etiquetas": ["mercado", "comida", "roche"],
+    "izquierda": { "texto": "Le compro el kilo entero para callarla", "perfil": "negociador" },
+    "derecha": { "texto": "Le digo 'muy caro, gracias' y huyo dignamente", "perfil": "tranquilo" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "18-30",
+    "genero": "F",
+    "texto": "Te dicen para ser viuda del Ño Carnavalón pero tú querías estar en la patrulla principal.",
+    "etiquetas": ["carnaval", "fiesta", "dilema"],
+    "izquierda": { "texto": "Me disfrazo de viuda y soy la más dramática", "perfil": "mediatico" },
+    "derecha": { "texto": "Fijo posición y exijo mi lugar en la patrulla", "perfil": "radical" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Alguien estornuda fuerte en la combi y automáticamente sueltas un '¡Ish!' sonoro que todos escuchan.",
+    "etiquetas": ["jerga", "transporte", "roche"],
+    "izquierda": { "texto": "Miro al techo disimulando mi acento norteño", "perfil": "tranquilo" },
+    "derecha": { "texto": "Le digo 'salud cuñao' para arreglarla", "perfil": "negociador" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Tienes clase a las 7 AM en la universidad, llueve a cántaros y hace 5 grados de temperatura.",
+    "etiquetas": ["estudio", "clima", "universidad"],
+    "izquierda": { "texto": "Mando un correo al profesor diciendo que me inundé", "perfil": "vivillo" },
+    "derecha": { "texto": "Me pongo tres casacas y voy como guerrero", "perfil": "tecnico" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Pides manjar blanco 'tradicional' en la calle y sabe sospechosamente a maicena con azúcar quemada.",
+    "etiquetas": ["comida", "estafa", "calle"],
+    "izquierda": { "texto": "Me lo como igual, el dulce es dulce", "perfil": "tranquilo" },
+    "derecha": { "texto": "Le exijo ver el registro sanitario del pote", "perfil": "tecnico" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "M",
+    "texto": "Llevas a tu enamorada a Santa Apolonia y decides subir las gradas corriendo para impresionar, pero te falta aire.",
+    "etiquetas": ["turismo", "cita", "roche"],
+    "izquierda": { "texto": "Finjo admirar el paisaje mientras recupero el aliento", "perfil": "vivillo" },
+    "derecha": { "texto": "Me tiro al pasto y pido una ambulancia", "perfil": "mediatico" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Se corta la luz en pleno aguacero con relámpagos justo cuando estás cerrando tu reporte contable.",
+    "etiquetas": ["trabajo", "clima", "crisis"],
+    "izquierda": { "texto": "Mando nota de voz al jefe gritando por auxilio", "perfil": "mediatico" },
+    "derecha": { "texto": "Comparto internet de mi cel y guardo en la nube", "perfil": "tecnico" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "general",
+    "texto": "En la unshita de tu barrio cae un tupper volando y te da directo en la frente.",
+    "etiquetas": ["carnaval", "barrio", "peligro"],
+    "izquierda": { "texto": "Me agarro el tupper como trofeo de guerra", "perfil": "vivillo" },
+    "derecha": { "texto": "Armo bronca exigiendo quién fue el que empujó", "perfil": "radical" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Tu primo de Lima te visita y quiere poner reggaetón en pleno miércoles de ceniza.",
+    "etiquetas": ["familia", "carnaval", "musica"],
+    "izquierda": { "texto": "Le quito el parlante y pongo coplas de Don Guillermo", "perfil": "radical" },
+    "derecha": { "texto": "Pongo un remix de huayno con perreo intenso", "perfil": "negociador" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Compras cecina en la feria dominical y descubres que es 90% grasa blanca disimulada.",
+    "etiquetas": ["comida", "mercado", "estafa"],
+    "izquierda": { "texto": "La frío fuerte hasta que se vuelva chicharrón", "perfil": "tecnico" },
+    "derecha": { "texto": "Hago una publicación furiosa en Facebook etiquetando al mercado", "perfil": "mediatico" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Alquilas un traje de clon para el corso, pero te das cuenta que huele al sudor del año pasado.",
+    "etiquetas": ["carnaval", "ropa", "roche"],
+    "izquierda": { "texto": "Lo baño en perfume barato y voy a bailar", "perfil": "vivillo" },
+    "derecha": { "texto": "Voy a reclamarle a la tienda exigiendo cambio", "perfil": "radical" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te compras un sombrero celendino de 500 soles, pero en el colectivo te tienes que aplastar para que entre.",
+    "etiquetas": ["ropa", "transporte", "cultura"],
+    "izquierda": { "texto": "Me lo pongo en las rodillas sufriendo en silencio", "perfil": "tranquilo" },
+    "derecha": { "texto": "Pago dos pasajes para que mi sombrero viaje cómodo", "perfil": "vivillo" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Tu jefe te manda a supervisar a Hualgayoc de imprevisto y estás con camisa manga corta.",
+    "etiquetas": ["trabajo", "clima", "peligro"],
+    "izquierda": { "texto": "Le pido adelanto para comprar una casaca térmica urgente", "perfil": "negociador" },
+    "derecha": { "texto": "Aguanto el frío serrano apelando a mi fuerza mental", "perfil": "radical" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "general",
+    "texto": "La chicha de jora que te invitan en la comparsa está tan fermentada que parece gasolina de avión.",
+    "etiquetas": ["carnaval", "bebida", "juerga"],
+    "izquierda": { "texto": "Le echo bastante azúcar para disimular y fondo", "perfil": "vivillo" },
+    "derecha": { "texto": "La tomo cerrando los ojos para no ofender", "perfil": "tranquilo" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "18-30",
+    "genero": "F",
+    "texto": "Invitas al chico que te gusta por un café en la Plaza, pero él propone ir a comer caldo de cabeza.",
+    "etiquetas": ["cita", "comida", "dilema"],
+    "izquierda": { "texto": "Acepto pero le digo que yo no como ojos", "perfil": "negociador" },
+    "derecha": { "texto": "Me hago la vegetariana de repente", "perfil": "vivillo" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Entras a la poza privada en Baños del Inca y el agua está hirviendo nivel lava volcánica.",
+    "etiquetas": ["turismo", "salud", "clima"],
+    "izquierda": { "texto": "Salgo rojo como camarón a los 3 minutos", "perfil": "tranquilo" },
+    "derecha": { "texto": "Abro el caño de agua fría y calculo la mezcla", "perfil": "tecnico" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Vas a comer humitas con tus amigos y al abrir la pancanca, la tuya es tamaño miniatura.",
+    "etiquetas": ["comida", "amigos", "estafa"],
+    "izquierda": { "texto": "Se la cambio rápido al que se fue al baño", "perfil": "vivillo" },
+    "derecha": { "texto": "Digo 'mejor, así no subo de peso'", "perfil": "negociador" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "M",
+    "texto": "En pleno corso un clon te persigue con un látigo gigante porque no le quisiste invitar cerveza.",
+    "etiquetas": ["carnaval", "calle", "peligro"],
+    "izquierda": { "texto": "Le ofrezco mi vaso para que deje de pegarme", "perfil": "negociador" },
+    "derecha": { "texto": "Corro en zigzag por toda la avenida", "perfil": "mediatico" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Te toca organizar el entierro del Ño Carnavalón y nadie de tu barrio quiere dar ni un sol para el ataúd.",
+    "etiquetas": ["carnaval", "barrio", "dinero"],
+    "izquierda": { "texto": "Hago una chancha obligatoria puerta por puerta", "perfil": "radical" },
+    "derecha": { "texto": "Armo un ataúd con cajas viejas de televisor", "perfil": "tecnico" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Llevas tu balde al carnaval para defenderte, pero la otra comparsa te lanza pintura de carro en spray.",
+    "etiquetas": ["carnaval", "calidad", "roche"],
+    "izquierda": { "texto": "Tiro mi balde y me retiro con dignidad manchada", "perfil": "tranquilo" },
+    "derecha": { "texto": "Les exijo que me paguen el dermatologo", "perfil": "tecnico" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te sirven chicharrón con mote en el mercado, le das una mordida y muerdes una piedra del tamaño de un frijol.",
+    "etiquetas": ["comida", "salud", "mercado"],
+    "izquierda": { "texto": "Escupo con cuidado y sigo comiendo por el lado suave", "perfil": "tranquilo" },
+    "derecha": { "texto": "Le hago chongo a la señora por mi curul dental", "perfil": "radical" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Estás cantando coplas y tu tío suelta una recontra subida de tono delante de tu abuela conservadora.",
+    "etiquetas": ["carnaval", "familia", "roche"],
+    "izquierda": { "texto": "Le sigo la rima y que arda Troya", "perfil": "vivillo" },
+    "derecha": { "texto": "Grito '¡Agua, agua!' para cambiar de tema urgente", "perfil": "negociador" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "general",
+    "texto": "El chofer del colectivo a Namora se pone a hacer piques al borde del abismo para ganarle a otro carro.",
+    "etiquetas": ["transporte", "peligro", "viaje"],
+    "izquierda": { "texto": "Me agarro fuerte y empiezo a rezar el rosario", "perfil": "tranquilo" },
+    "derecha": { "texto": "Le grito que pise el freno o lo denuncio", "perfil": "radical" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "F",
+    "texto": "Te ensucias tus tabas blancas carísimas en los charcos de lodo y chicha del complejo Qhapac Ñan.",
+    "etiquetas": ["ropa", "carnaval", "calle"],
+    "izquierda": { "texto": "Me rindo y las meto a la lavadora al llegar", "perfil": "tranquilo" },
+    "derecha": { "texto": "Busco un charco limpio para enjuagarlas rápido", "perfil": "tecnico" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Llegas al mirador de Santa Apolonia y descubres que te olvidaste la billetera en la combi.",
+    "etiquetas": ["turismo", "roche", "dinero"],
+    "izquierda": { "texto": "Le digo al guachimán que soy residente ilustre", "perfil": "vivillo" },
+    "derecha": { "texto": "Tomo las fotos desde afuerita por las rejas", "perfil": "negociador" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "El de serenazgo te quiere quitar tu jarra de chicha por estar celebrando carnaval en la calle de la Recoleta.",
+    "etiquetas": ["carnaval", "burocracia", "barrio"],
+    "izquierda": { "texto": "Me tomo todo el vaso al seco antes que lo quite", "perfil": "radical" },
+    "derecha": { "texto": "Le ofrezco un vasito para que sea pata", "perfil": "negociador" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Termina febrero, barren las calles, dejan de vender pintura y sientes un profundo vacío existencial.",
+    "etiquetas": ["carnaval", "salud", "clima"],
+    "izquierda": { "texto": "Empiezo a armar el grupo de WhatsApp para el próximo año", "perfil": "tecnico" },
+    "derecha": { "texto": "Escucho coplas tristes en Spotify hasta abril", "perfil": "mediatico" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "M",
+    "texto": "Tu amigo que trabaja en la mina llega con una camioneta gigante y cierra toda tu angosta calle de barrio.",
+    "etiquetas": ["vehiculo", "amigos", "barrio"],
+    "izquierda": { "texto": "Le digo que lo meta a una cochera pituca", "perfil": "negociador" },
+    "derecha": { "texto": "Me subo a tomarme fotos para mi Instagram", "perfil": "mediatico" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Quieres pagar con Yape tu menú de cuy frito pero en la feria nunca hay señal de internet.",
+    "etiquetas": ["comida", "tecnologia", "dinero"],
+    "izquierda": { "texto": "Levanto el celular al cielo buscando señal milagrosa", "perfil": "tecnico" },
+    "derecha": { "texto": "Le dejo mi DNI a la seño y voy corriendo a buscar wifi", "perfil": "vivillo" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Ves a un limeño pidiendo 'caldo de gallina' en la picantería tradicional el domingo a mediodía.",
+    "etiquetas": ["comida", "turismo", "roche"],
+    "izquierda": { "texto": "Le recomiendo en voz alta que pida frito", "perfil": "negociador" },
+    "derecha": { "texto": "Lo miro juzgándolo en silencio absoluto", "perfil": "tranquilo" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Haces cola de una hora en la panadería en época de lluvias y justo frente a ti se acaba el pan de agua.",
+    "etiquetas": ["comida", "espera", "clima"],
+    "izquierda": { "texto": "Compro puro pan de yema, peor es nada", "perfil": "tranquilo" },
+    "derecha": { "texto": "Le reclamo al panadero por su pésima gestión de stock", "perfil": "tecnico" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te dicen que tu zona es segura, pero cada vez que llueve fuerte tu sala se convierte en la laguna San Nicolás.",
+    "etiquetas": ["clima", "casa", "barrio"],
+    "izquierda": { "texto": "Hago trincheras con costales de arena en la puerta", "perfil": "tecnico" },
+    "derecha": { "texto": "Pongo mis muebles sobre ladrillos y rezo", "perfil": "tranquilo" }
+  },
+  {
+    "region": "cajamarca",
+    "edad": "general",
+    "genero": "general",
+    "texto": "La casera del frito te esconde la yapa de ceviche porque te quejaste de que el chancho estaba muy duro.",
+    "etiquetas": ["comida", "mercado", "roche"],
+    "izquierda": { "texto": "Me disculpo y alabo su sazón para recuperar el ceviche", "perfil": "negociador" },
+    "derecha": { "texto": "Me voy ofendido y amenazo con ir a la competencia", "perfil": "radical" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Hace 38 grados a la sombra y tu abuela te sirve sopa de novios hirviendo al mediodía.",
+    "etiquetas": ["clima", "comida", "familia"],
+    "izquierda": { "texto": "Sudo a mares pero me la tomo toda", "perfil": "tranquilo" },
+    "derecha": { "texto": "La meto a la refri para la noche", "perfil": "vivillo" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "general",
+    "texto": "El mototaxista ha puesto luces neón y reggaetón tan fuerte que te tiemblan hasta las muelas.",
+    "etiquetas": ["transporte", "bulla", "calle"],
+    "izquierda": { "texto": "Le pido bajar el volumen por favor", "perfil": "negociador" },
+    "derecha": { "texto": "Grabo un TikTok del tono móvil", "perfil": "mediatico" }
+  },
+  {
+    "region": "piura",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Vas a Máncora con tus patas pero andan agujios y duermen en un hostal sin ventilador.",
+    "etiquetas": ["viaje", "calor", "amigos"],
+    "izquierda": { "texto": "Duermo en la playa cuidando mis tabas", "perfil": "vivillo" },
+    "derecha": { "texto": "Aguanto el sauna y los mosquitos dignamente", "perfil": "tranquilo" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te invitan chicha en poto pero ves una mosca enorme nadando estilo mariposa en tu bebida.",
+    "etiquetas": ["comida", "salud", "roche"],
+    "izquierda": { "texto": "Saco la mosca con el dedo y fondo", "perfil": "vivillo" },
+    "derecha": { "texto": "Pido disculpas y digo que sufro del estómago", "perfil": "tecnico" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Compras ceviche de caballa de carretilla a tres soles y tu barriga empieza a sonar raro.",
+    "etiquetas": ["comida", "calle", "emergencia"],
+    "izquierda": { "texto": "Corro al Open Plaza al baño con aire", "perfil": "tecnico" },
+    "derecha": { "texto": "Pido una gaseosa oscura para asentar", "perfil": "tranquilo" }
+  },
+  {
+    "region": "piura",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Cae una lluvia torrencial, tu calle parece el río Amazonas y no tienes botas de jebe.",
+    "etiquetas": ["clima", "emergencia", "barrio"],
+    "izquierda": { "texto": "Me amarro bolsas plásticas hasta las rodillas", "perfil": "vivillo" },
+    "derecha": { "texto": "Falto al trabajo diciendo que me inundé", "perfil": "negociador" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Un limeño se hace el sabroso intentando usar 'Gua' y 'Churre' pero le sale recontra mal.",
+    "etiquetas": ["jerga", "roche", "turismo"],
+    "izquierda": { "texto": "Le explico la gramática piurana con paciencia", "perfil": "tecnico" },
+    "derecha": { "texto": "Me mato de risa en su cara", "perfil": "radical" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "F",
+    "texto": "Te haces un laciado perfecto pero al salir un ventarrón te llena el pelo de pura arena.",
+    "etiquetas": ["estetica", "clima", "roche"],
+    "izquierda": { "texto": "Me hago una cola de caballo y lloro", "perfil": "tranquilo" },
+    "derecha": { "texto": "Me compro un sombrero de paja toquilla", "perfil": "negociador" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "M",
+    "texto": "Te invitan a una pichanga en arena a las 2 PM y el sol te calcina el cerebro.",
+    "etiquetas": ["pichanga", "amigos", "calor"],
+    "izquierda": { "texto": "Juego hasta desmayarme por honor", "perfil": "radical" },
+    "derecha": { "texto": "Me ofrezco de árbitro desde la sombrita", "perfil": "vivillo" }
+  },
+  {
+    "region": "piura",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Anuncian Fenómeno del Niño y ves que los sacos de arena están al triple de su precio.",
+    "etiquetas": ["clima", "dinero", "barrio"],
+    "izquierda": { "texto": "Compro arena de construcción y armo los míos", "perfil": "tecnico" },
+    "derecha": { "texto": "Denuncio a la ferretería por especulación", "perfil": "radical" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Vas a comprar chifles donde tu casera y ves que te mete los quemaditos al fondo de la bolsa.",
+    "etiquetas": ["comida", "estafa", "mercado"],
+    "izquierda": { "texto": "Hago que lo vacíe y saque los quemados", "perfil": "tecnico" },
+    "derecha": { "texto": "Los remojo en ají para no sentir el sabor", "perfil": "tranquilo" }
+  },
+  {
+    "region": "piura",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Vas a Catacaos, el vendedor de artesanías te sigue dos cuadras ofreciendo cadenas de oro.",
+    "etiquetas": ["turismo", "calle", "compras"],
+    "izquierda": { "texto": "Me hago el mudo para que me deje en paz", "perfil": "vivillo" },
+    "derecha": { "texto": "Le digo 'estoy misio causa' con firmeza", "perfil": "radical" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te muerdes un clarito helado y te das cuenta que es 90% hielo y 10% chicha.",
+    "etiquetas": ["bebida", "calor", "estafa"],
+    "izquierda": { "texto": "Espero que se derrita mirando al sol", "perfil": "tranquilo" },
+    "derecha": { "texto": "Voy y le exijo la yapa pura a la seño", "perfil": "negociador" }
+  },
+  {
+    "region": "piura",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Vas a renovar tu DNI al RENIEC y el aire acondicionado está malogrado. Son 40 grados adentro.",
+    "etiquetas": ["burocracia", "calor", "roche"],
+    "izquierda": { "texto": "Armo motín para que abran las ventanas", "perfil": "radical" },
+    "derecha": { "texto": "Hago cola abanicándome con mis copias", "perfil": "tranquilo" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te tomas un seco de chavelo recontra picante y no hay agua ni gaseosa en todo el local.",
+    "etiquetas": ["comida", "emergencia", "roche"],
+    "izquierda": { "texto": "Me trago el hielo del clarito desesperado", "perfil": "vivillo" },
+    "derecha": { "texto": "Lloro lágrimas de fuego en silencio total", "perfil": "tranquilo" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "general",
+    "texto": "El colectivo Sullana-Piura va a 140 km/h y el chofer va respondiendo audios de WhatsApp.",
+    "etiquetas": ["transporte", "peligro", "viaje"],
+    "izquierda": { "texto": "Le grito que me bajo ahí mismo", "perfil": "radical" },
+    "derecha": { "texto": "Aseguro mi cinturón imaginario y rezo", "perfil": "tranquilo" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "F",
+    "texto": "Sales en minifalda por el calor y un nube de zancudos mutantes se lanza a tus piernas.",
+    "etiquetas": ["clima", "ropa", "peligro"],
+    "izquierda": { "texto": "Me baño en repelente frente a todos", "perfil": "tecnico" },
+    "derecha": { "texto": "Regreso corriendo a ponerme pantalón sudando", "perfil": "negociador" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te compras un marciano de coco y a las tres cuadras ya es agua caliente en bolsa.",
+    "etiquetas": ["calor", "calle", "comida"],
+    "izquierda": { "texto": "Me lo tomo como infusión de coco", "perfil": "tranquilo" },
+    "derecha": { "texto": "Lo tiro molesto y busco una tienda con aire", "perfil": "radical" }
+  },
+  {
+    "region": "piura",
+    "edad": "18-30",
+    "genero": "M",
+    "texto": "Tratas de conquistar a una churre piurana pero te invita majarisco y tú odias los mariscos.",
+    "etiquetas": ["cita", "comida", "roche"],
+    "izquierda": { "texto": "Me los trago enteros y sufro en el baño", "perfil": "vivillo" },
+    "derecha": { "texto": "Confieso la verdad arruinando el momento", "perfil": "negociador" }
+  },
+  {
+    "region": "piura",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Es diciembre, hace un calor del infierno y en la oficina te obligan a usar gorrito navideño.",
+    "etiquetas": ["trabajo", "calor", "fiesta"],
+    "izquierda": { "texto": "Me lo pongo pero de costado con estilo", "perfil": "mediatico" },
+    "derecha": { "texto": "Hago queja formal a Recursos Humanos", "perfil": "tecnico" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Pides un Uber y llega una mototaxi con aletas de tiburón y luces de discoteca.",
+    "etiquetas": ["transporte", "calle", "roche"],
+    "izquierda": { "texto": "Me subo grabando historia para Instagram", "perfil": "mediatico" },
+    "derecha": { "texto": "Cancelo el viaje y pago la penalidad", "perfil": "tecnico" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Subes a un bus a Paita y el cobrador mete tres sacos de pescado que huelen bravísimo.",
+    "etiquetas": ["transporte", "viaje", "roche"],
+    "izquierda": { "texto": "Me pongo doble mascarilla y aguanto", "perfil": "tecnico" },
+    "derecha": { "texto": "Armo chongo para que lo suban al techo", "perfil": "radical" }
+  },
+  {
+    "region": "piura",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Tu pata limeño viene a Piura en pleno marzo y sale con chompa de lana a la calle.",
+    "etiquetas": ["amigos", "clima", "roche"],
+    "izquierda": { "texto": "Me hago el que no lo conozco", "perfil": "vivillo" },
+    "derecha": { "texto": "Le advierto que le va a dar un golpe de calor", "perfil": "tecnico" }
+  },
+  {
+    "region": "piura",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "El recibo de Enosa llega por 500 soles porque dejaste el aire acondicionado prendido toda la noche.",
+    "etiquetas": ["dinero", "casa", "calor"],
+    "izquierda": { "texto": "Le echo la culpa a los duendes de la casa", "perfil": "vivillo" },
+    "derecha": { "texto": "Rompo el chanchito y me resigno a usar ventilador", "perfil": "tranquilo" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Estás comiendo natilla y te das cuenta que atrajo a cinco abejas que te rondan la cabeza.",
+    "etiquetas": ["comida", "peligro", "calor"],
+    "izquierda": { "texto": "Me quedo inmóvil rezando que no me piquen", "perfil": "tranquilo" },
+    "derecha": { "texto": "Suelto el pote y corro como loco", "perfil": "radical" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "general",
+    "texto": "El puente Bolognesi está cerrado, llegas tarde al trabajo y el único desvío toma 40 minutos.",
+    "etiquetas": ["calle", "trabajo", "trafico"],
+    "izquierda": { "texto": "Me bajo y cruzo caminando por el río seco", "perfil": "vivillo" },
+    "derecha": { "texto": "Mando mi ubicación en tiempo real al jefe", "perfil": "tecnico" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "F",
+    "texto": "Te vas a Los Órganos y la primera ola te revuelca dejándote calata frente a tu crush.",
+    "etiquetas": ["viaje", "playa", "roche"],
+    "izquierda": { "texto": "Me hago la ahogada para que me rescate", "perfil": "vivillo" },
+    "derecha": { "texto": "Salgo como ninja tapándome con arena", "perfil": "tecnico" }
+  },
+  {
+    "region": "piura",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "El mototaxista te cobra 10 lucas por llevarte a tres cuadras porque 'hace mucho sol, churre'.",
+    "etiquetas": ["transporte", "dinero", "calle"],
+    "izquierda": { "texto": "Le doy 3 soles y me voy caminando", "perfil": "radical" },
+    "derecha": { "texto": "Le regateo a 5 soles como buen piurano", "perfil": "negociador" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Pides un jugo de algarrobina en el mercado y está tan espeso que el sorbete no funciona.",
+    "etiquetas": ["comida", "mercado", "roche"],
+    "izquierda": { "texto": "Pido una cuchara y me lo como como postre", "perfil": "tecnico" },
+    "derecha": { "texto": "Tomo directo del vaso manchándome toda la nariz", "perfil": "tranquilo" }
+  },
+  {
+    "region": "piura",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Se corta el agua por tres días en Piura y solo tienes medio balde para toda tu familia.",
+    "etiquetas": ["crisis", "casa", "familia"],
+    "izquierda": { "texto": "Compro agua mineral carísima para lavarme la cara", "perfil": "vivillo" },
+    "derecha": { "texto": "Raciono con vasito técnico como en la guerra", "perfil": "tecnico" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te invitan a una fiesta en Catacaos pero el tono es al lado del cementerio sin luz.",
+    "etiquetas": ["fiesta", "peligro", "barrio"],
+    "izquierda": { "texto": "No voy, me da terror la llorona", "perfil": "tranquilo" },
+    "derecha": { "texto": "Voy pero me llevo mi cruz de madera", "perfil": "vivillo" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Compras chifles en bolsita blanca sin marca en el semáforo y resulta que tienen harta tierra.",
+    "etiquetas": ["comida", "calle", "estafa"],
+    "izquierda": { "texto": "Los sacudo y me los como, vitamina T", "perfil": "tranquilo" },
+    "derecha": { "texto": "Los boto por la ventana enfurecido", "perfil": "radical" }
+  },
+  {
+    "region": "piura",
+    "edad": "18-30",
+    "genero": "M",
+    "texto": "Tu pata piurano te dice 'primo, saca tu fustán' y no tienes idea si es insulto o halago.",
+    "etiquetas": ["jerga", "amigos", "roche"],
+    "izquierda": { "texto": "Me río fingiendo que entendí la broma", "perfil": "negociador" },
+    "derecha": { "texto": "Busco el significado en Google caleta", "perfil": "tecnico" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "general",
+    "texto": "En pleno marzo caminas por la calle y sientes que tus tabas se hunden en el asfalto derretido.",
+    "etiquetas": ["clima", "calle", "calor"],
+    "izquierda": { "texto": "Camino rapidito en puntas de pie", "perfil": "vivillo" },
+    "derecha": { "texto": "Tomo foto para Twitter rajando del alcalde", "perfil": "mediatico" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "general",
+    "texto": "En el chifa piurano te sirven el chaufa con zarandaja en vez de cebollita china.",
+    "etiquetas": ["comida", "bizarro", "roche"],
+    "izquierda": { "texto": "Hago chongo por la herejía culinaria", "perfil": "radical" },
+    "derecha": { "texto": "Me lo como callado, seguro es fusión", "perfil": "tranquilo" }
+  },
+  {
+    "region": "piura",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Tu techo de calamina suena durísimo por la lluvia en la madrugada y empieza a gotear sobre tu cama.",
+    "etiquetas": ["casa", "clima", "crisis"],
+    "izquierda": { "texto": "Pongo tres ollas, un balde y duermo esquivando", "perfil": "tecnico" },
+    "derecha": { "texto": "Me mudo al sofá de la sala maldiciendo", "perfil": "radical" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "F",
+    "texto": "La casera del mercado te grita 'lleva pe churra hermosa' pero cuando pides rebaja te ignora feo.",
+    "etiquetas": ["compras", "mercado", "roche"],
+    "izquierda": { "texto": "Le lloro un poquito para que me baje el precio", "perfil": "negociador" },
+    "derecha": { "texto": "Me voy al puesto del frente por dignidad", "perfil": "radical" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Se malogra el ventilador a las 2 AM, la temperatura es de 30 grados y los zancudos hacen fiesta.",
+    "etiquetas": ["calor", "casa", "emergencia"],
+    "izquierda": { "texto": "Me mojo todo el cuerpo y duermo sin taparme", "perfil": "vivillo" },
+    "derecha": { "texto": "Pongo espiral matamosquitos y me ahogo con humo", "perfil": "tecnico" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te invitan a una chichería tradicional en Narihualá y el baño es un hueco en la tierra.",
+    "etiquetas": ["salud", "turismo", "roche"],
+    "izquierda": { "texto": "Aguanto como un guerrero hasta llegar a casa", "perfil": "tranquilo" },
+    "derecha": { "texto": "Pido prestado el baño de un vecino pagando", "perfil": "negociador" }
+  },
+  {
+    "region": "piura",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Te dicen para ir de amanecida a Colán pero te toca ir en la tolva de la camioneta.",
+    "etiquetas": ["viaje", "amigos", "playa"],
+    "izquierda": { "texto": "Me subo abrigado y voy cantando a gritos", "perfil": "mediatico" },
+    "derecha": { "texto": "No voy, mi columna vale más que la juerga", "perfil": "tecnico" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "M",
+    "texto": "Estás haciendo tu cola pal pollo a la brasa y te das cuenta que es pollo horneado sin carbón.",
+    "etiquetas": ["comida", "estafa", "roche"],
+    "izquierda": { "texto": "Hago mi queja formal en libro de reclamaciones", "perfil": "tecnico" },
+    "derecha": { "texto": "Me trago mi orgullo y como mi pollo sancochado", "perfil": "tranquilo" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "general",
+    "texto": "El río Piura amenaza con desbordarse, tú vives cerca y tienes un televisor de 65 pulgadas nuevecito.",
+    "etiquetas": ["clima", "casa", "emergencia"],
+    "izquierda": { "texto": "Lo subo al techo con poleas y cuerdas", "perfil": "tecnico" },
+    "derecha": { "texto": "Lo vendo rápido en marketplace rematado", "perfil": "vivillo" }
+  },
+  {
+    "region": "piura",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Te mandan de comisión a Tambogrande al mediodía y el único transporte disponible es una miniván sin aire.",
+    "etiquetas": ["trabajo", "viaje", "calor"],
+    "izquierda": { "texto": "Viajo pegado a la ventana sacando la lengua", "perfil": "tranquilo" },
+    "derecha": { "texto": "Exijo viáticos para pagar un taxi privado", "perfil": "radical" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te sirven ceviche de mero pitucazo en un restaurante, pero extrañas la zarandaja del mercado.",
+    "etiquetas": ["comida", "calidad", "roche"],
+    "izquierda": { "texto": "Saco mi tapercito con zarandaja caleta", "perfil": "vivillo" },
+    "derecha": { "texto": "Lo como como pituco fingiendo que me encanta", "perfil": "negociador" }
+  },
+  {
+    "region": "piura",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "En carnaval, un churre te tira un globazo de agua helada desde el segundo piso directo en la espalda.",
+    "etiquetas": ["carnaval", "peligro", "calle"],
+    "izquierda": { "texto": "Le tiro una piedra a su ventana en venganza", "perfil": "radical" },
+    "derecha": { "texto": "Agradezco el agua porque el calor está criminal", "perfil": "tranquilo" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Descubres un hueco donde venden el mejor seco de chavelo, pero el dueño atiende recontra amargado.",
+    "etiquetas": ["comida", "calle", "roche"],
+    "izquierda": { "texto": "Le hago chistes para ablandarle el corazón", "perfil": "negociador" },
+    "derecha": { "texto": "Pido rápido, como y huyo sin hacer contacto visual", "perfil": "tranquilo" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "F",
+    "texto": "Te pones base de maquillaje fina, sales al solazo piurano y a las dos cuadras pareces helado derretido.",
+    "etiquetas": ["estetica", "calor", "roche"],
+    "izquierda": { "texto": "Me lavo la cara en el baño del grifo", "perfil": "tecnico" },
+    "derecha": { "texto": "Digo que es el nuevo look 'glowy' sudado", "perfil": "vivillo" }
+  },
+  {
+    "region": "piura",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Vendes tu carro para poner un negocio en la Plaza de Armas, pero justo peatonalizan toda tu calle.",
+    "etiquetas": ["negocio", "burocracia", "dinero"],
+    "izquierda": { "texto": "Convoco huelga de comerciantes bloqueando la vía", "perfil": "radical" },
+    "derecha": { "texto": "Cambio de giro y pongo venta de marcianos", "perfil": "negociador" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Un mototaxista se mete contra el tráfico en pleno mercado de Piura rayando tu auto nuevecito.",
+    "etiquetas": ["transporte", "vehiculo", "calle"],
+    "izquierda": { "texto": "Le quito la llave de su moto hasta que pague", "perfil": "radical" },
+    "derecha": { "texto": "Tomo foto a su placa y llamo al seguro", "perfil": "tecnico" }
+  },
+  {
+    "region": "piura",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Llevas tu chicha de jora en botella de plástico y al abrirla en el bus explota como champagne.",
+    "etiquetas": ["bebida", "transporte", "roche"],
+    "izquierda": { "texto": "Me hago el dormido mientras limpio a los pasajeros", "perfil": "vivillo" },
+    "derecha": { "texto": "Pido perdón a todos y pago la lavandería", "perfil": "negociador" }
+  },
+{
+    "region": "lima",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Llevas una hora en la cola de Naranjal y cuando llega el Expreso 4, veinte personas se meten por la salida.",
+    "etiquetas": ["transporte", "calle", "metropolitano"],
+    "izquierda": { "texto": "Meto codazo limpio para entrar yo también", "perfil": "radical" },
+    "derecha": { "texto": "Suspiro y espero el siguiente bus llorando", "perfil": "tranquilo" }
+  },
+  {
+    "region": "lima",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Se frustra tu beca a Chile y tienes que tramitar tu traslado a la sede central de Lima a última hora.",
+    "etiquetas": ["universidad", "burocracia", "estudio"],
+    "izquierda": { "texto": "Le lloro a la secretaria para que acelere", "perfil": "negociador" },
+    "derecha": { "texto": "Busco los correos de los decanos y presiono", "perfil": "tecnico" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Estás atrapado en Javier Prado a las 6 PM, no avanzas ni un metro y tu vejiga está a punto de explotar.",
+    "etiquetas": ["trafico", "calle", "emergencia"],
+    "izquierda": { "texto": "Me bajo del bus y corro al Jockey a salvarme", "perfil": "tecnico" },
+    "derecha": { "texto": "Aguanto con la mente en blanco y sudando", "perfil": "tranquilo" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "general",
+    "texto": "La humedad del 99% ha convertido la pared de tu cuarto en un ecosistema de hongos negros y peludos.",
+    "etiquetas": ["clima", "casa", "salud"],
+    "izquierda": { "texto": "Pinto encima con pintura barata y finjo demencia", "perfil": "vivillo" },
+    "derecha": { "texto": "Compro lejía y limpio con mascarilla de gas", "perfil": "tecnico" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "F",
+    "texto": "Te haces un laciado carísimo pero sales a la calle, te cae la 'garúa' limeña y quedas como león.",
+    "etiquetas": ["clima", "estetica", "roche"],
+    "izquierda": { "texto": "Me hago un moño rápido disimulando", "perfil": "negociador" },
+    "derecha": { "texto": "Grabo un TikTok quejándome del clima de Lima", "perfil": "mediatico" }
+  },
+  {
+    "region": "lima",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Le ofreces tu nuevo SaaS a un empresario mayorista en Gamarra pero te quiere pagar con tres fardos de tela.",
+    "etiquetas": ["trabajo", "negocio", "calle"],
+    "izquierda": { "texto": "Acepto los fardos y los revendo en marketplace", "perfil": "vivillo" },
+    "derecha": { "texto": "Le explico la tarifa mensual con gráficos", "perfil": "tecnico" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Pides un chaufa de a china en el chifa del barrio y ves pasar una rata gigante por la cocina.",
+    "etiquetas": ["comida", "calle", "peligro"],
+    "izquierda": { "texto": "Tomo foto, no pago y los quemo en redes", "perfil": "mediatico" },
+    "derecha": { "texto": "Sigo comiendo, eso le da el saborcito", "perfil": "tranquilo" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "M",
+    "texto": "El Chosicano hace carrera con otro micro, frena en seco y terminas abrazando a la señora de las compras.",
+    "etiquetas": ["transporte", "roche", "calle"],
+    "izquierda": { "texto": "Pido disculpas y me acomodo avergonzado", "perfil": "tranquilo" },
+    "derecha": { "texto": "Le meto una gritada al chofer por animal", "perfil": "radical" }
+  },
+  {
+    "region": "lima",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "El backend en Spring Boot de tu app revienta porque 5,000 limeños entraron a responder dilemas al mismo tiempo.",
+    "etiquetas": ["tecnologia", "estudio", "roche"],
+    "izquierda": { "texto": "Reinicio el contenedor Docker y rezo", "perfil": "tecnico" },
+    "derecha": { "texto": "Subo una historia pidiendo paciencia a los fans", "perfil": "mediatico" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Compras un ceviche de carretilla a 5 lucas frente a la estación Tacna, pero el balde de pota está al sol.",
+    "etiquetas": ["comida", "calle", "salud"],
+    "izquierda": { "texto": "Le echo bastante ají para matar los microbios", "perfil": "vivillo" },
+    "derecha": { "texto": "Mejor paso y me compro un paquete de galletas", "perfil": "tecnico" }
+  },
+  {
+    "region": "lima",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Pagas mantenimiento carísimo en un depa de Lince pero el ascensor lleva malogrado todo el mes.",
+    "etiquetas": ["casa", "dinero", "roche"],
+    "izquierda": { "texto": "Dejo de pagar el mantenimiento hasta que arreglen", "perfil": "radical" },
+    "derecha": { "texto": "Armo un grupo de WhatsApp de vecinos furiosos", "perfil": "mediatico" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "general",
+    "texto": "El emolientero te prepara la bebida y le echa tres polvos misteriosos y un líquido dudoso sin preguntarte.",
+    "etiquetas": ["comida", "calle", "salud"],
+    "izquierda": { "texto": "Lo tomo al seco, seguro es para la gastritis", "perfil": "tranquilo" },
+    "derecha": { "texto": "Le pregunto detalladamente qué ingredientes me ha dado", "perfil": "tecnico" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "general",
+    "texto": "El cielo está blanco panza de burro, te abrigas, y al mediodía sale un sol que derrite las veredas.",
+    "etiquetas": ["clima", "ropa", "calle"],
+    "izquierda": { "texto": "Llevo mi casaca amarrada a la cintura sudando", "perfil": "tranquilo" },
+    "derecha": { "texto": "Me compro un polo barato y me cambio ahí mismo", "perfil": "vivillo" }
+  },
+  {
+    "region": "lima",
+    "edad": "18-30",
+    "genero": "F",
+    "texto": "El chico te invita a Larcomar en la primera cita, pero llega con short de su equipo y chanclas con medias.",
+    "etiquetas": ["cita", "ropa", "roche"],
+    "izquierda": { "texto": "Camino tres pasos delante de él todo el rato", "perfil": "vivillo" },
+    "derecha": { "texto": "Le digo 'qué fresco tu look' y sigo normal", "perfil": "negociador" }
+  },
+  {
+    "region": "lima",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Trabajas en San Isidro pero vives en Puente Piedra. Recursos Humanos exige ir presencial por el 'clima laboral'.",
+    "etiquetas": ["trabajo", "trafico", "distritos"],
+    "izquierda": { "texto": "Exijo teletrabajo o me voy renunciando", "perfil": "radical" },
+    "derecha": { "texto": "Aprovecho el viaje de tres horas para escuchar podcasts", "perfil": "tecnico" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "general",
+    "texto": "El cobrador te grita 'pie derecho, avanza choche' y te empuja hacia el abismo de la Av. Abancay en movimiento.",
+    "etiquetas": ["transporte", "calle", "peligro"],
+    "izquierda": { "texto": "Salto con estilo y ruedo para no matarme", "perfil": "vivillo" },
+    "derecha": { "texto": "Me agarro fuerte y exijo que frene por completo", "perfil": "tecnico" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Hay un temblor grado 6 y estás en el piso 15 de un edificio viejo en el centro de Lima.",
+    "etiquetas": ["emergencia", "ciudad", "peligro"],
+    "izquierda": { "texto": "Me paro bajo la viga más gruesa rezando padrenuestros", "perfil": "tranquilo" },
+    "derecha": { "texto": "Grabo la lámpara moviéndose para mis historias", "perfil": "mediatico" }
+  },
+  {
+    "region": "lima",
+    "edad": "18-30",
+    "genero": "M",
+    "texto": "Vas a comprar repuestos a Paruro, sacas el celular un segundo y 30 personas te miran fijamente.",
+    "etiquetas": ["calle", "peligro", "tecnologia"],
+    "izquierda": { "texto": "Meto el celular al bóxer inmediatamente", "perfil": "tecnico" },
+    "derecha": { "texto": "Pongo cara de loco para que no se acerquen", "perfil": "radical" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "general",
+    "texto": "El Corredor Azul cierra sus puertas agarrando tu mochila y el chofer arranca sin importarle tus gritos.",
+    "etiquetas": ["transporte", "roche", "calle"],
+    "izquierda": { "texto": "Corro junto al bus hasta la siguiente parada", "perfil": "mediatico" },
+    "derecha": { "texto": "Suelto la mochila y lloro mi laptop perdida", "perfil": "tranquilo" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Vas a comer pollito a la brasa en Polvos Azules, pero descubres que las papas son de bolsa y no nativas.",
+    "etiquetas": ["comida", "calidad", "estafa"],
+    "izquierda": { "texto": "Las baño en todas las cremas para no sentir", "perfil": "vivillo" },
+    "derecha": { "texto": "Dejo las papas y me como solo el pollo", "perfil": "tranquilo" }
+  },
+  {
+    "region": "lima",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Rutas de Lima sube el peaje otra vez. Vives en Ancón y trabajas en Surco, tu sueldo se va en garitas.",
+    "etiquetas": ["dinero", "vehiculo", "burocracia"],
+    "izquierda": { "texto": "Me aprendo todas las rutas alternas por los cerros", "perfil": "vivillo" },
+    "derecha": { "texto": "Vendo el carro y me rindo al transporte público", "perfil": "negociador" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "F",
+    "texto": "Cruzas el Puente de los Suspiros aguantando la respiración, pero a la mitad te atoras con tu propia saliva.",
+    "etiquetas": ["turismo", "roche", "ciudad"],
+    "izquierda": { "texto": "Toso como foca ahogada arruinando la magia", "perfil": "tranquilo" },
+    "derecha": { "texto": "Sigo aguantando color morada hasta llegar al final", "perfil": "radical" }
+  },
+  {
+    "region": "lima",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Tu comparsa entra a la Tía Veneno de madrugada y pides la hamburguesa 'rompe colchón' de dudosa carne.",
+    "etiquetas": ["comida", "juerga", "calle"],
+    "izquierda": { "texto": "Me la zampo entera y pido pastillas llegando a casa", "perfil": "vivillo" },
+    "derecha": { "texto": "Miro cómo comen y yo pido solo salchipapa", "perfil": "tecnico" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Estás en el Tren Eléctrico hora punta, todos van como sardinas y el que está a tu lado huele a cebolla viva.",
+    "etiquetas": ["transporte", "roche", "ciudad"],
+    "izquierda": { "texto": "Respiro por la boca mirando el horizonte", "perfil": "tranquilo" },
+    "derecha": { "texto": "Saco mi perfume y me echo descaradamente", "perfil": "radical" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Sedapal anuncia corte masivo en tu distrito por 4 días. Es verano y sudas solo con respirar.",
+    "etiquetas": ["crisis", "casa", "clima"],
+    "izquierda": { "texto": "Compro tres tachos gigantes y los lleno de madrugada", "perfil": "tecnico" },
+    "derecha": { "texto": "Me voy a bañar a la casa de mi ex", "perfil": "vivillo" }
+  },
+  {
+    "region": "lima",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Tu vecino de la Residencial San Felipe decide remodelar su baño usando un taladro a las 7 AM un domingo.",
+    "etiquetas": ["vecinos", "casa", "bulla"],
+    "izquierda": { "texto": "Le toco la puerta en pijama para detenerlo", "perfil": "radical" },
+    "derecha": { "texto": "Pongo música clásica a todo volumen para contrarrestar", "perfil": "negociador" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "M",
+    "texto": "En la Vía Expresa tu carro se recalienta y empieza a botar humo blanco en pleno tráfico de las 7 AM.",
+    "etiquetas": ["vehiculo", "trafico", "emergencia"],
+    "izquierda": { "texto": "Lo empujo yo solo esquivando insultos de todos", "perfil": "tranquilo" },
+    "derecha": { "texto": "Pongo mi triángulo y me siento a esperar la grúa", "perfil": "tecnico" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Vas a comer tus anticuchos bajo el puente de la Vía Expresa y pasa un camión levantando polvo negro.",
+    "etiquetas": ["comida", "calle", "ciudad"],
+    "izquierda": { "texto": "Soplo mi anticucho y me lo como crocante", "perfil": "vivillo" },
+    "derecha": { "texto": "Pido que me lo envuelvan para llevar rápido", "perfil": "negociador" }
+  },
+  {
+    "region": "lima",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Te quedas sin saldo en el Metropolitano y le pides pasaje a un señor, pero solo tienes un billete de 50.",
+    "etiquetas": ["transporte", "dinero", "roche"],
+    "izquierda": { "texto": "Le suplico que me done el pasaje por piedad", "perfil": "negociador" },
+    "derecha": { "texto": "Salgo de la estación a buscar dónde feriar mi billete", "perfil": "tecnico" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Subes a una combi en la Av. Arequipa y el cobrador mete a 4 inspectores de la ATU camuflados.",
+    "etiquetas": ["transporte", "burocracia", "calle"],
+    "izquierda": { "texto": "Empiezo a grabar para TikTok por si hay pelea", "perfil": "mediatico" },
+    "derecha": { "texto": "Me hago el dormido para que no me pidan boleto", "perfil": "vivillo" }
+  },
+  {
+    "region": "lima",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Vas al Mercado Central a comprar cosas de Navidad en noviembre y terminas empujado en una marea humana.",
+    "etiquetas": ["compras", "ciudad", "roche"],
+    "izquierda": { "texto": "Meto brazo y avanzo como jugador de rugby", "perfil": "radical" },
+    "derecha": { "texto": "Me salgo de la calle principal y compro afuera más caro", "perfil": "tecnico" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Estás paseando por el Parque Kennedy y un gato se te sube al regazo, pero eres alérgico a los felinos.",
+    "etiquetas": ["turismo", "salud", "roche"],
+    "izquierda": { "texto": "Lo bajo suavemente y corro a estornudar lejos", "perfil": "tranquilo" },
+    "derecha": { "texto": "Me aguanto la alergia para subir la foto a redes", "perfil": "mediatico" }
+  },
+  {
+    "region": "lima",
+    "edad": "18-30",
+    "genero": "F",
+    "texto": "Sales de una discoteca en Barranco a las 4 AM y todos los taxis de aplicativo están con tarifa dinámica x4.",
+    "etiquetas": ["juerga", "dinero", "transporte"],
+    "izquierda": { "texto": "Hago chancha con mis amigas y pago llorando", "perfil": "tecnico" },
+    "derecha": { "texto": "Compro mi hamburguesa y espero que baje el precio", "perfil": "negociador" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "M",
+    "texto": "El de la moto de delivery rompe tu espejo retrovisor en la Av. Salaverry y se da a la fuga zigzagueando.",
+    "etiquetas": ["vehiculo", "trafico", "calle"],
+    "izquierda": { "texto": "Le meto persecución estilo Rápidos y Furiosos", "perfil": "radical" },
+    "derecha": { "texto": "Me detengo a llorar por mi billetera destrozada", "perfil": "tranquilo" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Serenazgo hace operativo en Gamarra y la señora que te vendía calcetines sale corriendo con tu vuelto.",
+    "etiquetas": ["compras", "dinero", "calle"],
+    "izquierda": { "texto": "Corro detrás de ella esquivando policías", "perfil": "vivillo" },
+    "derecha": { "texto": "Me resigno, son calcetines y mi vida vale más", "perfil": "tranquilo" }
+  },
+  {
+    "region": "lima",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Quieres alquilar un minidepa en Magdalena y el dueño te exige tres meses de adelanto, aval y tu carta astral.",
+    "etiquetas": ["casa", "dinero", "burocracia"],
+    "izquierda": { "texto": "Negocio y le muestro mi historial crediticio perfecto", "perfil": "tecnico" },
+    "derecha": { "texto": "Lo mando al diablo y sigo viviendo con mis papás", "perfil": "radical" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te dicen que un gringo está vendiendo menú en Miraflores a 45 soles y solo trae una lechuga y un tomate.",
+    "etiquetas": ["comida", "turismo", "ciudad"],
+    "izquierda": { "texto": "Le dejo una reseña de 1 estrella en Google Maps", "perfil": "tecnico" },
+    "derecha": { "texto": "Hago mi TikTok indignado por la gentrificación", "perfil": "mediatico" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Encuentras tu celular robado vendiéndose en Las Malvinas y reconoces tu sticker del perrito en la funda.",
+    "etiquetas": ["tecnologia", "robo", "calle"],
+    "izquierda": { "texto": "Llamo a mi comisaría más cercana sigilosamente", "perfil": "tecnico" },
+    "derecha": { "texto": "Me acerco y le digo 'oe causa ese es mi fono'", "perfil": "radical" }
+  },
+  {
+    "region": "lima",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Implementas un algoritmo brutal para tu startup y el primer cliente en Surquillo no sabe ni prender la PC.",
+    "etiquetas": ["tecnologia", "trabajo", "roche"],
+    "izquierda": { "texto": "Le cobro extra por curso de ofimática básica", "perfil": "vivillo" },
+    "derecha": { "texto": "Le hago un manual con dibujitos paso a paso", "perfil": "tecnico" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "F",
+    "texto": "En Plaza San Miguel un 'scout' de modelos te detiene para decirte que tienes perfil para comerciales de detergente.",
+    "etiquetas": ["calle", "estetica", "roche"],
+    "izquierda": { "texto": "Me ofendo profundo pero disimulo con una sonrisa", "perfil": "negociador" },
+    "derecha": { "texto": "Le pido la tarjeta, chamba es chamba", "perfil": "vivillo" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Subes a la coaster 'La Marina' y el cobrador pone cumbia chicha con un parlante reventado al lado de tu oreja.",
+    "etiquetas": ["transporte", "bulla", "calle"],
+    "izquierda": { "texto": "Me pongo mis audífonos a máximo volumen también", "perfil": "tecnico" },
+    "derecha": { "texto": "Muevo la cabeza al ritmo disimuladamente", "perfil": "tranquilo" }
+  },
+  {
+    "region": "lima",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Cierran toda la Av. Arequipa un domingo por maratón y tú necesitas cruzar en carro urgente al hospital.",
+    "etiquetas": ["vehiculo", "salud", "ciudad"],
+    "izquierda": { "texto": "Me bajo a rogarle al policía que me deje pasar", "perfil": "negociador" },
+    "derecha": { "texto": "Meto el carro por una callecita contra el tráfico", "perfil": "radical" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "M",
+    "texto": "Vas a una pollada en Comas, la salsa está altísima y la dueña te saca a bailar obligatoriamente.",
+    "etiquetas": ["fiesta", "barrio", "roche"],
+    "izquierda": { "texto": "Bailo todo tieso fingiendo que sé dar vueltas", "perfil": "tranquilo" },
+    "derecha": { "texto": "Doy mis mejores pasos y me robo el show", "perfil": "mediatico" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Se malogra el semáforo de la Av. Brasil con La Marina y no hay ni un solo policía de tránsito.",
+    "etiquetas": ["trafico", "calle", "ciudad"],
+    "izquierda": { "texto": "Espero media hora a que alguien me deje pasar", "perfil": "tranquilo" },
+    "derecha": { "texto": "Meto trompa de a pocos como todo buen limeño", "perfil": "vivillo" }
+  },
+  {
+    "region": "lima",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Vas con tus patas a la Cachina en Surco y ves tu propia casaca que te robaron hace un año.",
+    "etiquetas": ["compras", "ropa", "robo"],
+    "izquierda": { "texto": "Regateo y me la vuelvo a comprar baratita", "perfil": "vivillo" },
+    "derecha": { "texto": "Armo escándalo diciendo que es propiedad privada", "perfil": "radical" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Pides un pisco sour en un bar de San Blas y te lo traen en una copa del tamaño de un dedal.",
+    "etiquetas": ["bebida", "juerga", "ciudad"],
+    "izquierda": { "texto": "Me lo tomo en un sorbo y no dejo propina", "perfil": "tecnico" },
+    "derecha": { "texto": "Me quejo con el mozo por la micro-dosis", "perfil": "negociador" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Subes al bus vacío en la primera parada y tres paraderos después suben 50 escolares alborotados.",
+    "etiquetas": ["transporte", "bulla", "ciudad"],
+    "izquierda": { "texto": "Me hago el dormido para no ceder el asiento", "perfil": "vivillo" },
+    "derecha": { "texto": "Saco mi libro y me concentro en la lectura", "perfil": "tecnico" }
+  },
+  {
+    "region": "lima",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Vas a comer a un chifa ficha en San Borja y no te ponen limones enteros en la mesa.",
+    "etiquetas": ["comida", "calidad", "roche"],
+    "izquierda": { "texto": "Exijo mis tres limones y mi pocillo para exprimir", "perfil": "radical" },
+    "derecha": { "texto": "Como mi wantán con la salsa tamarindo nomás", "perfil": "tranquilo" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "F",
+    "texto": "El viento limeño te levanta la falda en plena Av. Tacna y el de la tienda de enfrente te aplaude.",
+    "etiquetas": ["ropa", "calle", "roche"],
+    "izquierda": { "texto": "Le mando una mirada fulminante que lo congela", "perfil": "radical" },
+    "derecha": { "texto": "Me bajo la falda corriendo roja como tomate", "perfil": "tranquilo" }
+  },
+  {
+    "region": "lima",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Tu taxista reniega de todos los alcaldes de Lima desde los años 90 mientras cruza La Victoria.",
+    "etiquetas": ["transporte", "politica", "chisme"],
+    "izquierda": { "texto": "Le doy la razón en todo para que no me bote", "perfil": "negociador" },
+    "derecha": { "texto": "Saco mi libreta y anoto datos para mi tesis", "perfil": "tecnico" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Lunes al mediodía, 32 grados de sol infernal en Trujillo y tu suegra sirve Shámbar hirviendo.",
+    "etiquetas": ["comida", "calor", "familia"],
+    "izquierda": { "texto": "Me lo como sudando como en sauna", "perfil": "tranquilo" },
+    "derecha": { "texto": "Le pido que lo guarde para la noche", "perfil": "negociador" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Subes a un micro hacia Huanchaco en paradero corto y el cobrador te exige pasaje interprovincial.",
+    "etiquetas": ["transporte", "dinero", "calle"],
+    "izquierda": { "texto": "Hago chongo y solo pago mi china", "perfil": "radical" },
+    "derecha": { "texto": "Pago llorando por no pelear frente a todos", "perfil": "tranquilo" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Quieres cruzar el Óvalo Papal a las 6 PM y los carros aceleran en vez de frenar.",
+    "etiquetas": ["trafico", "calle", "peligro"],
+    "izquierda": { "texto": "Me lanzo a la pista como kamikaze", "perfil": "radical" },
+    "derecha": { "texto": "Espero a que pase un anciano y lo sigo", "perfil": "vivillo" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "F",
+    "texto": "Te pones tu mejor vestido para ver el Corso Primaveral y te cae un globazo de agua helada.",
+    "etiquetas": ["fiesta", "roche", "calle"],
+    "izquierda": { "texto": "Busco al chibolo para tirarle mi zapato", "perfil": "radical" },
+    "derecha": { "texto": "Grabo un TikTok de mi tragedia primaveral", "perfil": "mediatico" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Un limeño de visita pide que a su ceviche trujillano le quiten el ají mochero porque 'pica mucho'.",
+    "etiquetas": ["comida", "turismo", "roche"],
+    "izquierda": { "texto": "Le explico la historia del ají con paciencia", "perfil": "tecnico" },
+    "derecha": { "texto": "Lo humillo comiéndome su ají frente a él", "perfil": "vivillo" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "18-30",
+    "genero": "M",
+    "texto": "Tu pata te invita a un tono pituco en Víctor Larco pero tú no tienes ni para el micro.",
+    "etiquetas": ["juerga", "amigos", "dinero"],
+    "izquierda": { "texto": "Le digo que me auspicie o no hay juerga", "perfil": "negociador" },
+    "derecha": { "texto": "Voy caminando desde La Esperanza con orgullo", "perfil": "radical" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te subes a un taxi Tico y la puerta solo cierra si la amarras con un pabilo.",
+    "etiquetas": ["transporte", "roche", "peligro"],
+    "izquierda": { "texto": "Amarro fuerte y rezo un padrenuestro", "perfil": "tranquilo" },
+    "derecha": { "texto": "Me bajo rápido y pido un aplicativo seguro", "perfil": "tecnico" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Estás bailando marinera descalzo en pleno concurso en la plaza y pisas un chicle recontra pegajoso.",
+    "etiquetas": ["cultura", "roche", "calle"],
+    "izquierda": { "texto": "Sigo zapateando fingiendo que es parte del paso", "perfil": "vivillo" },
+    "derecha": { "texto": "Me detengo indignado a sacarme el chicle", "perfil": "radical" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Visitas la Huaca del Sol y de la Luna pero te dan unas ganas horribles de ir al baño.",
+    "etiquetas": ["turismo", "emergencia", "roche"],
+    "izquierda": { "texto": "Me escondo en unas ruinas milenarias caleta", "perfil": "vivillo" },
+    "derecha": { "texto": "Aguanto apretando los dientes hasta la salida", "perfil": "tranquilo" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Visitas Moche con tus papás y tu hermanito se trepa de frente al huaco de la fertilidad.",
+    "etiquetas": ["familia", "bizarro", "turismo"],
+    "izquierda": { "texto": "Le tomo foto rápida para el grupo familiar", "perfil": "mediatico" },
+    "derecha": { "texto": "Lo bajo corriendo rojo de pura vergüenza", "perfil": "tranquilo" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Entras al Mall Plaza a comprar y ves a tu jefe del trabajo comiendo helado en horario laboral.",
+    "etiquetas": ["trabajo", "roche", "compras"],
+    "izquierda": { "texto": "Le tomo foto caleta para chantajearlo luego", "perfil": "vivillo" },
+    "derecha": { "texto": "Me acerco a saludarlo para ponerlo nervioso", "perfil": "negociador" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "M",
+    "texto": "Llevas a tu enamorada a ver caballitos de totora en la playa pero el viento helado los congela.",
+    "etiquetas": ["cita", "clima", "turismo"],
+    "izquierda": { "texto": "Le doy mi casaca y sufro de hipotermia", "perfil": "tranquilo" },
+    "derecha": { "texto": "Le propongo ir mejor a tomar un cafecito", "perfil": "negociador" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Pagas por un tour oficial en Chan Chan y el guía te cuenta la trama de una novela mexicana.",
+    "etiquetas": ["turismo", "estafa", "roche"],
+    "izquierda": { "texto": "Lo corrijo en público citando libros de historia", "perfil": "tecnico" },
+    "derecha": { "texto": "Me río y le pregunto en qué termina", "perfil": "mediatico" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Cae una llovizna sorpresa en Trujillo y la avenida se vuelve una pista de patinaje de barro.",
+    "etiquetas": ["clima", "calle", "peligro"],
+    "izquierda": { "texto": "Camino arrastrando los pies como pingüino", "perfil": "tranquilo" },
+    "derecha": { "texto": "Cruzo quejándome en Twitter de las autoridades", "perfil": "mediatico" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Vas a comprar zapatos de cuero a El Porvenir y el vendedor te jura que es piel de cocodrilo.",
+    "etiquetas": ["compras", "estafa", "ropa"],
+    "izquierda": { "texto": "Le sigo el juego pidiendo certificado de autenticidad", "perfil": "tecnico" },
+    "derecha": { "texto": "Le pido que me baje el precio por la mentira", "perfil": "negociador" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Un carro te salpica agua empozada en la Av. España justo antes de tu entrevista de trabajo.",
+    "etiquetas": ["calle", "roche", "trabajo"],
+    "izquierda": { "texto": "Entro a la entrevista diciendo que salvé un perro", "perfil": "vivillo" },
+    "derecha": { "texto": "Voy al baño a secarme con papel higiénico", "perfil": "tecnico" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Descubres que tu vecino tiene pegadas tres calcomanías de 'seguridad' diferentes en la puerta de su casa.",
+    "etiquetas": ["barrio", "peligro", "vecinos"],
+    "izquierda": { "texto": "Imprimo unas falsas y las pego en mi puerta", "perfil": "vivillo" },
+    "derecha": { "texto": "Instalo cuatro cámaras de seguridad conectadas a wifi", "perfil": "tecnico" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Domingo de bajona en la mañana y la tía del frito trujillano te da pura papa sin chancho.",
+    "etiquetas": ["comida", "roche", "domingo"],
+    "izquierda": { "texto": "Le reclamo mi presa como derecho constitucional", "perfil": "radical" },
+    "derecha": { "texto": "Me como mi papa triste con harto ají", "perfil": "tranquilo" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "18-30",
+    "genero": "F",
+    "texto": "Te invitan a participar para reina de la primavera pero tienes que pagarte el carísimo vestido tú misma.",
+    "etiquetas": ["cultura", "dinero", "roche"],
+    "izquierda": { "texto": "Busco tres auspiciadores locales para que lo paguen", "perfil": "negociador" },
+    "derecha": { "texto": "Rechazo todo y rajo del concurso en redes", "perfil": "mediatico" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Pides chicha de jora en Moche y está tan fermentada que sientes que parece ron de quemar.",
+    "etiquetas": ["bebida", "juerga", "peligro"],
+    "izquierda": { "texto": "Me la empino al seco haciéndome el fuerte", "perfil": "vivillo" },
+    "derecha": { "texto": "La rebajo con Inca Kola debajo de la mesa", "perfil": "tecnico" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Tu profesor de la universidad te ve tomando chelas en un huarique justo frente a la UPAO.",
+    "etiquetas": ["estudio", "roche", "amigos"],
+    "izquierda": { "texto": "Lo invito a mi mesa para asegurar el aprobado", "perfil": "vivillo" },
+    "derecha": { "texto": "Me escondo debajo de la mesa disimuladamente", "perfil": "tranquilo" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Vas a comer tu ceviche en el muelle de Huanchaco y una gaviota te roba el chicharrón de pota.",
+    "etiquetas": ["comida", "animales", "playa"],
+    "izquierda": { "texto": "Le meto una correteada por toda la playa", "perfil": "radical" },
+    "derecha": { "texto": "Le pido yapa al mozo contándole mi tragedia", "perfil": "negociador" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Alguien hace una marcha en el centro histórico y te quedas atrapado en tu combi por dos horas.",
+    "etiquetas": ["transporte", "trafico", "ciudad"],
+    "izquierda": { "texto": "Me bajo a caminar diez cuadras renegando", "perfil": "radical" },
+    "derecha": { "texto": "Aprovecho para dormir pegado a la ventana", "perfil": "tranquilo" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Tu pata limeño se burla y te pregunta por qué dices 'di' al final de cada maldita frase.",
+    "etiquetas": ["jerga", "amigos", "roche"],
+    "izquierda": { "texto": "Le digo 'para que entiendas pe, di'", "perfil": "vivillo" },
+    "derecha": { "texto": "Le doy una cátedra de lingüística regionalista", "perfil": "tecnico" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Compras alfajores trujillanos finos para regalar a tu familia y te los terminas comiendo todos en el bus.",
+    "etiquetas": ["comida", "viaje", "roche"],
+    "izquierda": { "texto": "Llego y digo que se los robaron en el camino", "perfil": "vivillo" },
+    "derecha": { "texto": "Compro galletas de sol en la bodega para compensar", "perfil": "negociador" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Te vas de escapada a Pacasmayo el finde y el 'hotel con vista al mar' es puro triplay.",
+    "etiquetas": ["viaje", "estafa", "playa"],
+    "izquierda": { "texto": "Duermo en la arena escuchando las olas mejor", "perfil": "radical" },
+    "derecha": { "texto": "Grabo un room-tour sarcástico para mis historias", "perfil": "mediatico" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "18-30",
+    "genero": "M",
+    "texto": "El seguridad de la discoteca no te deja entrar por usar zapatillas deportivas nuevecitas y carísimas.",
+    "etiquetas": ["juerga", "ropa", "roche"],
+    "izquierda": { "texto": "Le busco su precio en internet para que vea", "perfil": "tecnico" },
+    "derecha": { "texto": "Me cambio de zapatos con el cuida-carros", "perfil": "vivillo" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Ves que están asfaltando tu calle pero solo el pequeño pedazo que está frente a la casa del alcalde.",
+    "etiquetas": ["politica", "barrio", "corrupcion"],
+    "izquierda": { "texto": "Llamo a la prensa local para armar escándalo", "perfil": "mediatico" },
+    "derecha": { "texto": "Muevo mi carro y lo estaciono en el asfalto nuevo", "perfil": "vivillo" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "general",
+    "texto": "El cobrador del micro a Laredo te dice 'avanza pe' pero la gente ya está colgada de la ventana.",
+    "etiquetas": ["transporte", "calle", "peligro"],
+    "izquierda": { "texto": "Avanzo pisando mochilas y pidiendo perdón", "perfil": "negociador" },
+    "derecha": { "texto": "Me bajo y espero otro que sí tenga sitio", "perfil": "tranquilo" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "M",
+    "texto": "Quieres armar una pichanga pero la única cancha de pasto sintético disponible cuesta 150 soles la hora.",
+    "etiquetas": ["deporte", "amigos", "dinero"],
+    "izquierda": { "texto": "Pongo dos piedras en la pista y jugamos gratis", "perfil": "radical" },
+    "derecha": { "texto": "Le cobro doble a los que no saben jugar", "perfil": "vivillo" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Entras a un chifa por la Av. Larco y ves que el cocinero está matando moscas con la espumadera.",
+    "etiquetas": ["comida", "salud", "roche"],
+    "izquierda": { "texto": "Pido todo sellado para llevar y lo boto afuera", "perfil": "tranquilo" },
+    "derecha": { "texto": "Hago chongo y pido el libro de reclamaciones", "perfil": "tecnico" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "31+",
+    "genero": "F",
+    "texto": "Tu suegra te regala una cerámica 'Chimú original' pero tiene un sticker que dice 'Made in China' abajo.",
+    "etiquetas": ["familia", "regalos", "roche"],
+    "izquierda": { "texto": "Le saco el sticker y la pongo en la sala", "perfil": "negociador" },
+    "derecha": { "texto": "Le digo 'qué moderna la cultura Chimú'", "perfil": "radical" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Hay un sol radiante en el centro, vas a la playa de Huanchaco y está nublado con viento helado.",
+    "etiquetas": ["clima", "playa", "roche"],
+    "izquierda": { "texto": "Me meto al mar fingiendo que está calientito", "perfil": "vivillo" },
+    "derecha": { "texto": "Me tomo un champús caliente y me regreso", "perfil": "tranquilo" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te compras una raspadilla gigante en la Plaza de Armas y te da una puntada cerebral al primer sorbo.",
+    "etiquetas": ["comida", "salud", "calle"],
+    "izquierda": { "texto": "Hago muecas de dolor pero sigo tomando", "perfil": "radical" },
+    "derecha": { "texto": "Espero media hora a que se vuelva jugo", "perfil": "tranquilo" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Piden pollada bailable pro fondos de tu promoción pero te cobran la cerveza grande a precio de discoteca.",
+    "etiquetas": ["fiesta", "dinero", "amigos"],
+    "izquierda": { "texto": "Meto mi ron escondido en una botella de agua", "perfil": "vivillo" },
+    "derecha": { "texto": "Exijo ver el reporte de gastos y ganancias", "perfil": "tecnico" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Te detiene un policía en el baipás de Mansiche y te pide 'colaboración' porque se le acabó el talonario.",
+    "etiquetas": ["vehiculo", "calle", "corrupcion"],
+    "izquierda": { "texto": "Empiezo a grabar en vivo para mis redes sociales", "perfil": "mediatico" },
+    "derecha": { "texto": "Le recito el reglamento de tránsito de memoria", "perfil": "tecnico" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "general",
+    "texto": "El taxista te da una charla motivacional de cuarenta minutos sobre cómo puedes volverte millonario vendiendo zapatos.",
+    "etiquetas": ["transporte", "negocio", "chisme"],
+    "izquierda": { "texto": "Le pido que sea mi mentor financiero", "perfil": "vivillo" },
+    "derecha": { "texto": "Me pongo los audífonos y miro por la ventana", "perfil": "tranquilo" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "M",
+    "texto": "Le pones ají mochero entero a tu sopa teóloga para hacerte el macho y terminas llorando a mares.",
+    "etiquetas": ["comida", "roche", "salud"],
+    "izquierda": { "texto": "Digo que me acordé de una película triste", "perfil": "negociador" },
+    "derecha": { "texto": "Tomo tres litros de agua directo de la jarra", "perfil": "radical" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Alguien te roba tu sombrilla clavada en la arena de la playa mientras te estabas bañando en el mar.",
+    "etiquetas": ["playa", "robo", "roche"],
+    "izquierda": { "texto": "Le robo la sombrilla al vecino para compensar", "perfil": "vivillo" },
+    "derecha": { "texto": "Le pongo queja al serenazgo costero por seguridad", "perfil": "tecnico" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "F",
+    "texto": "Tu amiga te obliga a hacer una cola de dos horas bajo el sol para comprar pollo a la leña.",
+    "etiquetas": ["comida", "espera", "amigos"],
+    "izquierda": { "texto": "Le cobro sueldo por hora de espera en Yape", "perfil": "tecnico" },
+    "derecha": { "texto": "La dejo sola y me voy a comer chifa", "perfil": "radical" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Vas a una boda recontra pituca a las afueras de Trujillo y la tierra ensucia tus zapatos italianos.",
+    "etiquetas": ["fiesta", "ropa", "roche"],
+    "izquierda": { "texto": "Me los limpio con la servilleta de tela del catering", "perfil": "vivillo" },
+    "derecha": { "texto": "Bailo toda la noche para que el polvo disimule", "perfil": "negociador" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "18-30",
+    "genero": "F",
+    "texto": "Descubres que tu casi-algo le dio 'me encanta' a la foto del huaco erótico que subió tu mejor amiga.",
+    "etiquetas": ["redes", "chisme", "romance"],
+    "izquierda": { "texto": "Le armo un drama preguntando qué le gustó", "perfil": "radical" },
+    "derecha": { "texto": "Subo yo una foto mejor y lo ignoro", "perfil": "mediatico" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Trabajas en el centro histórico y la municipalidad prohíbe estacionar tu carro a menos de diez cuadras a la redonda.",
+    "etiquetas": ["vehiculo", "burocracia", "trabajo"],
+    "izquierda": { "texto": "Le pago al vigilante para que lo esconda en cochera", "perfil": "vivillo" },
+    "derecha": { "texto": "Envío carta formal al alcalde exigiendo parqueos", "perfil": "tecnico" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Llega tu pedido de delivery trujillano y te das cuenta que el motorizado se comió todas tus cremas de ají.",
+    "etiquetas": ["comida", "estafa", "robo"],
+    "izquierda": { "texto": "Le pongo una estrella y reporto en la app", "perfil": "tecnico" },
+    "derecha": { "texto": "Me como mi pollo seco maldiciendo mi suerte", "perfil": "tranquilo" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Se malogra el semáforo de la avenida Jesús de Nazareth y los micros arman un tetris mortal sin salida.",
+    "etiquetas": ["trafico", "calle", "ciudad"],
+    "izquierda": { "texto": "Me bajo a dirigir el tránsito yo mismo", "perfil": "mediatico" },
+    "derecha": { "texto": "Cierro los ojos y espero el choque inminente", "perfil": "tranquilo" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te dicen que te traen un King Kong original desde el norte pero resulta ser de marca dudosa 'King Kongcito'.",
+    "etiquetas": ["comida", "regalos", "estafa"],
+    "izquierda": { "texto": "Lo corto en tajadas y nadie nota la diferencia", "perfil": "vivillo" },
+    "derecha": { "texto": "Busco la fecha de vencimiento con terror", "perfil": "tecnico" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Paseas tranquilamente por el jirón Pizarro y un mimo te agarra de punto frente a toda la gente.",
+    "etiquetas": ["calle", "turismo", "roche"],
+    "izquierda": { "texto": "Le sigo la corriente y le hago un baile", "perfil": "mediatico" },
+    "derecha": { "texto": "Lo ignoro fríamente y acelero el paso rápido", "perfil": "radical" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Estás sustentando tu tesis vía Zoom y pasa la banda de músicos de un colegio reventando la calle.",
+    "etiquetas": ["estudio", "bulla", "roche"],
+    "izquierda": { "texto": "Pongo mute y sonrío congelado a la cámara", "perfil": "tecnico" },
+    "derecha": { "texto": "Le digo al jurado que es música de fondo", "perfil": "vivillo" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Vas a comprar pan a las 7 AM en invierno trujillano y la neblina no te deja ver ni la vereda.",
+    "etiquetas": ["clima", "calle", "compras"],
+    "izquierda": { "texto": "Camino tanteando las paredes como ciego", "perfil": "tranquilo" },
+    "derecha": { "texto": "Prendo la linterna del celular para no morir", "perfil": "tecnico" }
+  },
+  {
+    "region": "trujillo",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te compras un pan con chicharrón en Víctor Larco pero el pan es 90% aire y 10% harina.",
+    "etiquetas": ["comida", "estafa", "calle"],
+    "izquierda": { "texto": "Apreto el pan para que parezca una galleta", "perfil": "vivillo" },
+    "derecha": { "texto": "Le exijo al panadero que devuelva mi dinero", "perfil": "radical" }
+  },
+
+
+{
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Domingo 11 AM, llegas por tu adobo y la casera te dice que solo queda jugo y té.",
+    "etiquetas": ["comida", "domingo", "tradicion"],
+    "izquierda": { "texto": "Remojo tres panes en el jugo resignado", "perfil": "tranquilo" },
+    "derecha": { "texto": "Hago chongo y exijo mi presa de chancho", "perfil": "radical" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "18-30",
+    "genero": "M",
+    "texto": "Te haces el machito comiendo un rocoto relleno entero frente a tu flaca y empiezas a llorar.",
+    "etiquetas": ["cita", "comida", "roche"],
+    "izquierda": { "texto": "Digo que es de emoción por estar con ella", "perfil": "vivillo" },
+    "derecha": { "texto": "Pido dos litros de Anís Najar urgente", "perfil": "tecnico" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Un limeño te dice en tu cara que el pasaporte arequipeño es un invento huachafo.",
+    "etiquetas": ["orgullo", "turismo", "roche"],
+    "izquierda": { "texto": "Le recito la historia de la República Independiente", "perfil": "tecnico" },
+    "derecha": { "texto": "Lo ignoro por ccala y sigo mi camino", "perfil": "radical" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Sales de Yanahuara a la 1 PM con solazo y a las 5 PM el frío te congela.",
+    "etiquetas": ["clima", "calle", "salud"],
+    "izquierda": { "texto": "Me compro una chompa de alpaca carísima", "perfil": "vivillo" },
+    "derecha": { "texto": "Aguanto temblando diciendo 'no hace frío alalay'", "perfil": "tranquilo" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Estás atrapado en el Puente Grau a las 6 PM y tu carro se queda sin gasolina.",
+    "etiquetas": ["trafico", "vehiculo", "emergencia"],
+    "izquierda": { "texto": "Dejo el carro ahí y me voy caminando", "perfil": "radical" },
+    "derecha": { "texto": "Llamo al seguro mientras me tocan cien cláxones", "perfil": "tecnico" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Un turista gringo prueba queso helado y reclama indignado porque no tiene nada de queso.",
+    "etiquetas": ["comida", "turismo", "bizarro"],
+    "izquierda": { "texto": "Le digo 'así es pe, corito' y me río", "perfil": "vivillo" },
+    "derecha": { "texto": "Le explico la receta tradicional en inglés perfecto", "perfil": "tecnico" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Anuncian paro en la variante de Uchumayo y tu camión con mercadería está primero en la fila.",
+    "etiquetas": ["politica", "trabajo", "trafico"],
+    "izquierda": { "texto": "Me uno a la huelga tirando piedras también", "perfil": "radical" },
+    "derecha": { "texto": "Negocio con los huelguistas dándoles mi almuerzo", "perfil": "negociador" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Estás almorzando rico en la picantería y empieza un temblor grado 6 que sacude todo el sillar.",
+    "etiquetas": ["emergencia", "ciudad", "comida"],
+    "izquierda": { "texto": "Agarro mi vaso de chicha y salgo corriendo", "perfil": "vivillo" },
+    "derecha": { "texto": "Sigo comiendo mi cuy, acá siempre tiembla", "perfil": "tranquilo" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "18-30",
+    "genero": "F",
+    "texto": "Vas a un tono en la calle San Francisco y tu ex está chapando con tu mejor amiga.",
+    "etiquetas": ["juerga", "amigos", "chisme"],
+    "izquierda": { "texto": "Les grabo historia con canción de despecho", "perfil": "mediatico" },
+    "derecha": { "texto": "Les tiro mi vaso de chela arequipeña y huyo", "perfil": "radical" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Tu abuelo loncco te sirve chicha de güiñapo tan fermentada que huele a alcohol etílico puro.",
+    "etiquetas": ["familia", "bebida", "tradicion"],
+    "izquierda": { "texto": "Fondo blanco para no ofender al abuelo", "perfil": "tranquilo" },
+    "derecha": { "texto": "Digo que me duele la panza y escapo", "perfil": "negociador" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "31+",
+    "genero": "M",
+    "texto": "Compras un terreno por Characato y descubres que no tiene agua, luz, ni desagüe.",
+    "etiquetas": ["dinero", "casa", "estafa"],
+    "izquierda": { "texto": "Lo revendo más caro a un limeño incauto", "perfil": "vivillo" },
+    "derecha": { "texto": "Organizo a la junta vecinal para exigir servicios", "perfil": "tecnico" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te dicen para ir al mercado San Camilo pero el olor a rana licuada te da náuseas.",
+    "etiquetas": ["compras", "comida", "salud"],
+    "izquierda": { "texto": "Me tapo la nariz y compro rápido", "perfil": "tranquilo" },
+    "derecha": { "texto": "Pido el jugo de rana para agarrar fuerzas", "perfil": "radical" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "La combi de Paucarpata va repleta y el cobrador mete a una señora con tres gallinas vivas.",
+    "etiquetas": ["transporte", "bizarro", "calle"],
+    "izquierda": { "texto": "Me tomo selfie con las gallinas voladoras", "perfil": "mediatico" },
+    "derecha": { "texto": "Le reclamo por seguridad de los pasajeros", "perfil": "tecnico" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "F",
+    "texto": "Caminas con tacones por la Plaza de Armas y se te atora el zapato entre dos adoquines.",
+    "etiquetas": ["ropa", "roche", "calle"],
+    "izquierda": { "texto": "Saco el pie y camino coja disimulando", "perfil": "negociador" },
+    "derecha": { "texto": "Me quito los dos zapatos y camino descalza", "perfil": "radical" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te sirven un chupe de camarones pero los camarones son del tamaño de una hormiga desnutrida.",
+    "etiquetas": ["comida", "estafa", "roche"],
+    "izquierda": { "texto": "Llamo a la dueña y exijo langostinos", "perfil": "radical" },
+    "derecha": { "texto": "Me tomo el caldo que está buenazo igual", "perfil": "tranquilo" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Tu vecino pinta toda la fachada de su casa color verde fosforescente arruinando la vista de sillar.",
+    "etiquetas": ["vecinos", "cultura", "roche"],
+    "izquierda": { "texto": "Denuncio a la municipalidad por atentado visual", "perfil": "tecnico" },
+    "derecha": { "texto": "Le tiro pintura blanca en la madrugada", "perfil": "vivillo" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "18-30",
+    "genero": "M",
+    "texto": "Juegas pichanga al mediodía y el sol arequipeño te deja los brazos con quemaduras de tercer grado.",
+    "etiquetas": ["deporte", "clima", "salud"],
+    "izquierda": { "texto": "Digo que es mi bronceado de Mollendo", "perfil": "vivillo" },
+    "derecha": { "texto": "Me baño en sábila llorando en mi cuarto", "perfil": "tranquilo" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Entras a una tienda pituca en Cayma y la vendedora te mira de pies a cabeza juzgándote.",
+    "etiquetas": ["compras", "roche", "ciudad"],
+    "izquierda": { "texto": "Pido probarme lo más caro y no compro", "perfil": "radical" },
+    "derecha": { "texto": "Digo 'solo estoy mirando' y me escapo", "perfil": "tranquilo" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te prometieron llevarte al Misti pero se cansan a los veinte minutos de caminata en subida.",
+    "etiquetas": ["turismo", "amigos", "deporte"],
+    "izquierda": { "texto": "Les cobro multa por hacerme madrugar en vano", "perfil": "vivillo" },
+    "derecha": { "texto": "Los dejo botados y subo yo solo a la cumbre", "perfil": "radical" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "El recibo de Seal te llega con el triple de costo y tú paras trabajando todo el día.",
+    "etiquetas": ["casa", "dinero", "burocracia"],
+    "izquierda": { "texto": "Armo un excel con mi consumo por horas para reclamar", "perfil": "tecnico" },
+    "derecha": { "texto": "Me cuelgo del poste del vecino para compensar", "perfil": "vivillo" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "general",
+    "texto": "El taxista de un Tico empieza a reventar de ira porque un limeño no avanza en luz verde.",
+    "etiquetas": ["trafico", "transporte", "ciudad"],
+    "izquierda": { "texto": "Le doy la razón rajando del tráfico capitalino", "perfil": "negociador" },
+    "derecha": { "texto": "Grabo los insultos creativos para mis estados", "perfil": "mediatico" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Te compraste pasaje para Camaná pero el bus de la av. Andrés Avelino Cáceres huele a pescado podrido.",
+    "etiquetas": ["viaje", "roche", "playa"],
+    "izquierda": { "texto": "Me pongo Vicks VapoRub en la nariz y viajo", "perfil": "tecnico" },
+    "derecha": { "texto": "Hago bajar al chofer para que limpie la maletera", "perfil": "radical" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "F",
+    "texto": "Tu tía te obliga a comer pastel de papa con rocoto, pero a ti no te gusta el queso.",
+    "etiquetas": ["familia", "comida", "roche"],
+    "izquierda": { "texto": "Separo el queso como si fuera cirujana", "perfil": "tecnico" },
+    "derecha": { "texto": "Se lo paso al plato de mi primo disimuladamente", "perfil": "vivillo" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Cruzas por la calle Mercaderes y cinco jaladores de ópticas te acorralan ofreciendo lentes a 20 soles.",
+    "etiquetas": ["calle", "compras", "ciudad"],
+    "izquierda": { "texto": "Les digo que soy ciego para que me dejen", "perfil": "vivillo" },
+    "derecha": { "texto": "Me pongo agresivo exigiendo paso libre", "perfil": "radical" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Un sismo leve parte la pared de tu sala pero el maestro de obra te dice 'con yeso queda'.",
+    "etiquetas": ["casa", "emergencia", "roche"],
+    "izquierda": { "texto": "Contrato un ingeniero estructural colegiado", "perfil": "tecnico" },
+    "derecha": { "texto": "Pongo un cuadro gigante encima de la grieta", "perfil": "negociador" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Tu equipo pierde en el estadio de la UNSA y la hinchada rival empieza a tirar botellas.",
+    "etiquetas": ["deporte", "peligro", "ciudad"],
+    "izquierda": { "texto": "Salgo corriendo tapándome la cabeza con mi casaca", "perfil": "tranquilo" },
+    "derecha": { "texto": "Hago un live reportando los desmanes exclusivísimos", "perfil": "mediatico" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Compras un alfajor de Vítor en la calle y al morderlo descubres que está duro como sillar.",
+    "etiquetas": ["comida", "calidad", "roche"],
+    "izquierda": { "texto": "Lo mojo en mi té piteado para que afloje", "perfil": "tecnico" },
+    "derecha": { "texto": "Lo uso como arma arrojadiza contra el vendedor", "perfil": "radical" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "M",
+    "texto": "Tu suegro arequipeño te invita a tomar un puro de Anís Najar al seco para ver si eres hombre.",
+    "etiquetas": ["familia", "bebida", "roche"],
+    "izquierda": { "texto": "Me lo tomo y aguanto las lágrimas como macho", "perfil": "tranquilo" },
+    "derecha": { "texto": "Hago trampa y boto la mitad en la maceta", "perfil": "vivillo" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Paseas por el convento de Santa Catalina y te pierdes en los pasillos rojos de sillar sin señal.",
+    "etiquetas": ["turismo", "roche", "ciudad"],
+    "izquierda": { "texto": "Grito 'auxilio' pensando en los fantasmas coloniales", "perfil": "radical" },
+    "derecha": { "texto": "Me tomo mil fotos aesthetic hasta que alguien pase", "perfil": "mediatico" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Te nombran padrino de corte de pelo de un corito y te exigen poner un billete de cien soles.",
+    "etiquetas": ["familia", "dinero", "tradicion"],
+    "izquierda": { "texto": "Pongo 20 lucas escondidas en un sobre cerrado", "perfil": "vivillo" },
+    "derecha": { "texto": "Pago mis cien soles, el compadrazgo es sagrado", "perfil": "tranquilo" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Tus amigos limeños vienen y les da soroche nivel dios en la Plaza de Armas vomitando todo.",
+    "etiquetas": ["amigos", "salud", "turismo"],
+    "izquierda": { "texto": "Les compro mate de coca y oxígeno en farmacia", "perfil": "tecnico" },
+    "derecha": { "texto": "Me burlo grabando cómo los ccalas sufren la altura", "perfil": "mediatico" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "F",
+    "texto": "Vas a comer cuy chactado a Sabandía y el cuy te mira fijamente con sus dientecitos quemados.",
+    "etiquetas": ["comida", "bizarro", "roche"],
+    "izquierda": { "texto": "Le arranco la cabeza rápido para no sentir culpa", "perfil": "radical" },
+    "derecha": { "texto": "Pido que me lo sirvan volteado boca abajo", "perfil": "negociador" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te dicen que llueve en Arequipa y de la nada cae granizo del tamaño de una canica.",
+    "etiquetas": ["clima", "emergencia", "calle"],
+    "izquierda": { "texto": "Me meto debajo de un Tico a salvarme", "perfil": "vivillo" },
+    "derecha": { "texto": "Saco mi paraguas reforzado contra impactos meteorológicos", "perfil": "tecnico" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "El alcalde promete terminar la obra del centro histórico en un mes y ya van dos años con polvo.",
+    "etiquetas": ["politica", "ciudad", "corrupcion"],
+    "izquierda": { "texto": "Lidero una marcha vecinal con cacerolas de sillar", "perfil": "radical" },
+    "derecha": { "texto": "Compro purificador de aire para mi casa", "perfil": "tecnico" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Alguien se hace el sabroso insultando a la Virgen de Chapi en pleno mercado San Camilo.",
+    "etiquetas": ["religion", "peligro", "calle"],
+    "izquierda": { "texto": "Le advierto que las caseras lo van a linchar", "perfil": "negociador" },
+    "derecha": { "texto": "Saco mi celular para grabar el castigo divino", "perfil": "mediatico" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "18-30",
+    "genero": "M",
+    "texto": "Vas en combi por la av. Ejército y una chica guapa se sienta a tu lado comiendo cebolla cruda.",
+    "etiquetas": ["transporte", "cita", "roche"],
+    "izquierda": { "texto": "Le ofrezco un chicle de menta bien caleta", "perfil": "negociador" },
+    "derecha": { "texto": "Abro toda la ventana sacando la cabeza para respirar", "perfil": "tranquilo" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Te cobran 15 soles por un 'queso helado gourmet' en un restaurante de Cayma que parece agua con canela.",
+    "etiquetas": ["comida", "estafa", "dinero"],
+    "izquierda": { "texto": "Les explico la receta loncca para humillarlos", "perfil": "tecnico" },
+    "derecha": { "texto": "No pago y exijo ver al chef estafador", "perfil": "radical" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Tienes reunión seria por Zoom y tu abuela arequipeña empieza a gritarle 'alcapate' al gato de fondo.",
+    "etiquetas": ["tecnologia", "familia", "roche"],
+    "izquierda": { "texto": "Apago el micrófono y finjo problemas de conexión", "perfil": "vivillo" },
+    "derecha": { "texto": "Explico qué es 'alcapate' rompiendo el hielo", "perfil": "mediatico" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Compraste adobo el sábado para guardarlo para el domingo y tu hijo se lo comió frío en la madrugada.",
+    "etiquetas": ["comida", "familia", "domingo"],
+    "izquierda": { "texto": "Lo desheredo y lo mando a comprar pan", "perfil": "radical" },
+    "derecha": { "texto": "Caliento el jugo que quedó llorando de frustración", "perfil": "tranquilo" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "18-30",
+    "genero": "F",
+    "texto": "Te invitan a la playa de Mollendo, te pones un bikini carísimo y el agua está más fría que el Ártico.",
+    "etiquetas": ["viaje", "clima", "playa"],
+    "izquierda": { "texto": "Me meto sufriendo para las fotos de Instagram", "perfil": "mediatico" },
+    "derecha": { "texto": "Me quedo en la arena comiendo alfajores Vítor", "perfil": "tranquilo" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Un chofer de coaster se baja a pelear con un taxista en medio de la Goyeneche y tú llegas tarde.",
+    "etiquetas": ["trafico", "calle", "peligro"],
+    "izquierda": { "texto": "Me bajo y camino indignado por la berma", "perfil": "radical" },
+    "derecha": { "texto": "Apuesto 5 lucas por el cobrador desde la ventana", "perfil": "vivillo" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Compras chocolates La Ibérica para regalar a tu suegra y te das cuenta que se derritieron en tu mochila.",
+    "etiquetas": ["regalos", "calor", "roche"],
+    "izquierda": { "texto": "Los meto a la refri para que retomen forma", "perfil": "tecnico" },
+    "derecha": { "texto": "Me los como con cuchara y le compro flores", "perfil": "negociador" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "M",
+    "texto": "Te pasas de copas tomando chicha de jora y terminas cantando el himno de Arequipa llorando a moco tendido.",
+    "etiquetas": ["juerga", "amigos", "orgullo"],
+    "izquierda": { "texto": "Al día siguiente digo que me hackearon la mente", "perfil": "vivillo" },
+    "derecha": { "texto": "Lo asumo con orgullo regionalista total", "perfil": "radical" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Te compraste depa nuevo y descubres que el volcán Misti apunta directamente a la ventana de tu cuarto.",
+    "etiquetas": ["casa", "peligro", "ciudad"],
+    "izquierda": { "texto": "Duermo con mochila de emergencia amarrada a la pierna", "perfil": "tecnico" },
+    "derecha": { "texto": "Le digo a las visitas que es vista premium", "perfil": "mediatico" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "18-30",
+    "genero": "general",
+    "texto": "Haces huelga de hambre por tus derechos estudiantiles en la UNSA, pero tu mamá te trae escribano y pastel de papa.",
+    "etiquetas": ["estudio", "comida", "politica"],
+    "izquierda": { "texto": "Hago una pausa táctica para devorar todo caleta", "perfil": "vivillo" },
+    "derecha": { "texto": "Mantengo mis ideales characatos y lo rechazo", "perfil": "radical" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Un policía te quiere poner papeleta en la av. Parra pero le hablas con tu mejor dejo arequipeño ronco.",
+    "etiquetas": ["vehiculo", "corrupcion", "jerga"],
+    "izquierda": { "texto": "Le digo 'no seas malo pe huaco' y lloro", "perfil": "negociador" },
+    "derecha": { "texto": "Le pido la papeleta firme para quejadura formal", "perfil": "tecnico" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "F",
+    "texto": "Te peinas hermoso y subes a una combi en Avelino que tiene todas las ventanas abiertas levantando tierra volcanica.",
+    "etiquetas": ["estetica", "transporte", "roche"],
+    "izquierda": { "texto": "Cierro la ventana de un golpe amenazando al cobrador", "perfil": "radical" },
+    "derecha": { "texto": "Me pongo mi bufanda estilo ninja del desierto", "perfil": "tecnico" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "31+",
+    "genero": "general",
+    "texto": "Se te cae el celular en una acequia tradicional arequipeña y el agua se lo lleva directo a las chacras.",
+    "etiquetas": ["tecnologia", "calle", "emergencia"],
+    "izquierda": { "texto": "Sigo la acequia corriendo por tres cuadras gritando", "perfil": "mediatico" },
+    "derecha": { "texto": "Llamo al banco llorando para bloquear mis cuentas", "perfil": "tecnico" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "general",
+    "texto": "En la picantería te sirven chicha en vaso gigante de un litro, ya no puedes más pero falta la mitad.",
+    "etiquetas": ["bebida", "comida", "roche"],
+    "izquierda": { "texto": "Lo vacío en mi tomatodo para llevarlo a casa", "perfil": "vivillo" },
+    "derecha": { "texto": "Fondo blanco como todo un arequipeño pecho peludo", "perfil": "radical" }
+  },
+  {
+    "region": "arequipa",
+    "edad": "general",
+    "genero": "general",
+    "texto": "Vas a comer cau queso y el mesero te cuenta que el local tiene más fantasmas que el cementerio Apacheta.",
+    "etiquetas": ["comida", "bizarro", "ciudad"],
+    "izquierda": { "texto": "Hago un Facebook Live buscando entes paranormales lonccos", "perfil": "mediatico" },
+    "derecha": { "texto": "Pido para llevar corriendo santiguándome con la salsa", "perfil": "tranquilo" }
+  }
+]
