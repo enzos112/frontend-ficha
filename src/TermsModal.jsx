@@ -1,5 +1,3 @@
-// TermsModal.jsx — Modal de Términos y Condiciones (versión irónica)
-
 export default function TermsModal({ onClose, onAceptar }) {
   return (
     <div className="tm-overlay" onClick={e => e.target === e.currentTarget && onClose()}>
@@ -25,7 +23,6 @@ export default function TermsModal({ onClose, onAceptar }) {
 
         {/* Contenido scrolleable */}
         <div className="tm-body">
-
           <p className="tm-intro">
             Antes de sacar tu ficha, el Estado Satírico del Perú te informa lo siguiente.
             Léelo o no lo leas, igual vas a aceptar.
@@ -108,8 +105,9 @@ function TmStyles() {
         --f-codigo: 'Courier Prime', monospace;
       }
 
+      /* LA MAGIA ESTÁ AQUÍ: z-index a 99999 para que nada lo tape */
       .tm-overlay {
-        position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 300;
+        position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 99999;
         display: flex; align-items: flex-end; justify-content: center;
         animation: fade-in 0.2s ease;
       }
@@ -122,6 +120,7 @@ function TmStyles() {
         max-height: 88vh;
         animation: slide-up 0.35s cubic-bezier(0.175,0.885,0.32,1.275);
         overflow: hidden;
+        box-shadow: 0 -10px 40px rgba(0,0,0,0.8);
       }
       @keyframes slide-up { from{transform:translateY(100%)} to{transform:translateY(0)} }
 
@@ -142,7 +141,6 @@ function TmStyles() {
       .tm-close  { background: transparent; border: none; color: #444; font-size: 18px; cursor: pointer; transition: color 0.2s; padding: 0 4px; }
       .tm-close:hover { color: #fff; }
 
-      /* Sello */
       .tm-sello-wrap { flex-shrink: 0; display: flex; justify-content: center; padding: 14px 0 0; }
       .tm-sello {
         border: 2px solid #FF00AA; border-radius: 50%;
@@ -152,7 +150,6 @@ function TmStyles() {
       }
       .tm-sello p { font-family: var(--f-bloque); font-size: 7px; color: #FF00AA; letter-spacing: 1px; line-height: 1.3; text-align: center; }
 
-      /* Body scrolleable */
       .tm-body {
         flex: 1; overflow-y: auto; padding: 16px 18px 4px;
         display: flex; flex-direction: column; gap: 14px;
@@ -183,7 +180,6 @@ function TmStyles() {
       .tm-firma-nombre { font-family: var(--f-titulo); font-size: 16px; color: #fff; }
       .tm-firma-cargo  { font-family: var(--f-bloque); font-size: 9px; color: #444; text-transform: uppercase; letter-spacing: 1px; }
 
-      /* Footer */
       .tm-footer {
         flex-shrink: 0;
         padding: 14px 18px 24px;

@@ -1,7 +1,11 @@
 import { useState } from "react";
 
 const REGIONES = [
-    "Amazonas","Arequipa","Cajamarca","Lima","Trujillo",
+  "Amazonas", "Ancash", "Apurímac", "Arequipa", "Ayacucho", 
+  "Cajamarca", "Callao", "Cusco", "Huancavelica", "Huánuco", 
+  "Ica", "Junín", "La Libertad", "Lambayeque", "Lima", 
+  "Loreto", "Madre de Dios", "Moquegua", "Pasco", "Piura", 
+  "Puno", "San Martín", "Tacna", "Tumbes", "Ucayali"
 ];
 
 const EDADES = [
@@ -68,12 +72,13 @@ export default function HomeView({ onStart, onVerChismes, onVerStats, onVerTerms
               <span>👉</span>
             </div>
           </div>
-          <p className="hv-swipe-desc">Desliza o toca para elegir · 20 preguntas · 3 segundos cada una</p>
+          <p className="hv-swipe-desc">Desliza o toca para elegir · 20 preguntas · 0.5 seg de feedback</p>
         </div>
 
-        {/* Card */}
+        {/* Card Formulario */}
         <div className="hv-card">
           <div className="hv-card-stripe" />
+          
           {/* Departamento */}
           <label className="hv-label">📍 TU DEPARTAMENTO</label>
           <div className="hv-sel-wrap">
@@ -138,7 +143,7 @@ export default function HomeView({ onStart, onVerChismes, onVerStats, onVerTerms
           <p className="hv-disclaimer">Anónimo · Satírico · Sin datos personales</p>
         </div>
 
-        {/* Stats */}
+        {/* Stats Rápidas */}
         <div className="hv-stats">
           {[["127K+","fichas"],["20","preguntas"],["8","perfiles"]].map(([n,l]) => (
             <div key={l} className="hv-stat">
@@ -152,9 +157,34 @@ export default function HomeView({ onStart, onVerChismes, onVerStats, onVerTerms
       <footer className="hv-footer">
         <p>© 2026 Saca tu Ficha — Sátira electoral peruana</p>
         <div className="hv-footer-links">
-          <button className="hv-footer-link" onClick={onVerTerms}>Términos y Condiciones</button>
+          
+          {/* 👇 BOTÓN BLINDADO CON RASTREADOR 👇 */}
+          <button 
+            className="hv-footer-link" 
+            onClick={() => {
+              console.log("👉 Click en botón Términos detectado");
+              if (onVerTerms) {
+                console.log("✅ Prop onVerTerms existe, ejecutando...");
+                onVerTerms();
+              } else {
+                console.error("❌ ERROR: App.jsx NO le está pasando la función onVerTerms al HomeView!");
+              }
+            }}
+          >
+            Términos y Condiciones
+          </button>
+          
           <span className="hv-footer-sep">·</span>
-          <button className="hv-footer-link" onClick={onVerAdmin}>Admin</button>
+          
+          <button 
+            className="hv-footer-link" 
+            onClick={() => {
+              console.log("👉 Click en botón Admin detectado");
+              if (onVerAdmin) onVerAdmin();
+            }}
+          >
+            Admin
+          </button>
         </div>
       </footer>
 
