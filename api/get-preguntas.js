@@ -43,7 +43,7 @@ export default async function handler(req, res) {
         AND (p.edad = ${userEdad} OR p.edad = 'general')
         AND (p.genero = ${userGenero} OR p.genero = 'general')
         AND p.id NOT IN (
-          SELECT pregunta_id FROM respuestas WHERE uuid = ${uuid}
+          SELECT pregunta_id FROM respuestas_usuarios WHERE sesion_id::text = ${uuid}::text
         )
       GROUP BY p.id
       ORDER BY RANDOM()

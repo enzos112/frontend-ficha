@@ -48,7 +48,7 @@ export const useFicha = () => {
   const cargarPreguntas = async (uuidActual) => {
     setLoading(true);
     try {
-      const res = await fetch(/api/get-preguntas?uuid=${uuidActual});
+      const res = await fetch(`/api/get-preguntas?uuid=${encodeURIComponent(uuidActual)}`);
       const data = await res.json();
       
       if (data.finished) {
@@ -88,9 +88,10 @@ export const useFicha = () => {
   // Paso 4: Cargar un chisme para el morbo
   const mostrarChisme = async () => {
     try {
-      const res = await fetch('/api/get-chisme');
+      const res = await fetch('/api/get-chismes?region=nacional');
       const data = await res.json();
-      setChismeActivo(data.texto_chisme);
+      const uno = Array.isArray(data) ? data[0] : null;
+      setChismeActivo(uno?.texto || null);
       // El chisme desaparece a los 4 segundos
       setTimeout(() => setChismeActivo(null), 4000); 
     } catch (error) {

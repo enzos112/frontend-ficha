@@ -59,8 +59,8 @@ export default function QuizView({ preguntas, chismes, onAnswer, onFinish, sesio
       // 2. DISPARAMOS LA PETICIÓN (pero no dejamos que el await congele la pantalla)
       const porcentajeReal = await onAnswer({ 
         pregunta_id: pregunta.id, 
-        lado, 
-        perfil_id: opcion.perfil 
+        opcion_id: opcion?.opcion_id,
+        perfil_id: opcion?.perfil,
       });
 
       // 3. LANZAMOS EL FEEDBACK (ahora que tenemos la data)

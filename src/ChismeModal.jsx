@@ -134,7 +134,21 @@ export function ChismesCanal({ chismesExtra = [], sesionId, onNuevoChisme, onClo
       nuevo: true,
     };
 
-    await onNuevoChisme?.(nuevo.texto); // Enviamos solo el texto al padre para el fetch
+    try {
+      await fetch('/api/save-chisme', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          uuid: sesionId,
+          texto_chisme: nuevo.texto,
+          region: nuevo.region,
+        }),
+      });
+    } catch (err) {
+      console.error("Error enviando chisme:", err);
+    }
+
+    await onNuevoChisme?.(nuevo); // sincroniza UI del padre si lo usa
 
     setTodos(prev => [nuevo, ...prev]);
     setTexto(""); setEnv(false); setEnviado(true); setVistaE(false);

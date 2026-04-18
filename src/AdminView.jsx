@@ -1,6 +1,6 @@
 // AdminView.jsx — Panel de moderación con edición + tab de aprobados
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const MOCK_PENDIENTES = [
   { id: "p1", texto: "El gerente de la Municipalidad de Surco llega a las 11am y se va a las 12. Nadie dice nada.", region: "Lima",     fecha: "2026-04-10" },
@@ -35,6 +35,7 @@ export default function AdminView({ onClose }) {
   const [editandoId,  setEditId]  = useState(null);
   const [editDraft,   setDraft]   = useState({ texto: "", region: "" });
   const [confirmarId, setConfirm] = useState(null); // para confirmar borrado
+  const [cargandoListas, setCargando] = useState(false);
 
   function showToast(msg, color) {
     setToast({ msg, color });
@@ -46,14 +47,49 @@ export default function AdminView({ onClose }) {
     else { setPassErr(true); setTimeout(() => setPassErr(false), 1500); }
   }
 
+  async function cargarListas() {
+    setCargando(true);
+    try {
+      const res = await fetch("/api/get-admin-chismes", {
+        headers: { "x-admin-pass": passInput || PASS },
+      });
+      const data = await res.json();
+      if (data?.success) {
+        setPend(Array.isArray(data.pendientes) ? data.pendientes : []);
+        setApro(Array.isArray(data.aprobados) ? data.aprobados : []);
+      }
+    } catch (e) {
+      console.error("Error cargando admin:", e);
+    } finally {
+      setCargando(false);
+    }
+  }
+
+  useEffect(() => {
+    if (autenticado) cargarListas();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autenticado]);
+
   // ── Aprobar / Rechazar ──
   async function accion(id, estado) {
     if (editandoId === id && !editDraft.texto.trim()) {
       showToast("El texto no puede quedar vacío", "#FF00AA"); return;
     }
     setProc(prev => ({ ...prev, [id]: true }));
-    // TODO (Enzo): await fetch("/api/update-chisme", { method:"POST", body: JSON.stringify({ id, estado, texto?: editDraft.texto, region?: editDraft.region }) });
-    await delay(600);
+    try {
+      await fetch("/api/update-chisme", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-admin-pass": passInput || PASS },
+        body: JSON.stringify({
+          id,
+          estado,
+          texto: editandoId === id ? editDraft.texto : undefined,
+          region: editandoId === id ? editDraft.region : undefined,
+        }),
+      });
+    } catch (e) {
+      console.error("Error accion admin:", e);
+    }
 
     const chisme = pendientes.find(c => c.id === id);
     if (editandoId === id) cerrarEdicion();
@@ -83,8 +119,15 @@ export default function AdminView({ onClose }) {
     const t = editDraft.texto.trim();
     if (!t) { showToast("El texto no puede quedar vacío", "#FF00AA"); return; }
     setProc(prev => ({ ...prev, [id]: true }));
-    // TODO (Enzo): await fetch("/api/update-chisme", { method:"POST", body: JSON.stringify({ id, estado:"pendiente", texto:t, region: editDraft.region.trim() }) });
-    await delay(500);
+    try {
+      await fetch("/api/update-chisme", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-admin-pass": passInput || PASS },
+        body: JSON.stringify({ id, estado: "pendiente", texto: t, region: editDraft.region.trim() }),
+      });
+    } catch (e) {
+      console.error("Error guardando edición:", e);
+    }
     setPend(prev => prev.map(c => c.id === id ? { ...c, texto: t, region: editDraft.region.trim() || c.region } : c));
     setProc(prev => ({ ...prev, [id]: false }));
     cerrarEdicion();
@@ -94,8 +137,15 @@ export default function AdminView({ onClose }) {
   // ── Borrar aprobado ──
   async function borrarAprobado(id) {
     setProc(prev => ({ ...prev, [id]: true }));
-    // TODO (Enzo): await fetch("/api/delete-chisme", { method:"POST", body: JSON.stringify({ id }) });
-    await delay(500);
+    try {
+      await fetch("/api/delete-chisme", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-admin-pass": passInput || PASS },
+        body: JSON.stringify({ id }),
+      });
+    } catch (e) {
+      console.error("Error borrando aprobado:", e);
+    }
     setApro(prev => prev.filter(c => c.id !== id));
     setProc(prev => ({ ...prev, [id]: false }));
     setConfirm(null);
@@ -171,6 +221,9 @@ export default function AdminView({ onClose }) {
       </div>
 
       <main className="av-main">
+        {cargandoListas && (
+          <p className="av-instruccion">Cargando del servidor...</p>
+        )}
 
         {/* ══ TAB PENDIENTES ══ */}
         {tab === "PENDIENTES" && (

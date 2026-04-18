@@ -6,7 +6,7 @@ export default async function handler(req, res) {
   }
 
   const sql = neon(process.env.DATABASE_URL);
-  const { uuid, texto_chisme } = req.body;
+  const { uuid, texto_chisme, region } = req.body;
 
   // Si el usuario le dio a "Enviar" pero lo dejó vacío
   if (!uuid || !texto_chisme || texto_chisme.trim() === '') {
@@ -14,10 +14,17 @@ export default async function handler(req, res) {
   }
 
   try {
-    await sql`
-      INSERT INTO chismes (sesion_id, texto_chisme)
-      VALUES (${uuid}, ${texto_chisme})
-    `;
+    if (region && String(region).trim() !== '') {
+      await sql`
+        INSERT INTO chismes (sesion_id, texto_chisme, region)
+        VALUES (${uuid}, ${texto_chisme}, ${String(region).trim()})
+      `;
+    } else {
+      await sql`
+        INSERT INTO chismes (sesion_id, texto_chisme)
+        VALUES (${uuid}, ${texto_chisme})
+      `;
+    }
 
     return res.status(200).json({ 
       success: true, 

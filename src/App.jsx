@@ -6,7 +6,7 @@ import StatsView        from "./StatsView";
 import AdminView        from "./AdminView";
 import TermsModal       from "./TermsModal";
 import { ChismesCanal } from "./ChismeModal";
-import { PREGUNTAS }    from "./data";
+import { PREGUNTAS }    from "./Data";
 
 // ── Sesión anónima ──────────────────────────────────────────────────────────
 function generarUUID() {
@@ -48,6 +48,23 @@ export default function App() {
 
   useEffect(() => { setSesion(getOrCreateSesion()); }, []);
 
+  function normalizarPreguntasApi(pregs) {
+    if (!Array.isArray(pregs)) return null;
+    return pregs
+      .map(p => {
+        const opciones = Array.isArray(p.opciones) ? p.opciones : [];
+        if (opciones.length < 2) return null;
+        const [a, b] = opciones;
+        return {
+          id: p.id,
+          texto: p.texto,
+          izquierda: { texto: a.texto, perfil: a.perfil, opcion_id: a.id },
+          derecha:   { texto: b.texto, perfil: b.perfil, opcion_id: b.id },
+        };
+      })
+      .filter(Boolean);
+  }
+
   // ── Calcular perfil local (fallback si no hay API) ──
   function calcularPerfil(resps) {
     const conteo = {};
@@ -73,7 +90,10 @@ export default function App() {
       const resPreg = await fetch(`/api/get-preguntas?uuid=${sesion.uuid}&region=${r}&edad=${e}&genero=${g}`)
         .then(res => res.json())
         .catch(() => null);
-      if (resPreg && resPreg.length > 0) setPreg(resPreg);
+      if (resPreg && resPreg.length > 0) {
+        const norm = normalizarPreguntasApi(resPreg);
+        if (norm && norm.length > 0) setPreg(norm);
+      }
 
       // Enzo: chismes filtrados por región
       const resChis = await fetch(`/api/get-chismes?region=${encodeURIComponent(r)}`)
@@ -90,13 +110,13 @@ export default function App() {
   }
 
   // ── 2. Guardar respuesta ──
-  const handleAnswer = useCallback(async ({ pregunta_id, lado, perfil_id }) => {
-    setResp(prev => [...prev, { pregunta_id, lado, perfil_id }]);
+  const handleAnswer = useCallback(async ({ pregunta_id, opcion_id, perfil_id }) => {
+    setResp(prev => [...prev, { pregunta_id, opcion_id, perfil_id }]);
     try {
       const res = await fetch("/api/save-respuesta", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ uuid: sesion?.uuid, pregunta_id, lado, perfil_id }),
+        body: JSON.stringify({ uuid: sesion?.uuid, pregunta_id, opcion_id }),
       });
       const json = await res.json();
       return json.porcentaje || 0; // Enzo: % de personas que eligieron igual ("efecto espejo")
@@ -213,6 +233,7 @@ export default function App() {
       {vista === "canal" && (
         <ChismesCanal
           chismesExtra={chismesU}
+          sesionId={sesion?.uuid}
           onNuevoChisme={handleNuevoChisme}
           onClose={() => setVista(perfilId ? "result" : "home")}
         />
